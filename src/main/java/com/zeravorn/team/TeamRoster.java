@@ -44,6 +44,10 @@ public final class TeamRoster {
 		return participants.size();
 	}
 
+	public void clear() {
+		participants.clear();
+	}
+
 	public List<MatchParticipant> participants() {
 		return List.copyOf(participants);
 	}

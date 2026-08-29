@@ -1,0 +1,5 @@
+{
+  "startingGold": 500,
+  "startingSkillPoints": 1,
+  "xpThresholds": [0, 180, 450, 850, 1300, 1800, 2350, 2950, 3600, 4300]
+}

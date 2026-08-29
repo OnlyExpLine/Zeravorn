@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.zeravorn.match.MatchSessionTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-08-28T15:39:46.304Z" hostname="LAPTOP-2N956OO7" time="0.126">
+<testsuite name="com.zeravorn.match.MatchSessionTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-29T03:52:01.064Z" hostname="LAPTOP-2N956OO7" time="0.022">
   <properties/>
-  <testcase name="finishingIsIdempotent()" classname="com.zeravorn.match.MatchSessionTest" time="0.067"/>
-  <testcase name="rejectsInvalidTransitions()" classname="com.zeravorn.match.MatchSessionTest" time="0.006"/>
-  <testcase name="teamRosterHasFiveSlotsAndUniquePlayersAcrossTeams()" classname="com.zeravorn.match.MatchSessionTest" time="0.005"/>
+  <testcase name="finishingIsIdempotent()" classname="com.zeravorn.match.MatchSessionTest" time="0.004"/>
+  <testcase name="rejectsInvalidTransitions()" classname="com.zeravorn.match.MatchSessionTest" time="0.009"/>
+  <testcase name="teamRosterHasFiveSlotsAndUniquePlayersAcrossTeams()" classname="com.zeravorn.match.MatchSessionTest" time="0.004"/>
   <testcase name="followsTheServerMatchLifecycle()" classname="com.zeravorn.match.MatchSessionTest" time="0.001"/>
+  <testcase name="cannotFinishWithoutAuthoritativeWinnerAndResetClearsRosters()" classname="com.zeravorn.match.MatchSessionTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.zeravorn.hero.HeroCoreTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-29T03:52:00.904Z" hostname="LAPTOP-2N956OO7" time="0.157">
+  <properties/>
+  <testcase name="skillPointIsNotSpentWhenUpgradeIsRejected()" classname="com.zeravorn.hero.HeroCoreTest" time="0.074"/>
+  <testcase name="experienceLevelsUpAndGrantsOnePointPerLevel()" classname="com.zeravorn.hero.HeroCoreTest" time="0.003"/>
+  <testcase name="definitionsContainAllFiveHeroesAndDocumentedCaps()" classname="com.zeravorn.hero.HeroCoreTest" time="0.005"/>
+  <testcase name="progressionUsesEveryDocumentedXpThresholdAndEffectiveStats()" classname="com.zeravorn.hero.HeroCoreTest" time="0.01"/>
+  <testcase name="abilityRanksCannotExceedConfiguredCaps()" classname="com.zeravorn.hero.HeroCoreTest" time="0.013"/>
+  <testcase name="runtimeStartsWithConfiguredResourcesAndLevelOnePoint()" classname="com.zeravorn.hero.HeroCoreTest" time="0.001"/>
+  <testcase name="abilityUpgradeValidatesUnlockCapsAndHeroSpecificF()" classname="com.zeravorn.hero.HeroCoreTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

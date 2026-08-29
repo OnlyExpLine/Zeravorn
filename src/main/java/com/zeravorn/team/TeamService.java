@@ -27,4 +27,9 @@ public final class TeamService {
 	public boolean contains(UUID playerId) {
 		return blue.contains(playerId) || red.contains(playerId);
 	}
+
+	public void reset() {
+		blue.clear();
+		red.clear();
+	}
 }

@@ -44,6 +44,17 @@ class MatchSessionTest {
 	}
 
 	@Test
+	void cannotFinishWithoutAuthoritativeWinnerAndResetClearsRosters() {
+		MatchSession session = playingSession();
+		assertThrows(IllegalStateException.class, () -> session.transitionTo(MatchState.FINISHED));
+		assertTrue(session.teams().add(TeamId.BLUE, new MatchParticipant(UUID.randomUUID(), "Blue", false)));
+		session.finish(TeamId.BLUE, MatchFinishReason.THRONE_DESTROYED);
+		session.transitionTo(MatchState.POST_GAME);
+		session.reset();
+		assertEquals(0, session.teams().roster(TeamId.BLUE).size());
+	}
+
+	@Test
 	void finishingIsIdempotent() {
 		MatchSession session = playingSession();
 

@@ -80,6 +80,7 @@ public final class MatchSession {
 		elapsedTicks = 0;
 		winner = null;
 		finishReason = null;
+		teams.reset();
 	}
 
 	private static boolean isAllowedTransition(MatchState current, MatchState next) {
@@ -88,7 +89,9 @@ public final class MatchSession {
 			case HERO_SELECT -> next == MatchState.LOADING;
 			case LOADING -> next == MatchState.COUNTDOWN;
 			case COUNTDOWN -> next == MatchState.PLAYING;
-			case PLAYING -> next == MatchState.FINISHED;
+			// A playing match may enter FINISHED only through finish(), which
+			// atomically records the winner and the authoritative finish reason.
+			case PLAYING -> false;
 			case FINISHED -> next == MatchState.POST_GAME;
 			case POST_GAME -> next == MatchState.LOBBY;
 		};
