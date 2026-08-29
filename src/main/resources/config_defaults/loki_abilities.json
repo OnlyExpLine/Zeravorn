@@ -1,0 +1,5 @@
+{
+  "q":[{"damage":45,"attackRatio":0.70,"cooldownTicks":240,"mana":70,"range":9.0,"pullTicks":7},{"damage":55,"attackRatio":0.70,"cooldownTicks":230,"mana":70,"range":9.0,"pullTicks":7},{"damage":63,"attackRatio":0.70,"cooldownTicks":220,"mana":70,"range":9.0,"pullTicks":7},{"damage":70,"attackRatio":0.70,"cooldownTicks":200,"mana":70,"range":9.0,"pullTicks":7}],
+  "e":[{"cooldownTicks":280,"mana":50,"durationTicks":80,"moveBonus":0.12},{"cooldownTicks":270,"mana":50,"durationTicks":80,"moveBonus":0.14},{"cooldownTicks":260,"mana":50,"durationTicks":80,"moveBonus":0.16},{"cooldownTicks":240,"mana":50,"durationTicks":80,"moveBonus":0.18}],
+  "r":[{"damage":75,"attackRatio":0.40,"cooldownTicks":680,"mana":110,"radius":4.0,"rootTicks":30},{"damage":100,"attackRatio":0.40,"cooldownTicks":600,"mana":110,"radius":4.0,"rootTicks":40}]
+}

@@ -1,14 +1,14 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M7 — Jungle + Buffs + Summoner Spells (verification pending)
+M9 — Vision + Bushes + Minimap State (verification pending)
 
 ## Last completed milestone
-M6 — Economy + Items + Shop
+M8D — Loki
 
 ## Build status
-- build: NOT VERIFIED — pending M7 verification
-- test: NOT VERIFIED — Gradle distribution download timed out after sandbox network approval
+- build: PASS — M7 confirmed by user
+- test: PASS — M7 confirmed by user
 - client run: NOT CHECKED
 - server run: NOT CHECKED
 
@@ -53,6 +53,11 @@ M6 — Economy + Items + Shop
 - M7 adds config-backed jungle mob definitions, camp state transitions, leash reset, respawn, documented scaling, and reward dispatch.
 - M7 buffs are server-owned, expire by server tick, are removed on death, and Red applies only to outgoing hero damage.
 - M7 summoner spells are server-validated and use the existing cooldown/CC services; Flash delegates endpoint safety to the map integration boundary.
+- M8A adds Shelianer Q/E/F/R server execution with config-driven ranks, mana costs, cooldowns, physical/magical damage, poison ticks, slow, dash, and six-hit ultimate.
+- M8B adds Esaki Q/E/R server execution with config-driven physical damage, mana, cooldowns, projectile range validation, knockback, and three ultimate pulses.
+- M8C adds Amelia Q/E/R server execution with config-driven magical damage, AP scaling, six channel ticks, slow, knockback, and delayed Ice Spikes.
+- M8D adds Loki Q/E/R server execution with config-driven physical damage, PULL/ROOT control, timed Rampage movement bonus, and Iron Prison AoE.
+- M9 adds server-authoritative VisionState per team, LOS/bush/reveal rules, VisionDelta, and minimap position filtering.
 
 ## Assumptions
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
@@ -103,6 +108,28 @@ M6 — Economy + Items + Shop
 - `src/main/resources/config_defaults/jungle.json`
 - `src/main/resources/config_defaults/spells.json`
 - `src/test/java/com/zeravorn/jungle/JungleAndSpellTest.java`
+- `src/main/java/com/zeravorn/hero/ShelianerAbilityDefinitions.java`
+- `src/main/java/com/zeravorn/hero/ShelianerAbilityResult.java`
+- `src/main/java/com/zeravorn/hero/ShelianerAbilityService.java`
+- `src/main/resources/config_defaults/shelianer_abilities.json`
+- `src/test/java/com/zeravorn/hero/ShelianerAbilityTest.java`
+- `src/main/java/com/zeravorn/hero/EsakiAbilityDefinitions.java`
+- `src/main/java/com/zeravorn/hero/EsakiAbilityResult.java`
+- `src/main/java/com/zeravorn/hero/EsakiAbilityService.java`
+- `src/main/resources/config_defaults/esaki_abilities.json`
+- `src/test/java/com/zeravorn/hero/EsakiAbilityTest.java`
+- `src/main/java/com/zeravorn/hero/AmeliaAbilityDefinitions.java`
+- `src/main/java/com/zeravorn/hero/AmeliaAbilityResult.java`
+- `src/main/java/com/zeravorn/hero/AmeliaAbilityService.java`
+- `src/main/resources/config_defaults/amelia_abilities.json`
+- `src/test/java/com/zeravorn/hero/AmeliaAbilityTest.java`
+- `src/main/java/com/zeravorn/hero/LokiAbilityDefinitions.java`
+- `src/main/java/com/zeravorn/hero/LokiAbilityResult.java`
+- `src/main/java/com/zeravorn/hero/LokiAbilityService.java`
+- `src/main/resources/config_defaults/loki_abilities.json`
+- `src/test/java/com/zeravorn/hero/LokiAbilityTest.java`
+- `src/main/java/com/zeravorn/vision/`
+- `src/test/java/com/zeravorn/vision/VisionServiceTest.java`
 
 ## Files/modules changed
 - `gradle.properties`
@@ -124,9 +151,14 @@ M6 — Economy + Items + Shop
 - M6: `.\gradlew.bat --no-daemon test` — PASS.
 - M6: `.\gradlew.bat --no-daemon build` — PASS.
 - M7: `GRADLE_USER_HOME=.gradle-user .\gradlew.bat test` — NOT VERIFIED; initial sandbox run was denied network access, approved retry timed out while downloading Gradle 9.5.1.
+- M7: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
+- M8A: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
+- M8B: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
+- M8C: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
+- M8D: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
 
 ## Next milestone
-M8A — Shelianer (after M7 build/test verification)
+M10 — Gameplay HUD + Input + Network Contracts (after M9 verification)
 
 ## Git checkpoint
 - Branch: `main`

@@ -25,8 +25,8 @@ public final class CrowdControlService {
     }
     public void tick(long serverTick) { active.values().forEach(effects -> effects.removeIf(effect -> effect.expiresAtTick() <= serverTick)); active.values().removeIf(List::isEmpty); }
     public List<CrowdControlEffect> effects(UUID target) { return List.copyOf(active.getOrDefault(target, List.of())); }
-    public boolean blocksMovement(UUID target) { return has(target, CrowdControlType.STUN, CrowdControlType.ROOT, CrowdControlType.KNOCKUP, CrowdControlType.KNOCKBACK); }
-    public boolean blocksBasicOrAbility(UUID target) { return has(target, CrowdControlType.STUN, CrowdControlType.KNOCKUP, CrowdControlType.KNOCKBACK); }
+    public boolean blocksMovement(UUID target) { return has(target, CrowdControlType.STUN, CrowdControlType.ROOT, CrowdControlType.KNOCKUP, CrowdControlType.KNOCKBACK, CrowdControlType.PULL); }
+    public boolean blocksBasicOrAbility(UUID target) { return has(target, CrowdControlType.STUN, CrowdControlType.KNOCKUP, CrowdControlType.KNOCKBACK, CrowdControlType.PULL); }
     public double movementMultiplier(UUID target) {
         return effects(target).stream().filter(effect -> effect.type() == CrowdControlType.SLOW)
                 .mapToDouble(effect -> Math.max(0, 1.0 - effect.strength())).min().orElse(1.0);

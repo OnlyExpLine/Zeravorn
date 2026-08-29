@@ -1,0 +1,5 @@
+{
+  "q":[{"damagePerTick":23,"apRatio":0.12,"cooldownTicks":260,"mana":90,"range":5.0,"slow":0.25,"ticks":6},{"damagePerTick":27,"apRatio":0.12,"cooldownTicks":260,"mana":90,"range":5.0,"slow":0.30,"ticks":6},{"damagePerTick":31,"apRatio":0.12,"cooldownTicks":250,"mana":90,"range":5.0,"slow":0.35,"ticks":6},{"damagePerTick":35,"apRatio":0.12,"cooldownTicks":240,"mana":90,"range":5.0,"slow":0.40,"ticks":6}],
+  "e":[{"damage":60,"apRatio":0.45,"cooldownTicks":260,"mana":75,"radius":4.0,"knockback":2.5},{"damage":70,"apRatio":0.45,"cooldownTicks":260,"mana":75,"radius":4.0,"knockback":3.0},{"damage":80,"apRatio":0.45,"cooldownTicks":250,"mana":75,"radius":4.0,"knockback":3.5},{"damage":90,"apRatio":0.45,"cooldownTicks":240,"mana":75,"radius":4.0,"knockback":4.0}],
+  "r":[{"damage":175,"apRatio":0.90,"cooldownTicks":680,"mana":130,"range":4.0,"radius":2.0,"delayTicks":11},{"damage":220,"apRatio":0.90,"cooldownTicks":600,"mana":130,"range":4.0,"radius":2.0,"delayTicks":11}]
+}

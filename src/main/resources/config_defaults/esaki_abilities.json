@@ -1,0 +1,5 @@
+{
+  "q":[{"damage":70,"attackRatio":1.10,"cooldownTicks":180,"mana":75,"range":7.0,"projectileSpeed":8.0},{"damage":80,"attackRatio":1.10,"cooldownTicks":180,"mana":75,"range":7.0,"projectileSpeed":8.0},{"damage":90,"attackRatio":1.10,"cooldownTicks":170,"mana":75,"range":7.0,"projectileSpeed":8.0},{"damage":100,"attackRatio":1.10,"cooldownTicks":160,"mana":75,"range":7.0,"projectileSpeed":8.0}],
+  "e":[{"damage":40,"attackRatio":0.50,"cooldownTicks":260,"mana":60,"radius":3.0,"knockback":1.5},{"damage":47,"attackRatio":0.50,"cooldownTicks":260,"mana":60,"radius":3.0,"knockback":1.7},{"damage":54,"attackRatio":0.50,"cooldownTicks":250,"mana":60,"radius":3.0,"knockback":1.85},{"damage":60,"attackRatio":0.50,"cooldownTicks":240,"mana":60,"radius":3.0,"knockback":2.0}],
+  "r":[{"damagePerPulse":55,"attackRatio":0.35,"cooldownTicks":880,"mana":140,"radius":6.0,"pulses":3},{"damagePerPulse":70,"attackRatio":0.35,"cooldownTicks":800,"mana":140,"radius":6.0,"pulses":3}]
+}
