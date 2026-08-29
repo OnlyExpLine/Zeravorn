@@ -1,8 +1,43 @@
 package com.zeravorn.item;
-import java.util.*;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/** Immutable, validated item catalogue loaded from packaged balance data. */
 public final class ItemCatalog {
-    private final Map<String,ItemDefinition> items = new LinkedHashMap<>();
-    public ItemCatalog() { add("iron_blade","Железный клинок",ItemCategory.PHYSICAL,1800,new ItemStats(35,0,150,0,0,0,0,0,0)); add("berserker_blade","Клинок берсерка",ItemCategory.PHYSICAL,2100,new ItemStats(25,0,0,0,0,.25,0,0,0)); add("blooddrinker","Кровопийца",ItemCategory.PHYSICAL,2300,new ItemStats(30,0,0,0,0,0,.15,0,0)); add("hunters_fang","Клык охотника",ItemCategory.PHYSICAL,2000,new ItemStats(20,0,300,0,0,0,0,0,.10)); add("crusher","Крушитель",ItemCategory.PHYSICAL,2500,new ItemStats(55,0,0,0,0,0,0,0,0)); add("combat_bracers","Боевые наручи",ItemCategory.PHYSICAL,2200,new ItemStats(20,0,200,0,0,.20,0,0,0)); add("titan_armor","Броня титана",ItemCategory.DEFENSE,2100,new ItemStats(0,0,650,0,0,0,0,0,0)); add("steel_chest","Стальной нагрудник",ItemCategory.DEFENSE,1900,new ItemStats(10,0,450,0,0,0,0,0,0)); add("giant_heart","Сердце великана",ItemCategory.DEFENSE,2400,new ItemStats(0,0,850,0,0,0,0,0,0)); add("war_shell","Боевой панцирь",ItemCategory.DEFENSE,2100,new ItemStats(0,0,500,0,0,.10,0,0,0)); add("blood_armor","Кровавая броня",ItemCategory.DEFENSE,2300,new ItemStats(0,0,450,0,0,0,.10,0,0)); add("stalker_armor","Доспех преследователя",ItemCategory.DEFENSE,2200,new ItemStats(0,0,400,0,0,0,0,0,.08)); add("frost_crystal","Ледяной кристалл",ItemCategory.MAGICAL,1900,new ItemStats(0,30,0,150,0,0,0,0,0)); add("wisdom_staff","Посох мудрости",ItemCategory.MAGICAL,2200,new ItemStats(0,35,0,250,1,0,0,0,0)); add("archmage_orb","Сфера архимага",ItemCategory.MAGICAL,2500,new ItemStats(0,60,0,200,0,0,0,0,0)); add("eternity_crystal","Кристалл вечности",ItemCategory.MAGICAL,2100,new ItemStats(0,0,0,350,3,0,0,0,0)); add("blood_grimoire","Кровавый гримуар",ItemCategory.MAGICAL,2400,new ItemStats(0,35,0,0,0,0,0,.12,0)); add("battle_mage_orb","Сфера боевого мага",ItemCategory.MAGICAL,2200,new ItemStats(0,30,300,150,0,0,0,0,0)); add("traveler_boots","Сапоги путешественника",ItemCategory.BOOTS,900,new ItemStats(0,0,0,0,0,0,0,0,.15),SlotType.BOOTS); add("combat_boots","Боевые сапоги",ItemCategory.BOOTS,1200,new ItemStats(0,0,0,0,0,.15,0,0,.10),SlotType.BOOTS); }
-    private void add(String id,String name,ItemCategory c,int p,ItemStats s){add(id,name,c,p,s,SlotType.NORMAL);} private void add(String id,String name,ItemCategory c,int p,ItemStats s,SlotType slot){items.put(id,new ItemDefinition(id,name,c,p,slot,s));}
-    public ItemDefinition find(String id){return items.get(id);} public Collection<ItemDefinition> all(){return Collections.unmodifiableCollection(items.values());}
+    private final Map<String, ItemDefinition> items = new LinkedHashMap<>();
+
+    public ItemCatalog() {
+        try (var stream = ItemCatalog.class.getResourceAsStream("/config_defaults/items.json")) {
+            if (stream == null) throw new IllegalStateException("Missing item balance config");
+            JsonArray definitions = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+                    .getAsJsonObject().getAsJsonArray("items");
+            for (var element : definitions) add(parse(element.getAsJsonObject()));
+        } catch (Exception exception) {
+            throw new IllegalStateException("Unable to load item balance config", exception);
+        }
+        if (items.size() != 20) throw new IllegalStateException("Expected exactly 20 starter items");
+    }
+
+    private static ItemDefinition parse(JsonObject item) {
+        JsonObject stats = item.getAsJsonObject("stats");
+        return new ItemDefinition(item.get("id").getAsString(), item.get("name").getAsString(),
+                ItemCategory.valueOf(item.get("category").getAsString()), item.get("price").getAsInt(),
+                SlotType.valueOf(item.get("slotType").getAsString()), new ItemStats(
+                value(stats, "attack"), value(stats, "abilityPower"), value(stats, "maxHealth"), value(stats, "maxMana"),
+                decimal(stats, "manaRegen"), decimal(stats, "attackSpeed"), decimal(stats, "lifesteal"),
+                decimal(stats, "spellVamp"), decimal(stats, "moveSpeed")));
+    }
+    private static int value(JsonObject object, String field) { return object.has(field) ? object.get(field).getAsInt() : 0; }
+    private static double decimal(JsonObject object, String field) { return object.has(field) ? object.get(field).getAsDouble() : 0; }
+    private void add(ItemDefinition item) { if (items.putIfAbsent(item.id(), item) != null) throw new IllegalStateException("Duplicate item id: " + item.id()); }
+    public ItemDefinition find(String id) { return items.get(id); }
+    public Collection<ItemDefinition> all() { return Collections.unmodifiableCollection(items.values()); }
 }

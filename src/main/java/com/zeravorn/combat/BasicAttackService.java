@@ -21,8 +21,10 @@ public final class BasicAttackService {
         if (crowdControl != null && crowdControl.blocksBasicOrAbility(caster.owner())) return DamageResult.rejected("STUNNED", target.health());
         if (!snapshot.id().equals(target.owner())) return DamageResult.rejected("INVALID_TARGET", target.health());
         if (!targeting.validEnemy(caster, snapshot, range)) return DamageResult.rejected("INVALID_TARGET", target.health());
-        long interval = attackSpeed.intervalTicks(caster.definition().baseAttackInterval(), attackSpeedMultiplier, ticksPerSecond);
+        double configuredMultiplier = 1.0 + caster.effectiveStats().attackSpeedBonus();
+        long interval = attackSpeed.intervalTicks(caster.definition().baseAttackInterval(), configuredMultiplier * attackSpeedMultiplier, ticksPerSecond);
         if (!cooldowns.tryStart(caster.owner(), "basic_attack", tick, interval)) return DamageResult.rejected("COOLDOWN", target.health());
-        return damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, caster.stats().attack(), tick));
+        DamageType type = caster.definition().damageType() == com.zeravorn.hero.DamageType.MAGICAL ? DamageType.MAGICAL : DamageType.PHYSICAL;
+        return damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), type, caster.effectiveStats().attack(), tick));
     }
 }

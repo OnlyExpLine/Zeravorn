@@ -37,7 +37,7 @@ public final class HeroRuntime {
     public TeamId team() { return team; }
     public HeroDefinition definition() { return definition; }
 	public HeroStats stats() { return definition.statsAt(level); }
-	public EffectiveHeroStats effectiveStats() { return EffectiveHeroStats.from(definition, level); }
+	public EffectiveHeroStats effectiveStats() { return EffectiveHeroStats.from(this); }
     public int level() { return level; }
     public int experience() { return experience; }
     public int gold() { return gold; }
@@ -66,8 +66,8 @@ public final class HeroRuntime {
 		}
 		this.experience = experience;
 		this.level = level;
-		this.health = Math.min(health, stats().health());
-		this.mana = Math.min(mana, stats().maxMana());
+		this.health = Math.min(health, effectiveStats().maxHealth());
+		this.mana = Math.min(mana, effectiveStats().maxMana());
 		this.availableSkillPoints += skillPointsGained;
 	}
 	void addSkillPoints(int amount) { availableSkillPoints += amount; }
@@ -96,6 +96,11 @@ public final class HeroRuntime {
 	}
 	public void heal(int amount) {
 		if (amount < 0) throw new IllegalArgumentException("Healing cannot be negative");
-		health = Math.min(stats().health(), health + amount);
+		health = Math.min(effectiveStats().maxHealth(), health + amount);
+	}
+	/** Re-clamps current resources after an inventory stat removal. */
+	public void clampResourcesToEffectiveMaximums() {
+		health = Math.min(health, effectiveStats().maxHealth());
+		mana = Math.min(mana, effectiveStats().maxMana());
 	}
 }

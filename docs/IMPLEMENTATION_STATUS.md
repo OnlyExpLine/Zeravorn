@@ -1,14 +1,14 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M6 — Economy + Items + Shop (completed)
+M6 — Economy + Items + Shop (audit remediation; Gradle verification blocked)
 
 ## Last completed milestone
-M6 — Economy + Items + Shop
+M5 — Lane Minions + Towers + Throne (audit remediation in progress)
 
 ## Build status
-- build: PASS (`.\gradlew.bat build`)
-- test: PASS (`.\gradlew.bat test`)
+- build: NOT VERIFIED — Fabric Loom cache access denied in this environment
+- test: NOT VERIFIED — Fabric Loom cache access denied in this environment
 - client run: NOT CHECKED
 - server run: NOT CHECKED
 
@@ -44,6 +44,10 @@ M6 — Economy + Items + Shop
 - M5 adds server-side Tower/Throne controllers with T1→T2→T3 vulnerability, throne unlock after an enemy T3 falls, no-wave hero damage protection, basic-attack-only structure damage, and tank/non-tank damage rules.
 - M6 adds server-owned gold/XP services, passive income from 00:30, item catalog/stat definitions, 5 normal slots plus boots, class restrictions, duplicate protection, and 60% sell refunds.
 - M6 shop operations are server-validated and remain available while the hero is dead; buying does not pause the match.
+- Audit remediation fixes throne vulnerability to depend on the defending team's destroyed T3 and calls idempotent match finish when a throne is destroyed.
+- Item definitions, Jason rank data, lane minion definitions and structure definitions are now loaded from `config_defaults` resources.
+- Effective hero stats now include equipped item bonuses and the documented AS/lifesteal/spell-vamp/move caps.
+- Added server-owned economy reward helpers for kills, assists, towers and lane minions; passive gold correctly accrues under per-tick orchestration.
 - `MatchSession` is a common/server domain class and has no client-only dependencies.
 - Common/server code must not depend on client-only classes.
 
@@ -51,8 +55,9 @@ M6 — Economy + Items + Shop
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
 
 ## Known issues
-- Concrete economy integration with kill/minion/tower event producers, map, HUD, and bot systems are not implemented yet.
-- No known M5 test/build failures remain.
+- Economy reward helpers await integration with future world/entity event producers; no client/network/HUD layer is implemented before M10.
+- Full minion movement/combat and structure entity ticking require MapDefinition/world integration scheduled for M13; current M5 domain controllers provide deterministic wave, target-priority and damage rules.
+- Gradle/Fabric Loom cannot currently set up `minecraft-server.jar`: both project-local Gradle caches fail with `AccessDeniedException` during configuration.
 - No client or server runtime smoke test has been performed yet.
 - M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
 

@@ -24,12 +24,13 @@ public final class JasonAbilityService {
     private final CooldownService cooldowns;
     private final DamageService damage;
     private final CrowdControlService crowdControl;
-    private final AbilityCastValidator validator = new AbilityCastValidator();
+    private final AbilityCastValidator validator;
     private final Map<UUID, Long> pendingDoubleDash = new HashMap<>();
     private final List<AbilityEvent> events = new ArrayList<>();
 
     public JasonAbilityService(CooldownService cooldowns, DamageService damage, CrowdControlService crowdControl) {
         this.cooldowns = cooldowns; this.damage = damage; this.crowdControl = crowdControl;
+        this.validator = new AbilityCastValidator(crowdControl);
     }
 
     public JasonAbilityResult castQ(HeroRuntime caster, HeroRuntime target, TargetSnapshot snapshot, AbilityContext context) {
@@ -60,7 +61,8 @@ public final class JasonAbilityService {
     public JasonAbilityResult resolveE(HeroRuntime caster, HeroRuntime target, TargetSnapshot snapshot, AbilityContext context) {
         Long expires = pendingDoubleDash.get(caster.owner());
         if (expires == null || context.serverTick() > expires) { pendingDoubleDash.remove(caster.owner()); return JasonAbilityResult.rejected("E_WINDOW_EXPIRED"); }
-        if (!caster.alive()) return JasonAbilityResult.rejected("DEAD");
+        String error = validator.validate(caster, AbilitySlot.E, context);
+        if (!error.isEmpty()) return JasonAbilityResult.rejected(error);
         if (!validEnemy(caster, target, snapshot, 2)) return JasonAbilityResult.rejected("INVALID_TARGET");
         pendingDoubleDash.remove(caster.owner());
         JasonAbilityDefinitions.E config = JasonAbilityDefinitions.e(caster.abilityRank(AbilitySlot.E));

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {"id":"iron_blade","name":"Железный клинок","category":"PHYSICAL","price":1800,"slotType":"NORMAL","stats":{"attack":35,"maxHealth":150}},
+    {"id":"berserker_blade","name":"Клинок берсерка","category":"PHYSICAL","price":2100,"slotType":"NORMAL","stats":{"attack":25,"attackSpeed":0.25}},
+    {"id":"blooddrinker","name":"Кровопийца","category":"PHYSICAL","price":2300,"slotType":"NORMAL","stats":{"attack":30,"lifesteal":0.15}},
+    {"id":"hunters_fang","name":"Клык охотника","category":"PHYSICAL","price":2000,"slotType":"NORMAL","stats":{"attack":20,"maxHealth":300,"moveSpeed":0.10}},
+    {"id":"crusher","name":"Крушитель","category":"PHYSICAL","price":2500,"slotType":"NORMAL","stats":{"attack":55}},
+    {"id":"combat_bracers","name":"Боевые наручи","category":"PHYSICAL","price":2200,"slotType":"NORMAL","stats":{"attack":20,"attackSpeed":0.20,"maxHealth":200}},
+    {"id":"titan_armor","name":"Броня титана","category":"DEFENSE","price":2100,"slotType":"NORMAL","stats":{"maxHealth":650}},
+    {"id":"steel_chest","name":"Стальной нагрудник","category":"DEFENSE","price":1900,"slotType":"NORMAL","stats":{"attack":10,"maxHealth":450}},
+    {"id":"giant_heart","name":"Сердце великана","category":"DEFENSE","price":2400,"slotType":"NORMAL","stats":{"maxHealth":850}},
+    {"id":"war_shell","name":"Боевой панцирь","category":"DEFENSE","price":2100,"slotType":"NORMAL","stats":{"maxHealth":500,"attackSpeed":0.10}},
+    {"id":"blood_armor","name":"Кровавая броня","category":"DEFENSE","price":2300,"slotType":"NORMAL","stats":{"maxHealth":450,"lifesteal":0.10}},
+    {"id":"stalker_armor","name":"Доспех преследователя","category":"DEFENSE","price":2200,"slotType":"NORMAL","stats":{"maxHealth":400,"moveSpeed":0.08}},
+    {"id":"frost_crystal","name":"Ледяной кристалл","category":"MAGICAL","price":1900,"slotType":"NORMAL","stats":{"abilityPower":30,"maxMana":150}},
+    {"id":"wisdom_staff","name":"Посох мудрости","category":"MAGICAL","price":2200,"slotType":"NORMAL","stats":{"abilityPower":35,"maxMana":250,"manaRegen":1}},
+    {"id":"archmage_orb","name":"Сфера архимага","category":"MAGICAL","price":2500,"slotType":"NORMAL","stats":{"abilityPower":60,"maxMana":200}},
+    {"id":"eternity_crystal","name":"Кристалл вечности","category":"MAGICAL","price":2100,"slotType":"NORMAL","stats":{"maxMana":350,"manaRegen":3}},
+    {"id":"blood_grimoire","name":"Кровавый гримуар","category":"MAGICAL","price":2400,"slotType":"NORMAL","stats":{"abilityPower":35,"spellVamp":0.12}},
+    {"id":"battle_mage_orb","name":"Сфера боевого мага","category":"MAGICAL","price":2200,"slotType":"NORMAL","stats":{"abilityPower":30,"maxHealth":300,"maxMana":150}},
+    {"id":"traveler_boots","name":"Сапоги путешественника","category":"BOOTS","price":900,"slotType":"BOOTS","stats":{"moveSpeed":0.15}},
+    {"id":"combat_boots","name":"Боевые сапоги","category":"BOOTS","price":1200,"slotType":"BOOTS","stats":{"attackSpeed":0.15,"moveSpeed":0.10}}
+  ]
+}

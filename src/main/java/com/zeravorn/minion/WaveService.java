@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.UUID;
 
 public final class WaveService {
-    public static final long FIRST_WAVE_TICKS = 30L * 20;
-    public static final long WAVE_INTERVAL_TICKS = 30L * 20;
+    public static final long FIRST_WAVE_TICKS = LaneBalance.firstWaveTicks();
+    public static final long WAVE_INTERVAL_TICKS = LaneBalance.intervalTicks();
     public WaveComposition composition(int waveNumber) {
         if (waveNumber < 1) throw new IllegalArgumentException("waveNumber must be positive");
         return new WaveComposition(3, 2, waveNumber % 3 == 0 ? 1 : 0);

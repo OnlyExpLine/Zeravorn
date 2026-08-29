@@ -1,0 +1,6 @@
+{
+  "t1":{"health":3200,"damage":120,"attackRange":10.0,"attackIntervalSeconds":2.0},
+  "t2":{"health":4200,"damage":145,"attackRange":10.5,"attackIntervalSeconds":2.0},
+  "t3":{"health":5200,"damage":170,"attackRange":11.0,"attackIntervalSeconds":2.0},
+  "throne":{"health":7000,"damage":200,"attackRange":11.5,"attackIntervalSeconds":2.0}
+}

@@ -5,6 +5,7 @@ import com.zeravorn.team.TeamId;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.Comparator;
 
 public final class LaneMinion {
     public enum State { MOVE_PATH, FIGHT_MINION, ATTACK_STRUCTURE, RECOVER_PATH }
@@ -34,6 +35,15 @@ public final class LaneMinion {
     public State state() { return state; } public UUID targetId() { return targetId; }
     public void setState(State state) { this.state = Objects.requireNonNull(state); }
     public void setTarget(UUID targetId) { this.targetId = targetId; }
+    /** Target priority required by the GDD: enemy lane minions, then a tower, then throne. */
+    public MinionTarget chooseTarget(List<MinionTarget> nearby) {
+        MinionTarget selected = nearby.stream().filter(target -> target.alive() && target.team() != team)
+                .min(Comparator.comparingInt((MinionTarget target) -> switch (target.kind()) { case LANE_MINION -> 0; case TOWER -> 1; case THRONE -> 2; })
+                        .thenComparingDouble(MinionTarget::distance)).orElse(null);
+        targetId = selected == null ? null : selected.id();
+        state = selected == null ? State.MOVE_PATH : selected.kind() == MinionTarget.Kind.LANE_MINION ? State.FIGHT_MINION : State.ATTACK_STRUCTURE;
+        return selected;
+    }
     public boolean advanceWaypoint() { if (waypointIndex + 1 >= waypoints.size()) return false; waypointIndex++; return true; }
     public void receiveDamage(int amount) { if (amount < 0) throw new IllegalArgumentException("negative damage"); health = Math.max(0, health - amount); }
     public boolean dead() { return health == 0; }

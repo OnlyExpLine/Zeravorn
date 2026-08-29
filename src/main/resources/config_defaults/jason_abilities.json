@@ -1,0 +1,5 @@
+{
+  "q": [{"baseDamage":60,"healRatio":0.30,"cooldownTicks":160},{"baseDamage":70,"healRatio":0.33,"cooldownTicks":160},{"baseDamage":80,"healRatio":0.36,"cooldownTicks":160},{"baseDamage":90,"healRatio":0.40,"cooldownTicks":160}],
+  "e": [{"baseDamage":40,"attackRatio":0.60,"cooldownTicks":180,"windowTicks":100,"stunTicks":14},{"baseDamage":50,"attackRatio":0.60,"cooldownTicks":180,"windowTicks":100,"stunTicks":16},{"baseDamage":60,"attackRatio":0.60,"cooldownTicks":170,"windowTicks":100,"stunTicks":18},{"baseDamage":70,"attackRatio":0.60,"cooldownTicks":160,"windowTicks":100,"stunTicks":20}],
+  "r": [{"baseDamage":110,"attackRatio":0.80,"cooldownTicks":480,"radius":3.0,"stunTicks":25},{"baseDamage":140,"attackRatio":0.80,"cooldownTicks":400,"radius":3.0,"stunTicks":30}]
+}

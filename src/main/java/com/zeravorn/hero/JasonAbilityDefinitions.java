@@ -1,14 +1,34 @@
 package com.zeravorn.hero;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class JasonAbilityDefinitions {
     public record Q(int baseDamage, double healRatio, long cooldownTicks) { }
     public record E(int baseDamage, double attackRatio, long cooldownTicks, long windowTicks, long stunTicks) { }
     public record R(int baseDamage, double attackRatio, long cooldownTicks, double radius, long stunTicks) { }
-    private static final List<Q> Q = List.of(new Q(60, .30, 160), new Q(70, .33, 160), new Q(80, .36, 160), new Q(90, .40, 160));
-    private static final List<E> E = List.of(new E(40, .60, 180, 100, 14), new E(50, .60, 180, 100, 16), new E(60, .60, 170, 100, 18), new E(70, .60, 160, 100, 20));
-    private static final List<R> R = List.of(new R(110, .80, 480, 3, 25), new R(140, .80, 400, 3, 30));
+    private static final List<Q> Q;
+    private static final List<E> E;
+    private static final List<R> R;
+    static {
+        try (var stream = JasonAbilityDefinitions.class.getResourceAsStream("/config_defaults/jason_abilities.json")) {
+            if (stream == null) throw new IllegalStateException("Missing Jason ability config");
+            JsonObject root = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8)).getAsJsonObject();
+            Q = q(root.getAsJsonArray("q"));
+            E = e(root.getAsJsonArray("e"));
+            R = r(root.getAsJsonArray("r"));
+        } catch (Exception exception) {
+            throw new IllegalStateException("Unable to load Jason ability config", exception);
+        }
+    }
+    private static List<Q> q(JsonArray rows) { List<Q> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new Q(v.get("baseDamage").getAsInt(), v.get("healRatio").getAsDouble(), v.get("cooldownTicks").getAsLong())); } return List.copyOf(values); }
+    private static List<E> e(JsonArray rows) { List<E> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new E(v.get("baseDamage").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("windowTicks").getAsLong(), v.get("stunTicks").getAsLong())); } return List.copyOf(values); }
+    private static List<R> r(JsonArray rows) { List<R> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new R(v.get("baseDamage").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("radius").getAsDouble(), v.get("stunTicks").getAsLong())); } return List.copyOf(values); }
     private JasonAbilityDefinitions() { }
     public static Q q(int rank) { return Q.get(rank - 1); }
     public static E e(int rank) { return E.get(rank - 1); }

@@ -3,4 +3,5 @@ import com.zeravorn.map.Position; import com.zeravorn.team.TeamId; import java.u
 class LaneMinionTest {
  @Test void wavesAndCadence(){var s=new WaveService(); assertEquals(0,s.waveNumberAt(599)); assertEquals(1,s.waveNumberAt(600)); assertEquals(new WaveComposition(3,2,0),s.composition(1)); assertEquals(1,s.composition(3).siege()); assertEquals(5,s.spawnWave(1,TeamId.BLUE,Lane.MID,List.of(new Position(0,0,0))).size());}
  @Test void scalingAndPath(){var m=new WaveService().spawnWave(5,TeamId.RED,Lane.TOP,List.of(new Position(0,0,0),new Position(1,0,0))).get(0); assertTrue(m.maxHealth()>300); assertTrue(m.damage()>20); assertTrue(m.advanceWaypoint()); assertFalse(m.advanceWaypoint());}
+ @Test void targetPriorityNeverUsesHeroes(){var m=new WaveService().spawnWave(1,TeamId.BLUE,Lane.MID,List.of(new Position(0,0,0))).get(0);var tower=new MinionTarget(java.util.UUID.randomUUID(),TeamId.RED,MinionTarget.Kind.TOWER,true,1);var minion=new MinionTarget(java.util.UUID.randomUUID(),TeamId.RED,MinionTarget.Kind.LANE_MINION,true,9);assertEquals(minion.id(),m.chooseTarget(List.of(tower,minion)).id());assertEquals(LaneMinion.State.FIGHT_MINION,m.state());}
 }
