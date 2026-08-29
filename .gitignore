@@ -1,4 +1,21 @@
 .gradle
 .gradle-workspace
-run\logs
-.build\...
+# Gradle wrapper/dependency cache (including local CI/dev override)
+.gradle/
+.gradle-local/
+
+# Build outputs and generated reports/classes
+build/
+bin/
+
+# Fabric/Minecraft runtime data and logs
+run/logs/
+run/crash-reports/
+run/saves/
+
+# IDE and OS metadata
+.idea/
+*.iml
+.vscode/*.log
+.DS_Store
+Thumbs.db
