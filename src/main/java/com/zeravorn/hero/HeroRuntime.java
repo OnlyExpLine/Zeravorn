@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import com.zeravorn.item.MobaInventory;
 
 public final class HeroRuntime {
     private final UUID owner;
@@ -21,6 +22,7 @@ public final class HeroRuntime {
     private int health;
     private int mana;
     private boolean alive = true;
+    private final MobaInventory inventory = new MobaInventory();
 
     public HeroRuntime(UUID owner, TeamId team, HeroDefinition definition) {
         this.owner = Objects.requireNonNull(owner, "owner");
@@ -43,6 +45,10 @@ public final class HeroRuntime {
     public int health() { return health; }
     public int mana() { return mana; }
     public boolean alive() { return alive; }
+    public MobaInventory inventory() { return inventory; }
+    public void addGold(int amount) { if (amount < 0) throw new IllegalArgumentException("Gold amount cannot be negative"); gold = Math.addExact(gold, amount); }
+    public boolean spendGold(int amount) { if (amount < 0 || amount > gold) return false; gold -= amount; return true; }
+    public void addExperience(int amount) { if (amount < 0) throw new IllegalArgumentException("XP amount cannot be negative"); new LevelService().addExperience(this, amount); }
     public Map<String, Integer> abilityRanks() { return Collections.unmodifiableMap(abilityRanks); }
     public int abilityRank(AbilitySlot slot) {
         var ability = definition.ability(slot);

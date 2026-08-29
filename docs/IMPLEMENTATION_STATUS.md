@@ -1,10 +1,10 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M5 — Lane Minions + Structures + Throne (completed)
+M6 — Economy + Items + Shop (completed)
 
 ## Last completed milestone
-M5 — Lane Minions + Structures + Throne
+M6 — Economy + Items + Shop
 
 ## Build status
 - build: PASS (`.\gradlew.bat build`)
@@ -42,6 +42,8 @@ M5 — Lane Minions + Structures + Throne
 - M4 implementation is verified by the full project test/build.
 - M5 adds config-backed default lane minion definitions, deterministic 30-second wave scheduling, 3-melee/2-ranged composition with every third siege minion, waypoint state, and documented time scaling.
 - M5 adds server-side Tower/Throne controllers with T1→T2→T3 vulnerability, throne unlock after an enemy T3 falls, no-wave hero damage protection, basic-attack-only structure damage, and tank/non-tank damage rules.
+- M6 adds server-owned gold/XP services, passive income from 00:30, item catalog/stat definitions, 5 normal slots plus boots, class restrictions, duplicate protection, and 60% sell refunds.
+- M6 shop operations are server-validated and remain available while the hero is dead; buying does not pause the match.
 - `MatchSession` is a common/server domain class and has no client-only dependencies.
 - Common/server code must not depend on client-only classes.
 
@@ -49,7 +51,7 @@ M5 — Lane Minions + Structures + Throne
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
 
 ## Known issues
-- Concrete hero ability effects, combat, economy, map, HUD, and bot systems are not implemented yet.
+- Concrete economy integration with kill/minion/tower event producers, map, HUD, and bot systems are not implemented yet.
 - No known M5 test/build failures remain.
 - No client or server runtime smoke test has been performed yet.
 - M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
@@ -83,6 +85,9 @@ M5 — Lane Minions + Structures + Throne
 - `src/main/java/com/zeravorn/structure/`
 - `src/test/java/com/zeravorn/minion/LaneMinionTest.java`
 - `src/test/java/com/zeravorn/structure/StructureServiceTest.java`
+- `src/main/java/com/zeravorn/item/`
+- `src/main/java/com/zeravorn/economy/`
+- `src/test/java/com/zeravorn/item/ShopServiceTest.java`
 
 ## Files/modules changed
 - `gradle.properties`
@@ -101,9 +106,11 @@ M5 — Lane Minions + Structures + Throne
 - M4: `.\gradlew.bat --no-daemon build` — PASS.
 - M5: `.\gradlew.bat --no-daemon test` — PASS.
 - M5: `.\gradlew.bat --no-daemon build` — PASS.
+- M6: `.\gradlew.bat --no-daemon test` — PASS.
+- M6: `.\gradlew.bat --no-daemon build` — PASS.
 
 ## Next milestone
-M6 — Economy + Items + Shop
+M7 — Jungle + Buffs + Summoner Spells
 
 ## Git checkpoint
 - Branch: `main`
