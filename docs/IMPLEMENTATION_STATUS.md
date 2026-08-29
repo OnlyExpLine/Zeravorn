@@ -1,14 +1,14 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M6 — Economy + Items + Shop (audit remediation; Gradle verification blocked)
+M7 — Jungle + Buffs + Summoner Spells (verification pending)
 
 ## Last completed milestone
-M5 — Lane Minions + Towers + Throne (audit remediation in progress)
+M6 — Economy + Items + Shop
 
 ## Build status
-- build: NOT VERIFIED — Fabric Loom cache access denied in this environment
-- test: NOT VERIFIED — Fabric Loom cache access denied in this environment
+- build: NOT VERIFIED — pending M7 verification
+- test: NOT VERIFIED — Gradle distribution download timed out after sandbox network approval
 - client run: NOT CHECKED
 - server run: NOT CHECKED
 
@@ -50,6 +50,9 @@ M5 — Lane Minions + Towers + Throne (audit remediation in progress)
 - Added server-owned economy reward helpers for kills, assists, towers and lane minions; passive gold correctly accrues under per-tick orchestration.
 - `MatchSession` is a common/server domain class and has no client-only dependencies.
 - Common/server code must not depend on client-only classes.
+- M7 adds config-backed jungle mob definitions, camp state transitions, leash reset, respawn, documented scaling, and reward dispatch.
+- M7 buffs are server-owned, expire by server tick, are removed on death, and Red applies only to outgoing hero damage.
+- M7 summoner spells are server-validated and use the existing cooldown/CC services; Flash delegates endpoint safety to the map integration boundary.
 
 ## Assumptions
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
@@ -60,6 +63,7 @@ M5 — Lane Minions + Towers + Throne (audit remediation in progress)
 - Gradle/Fabric Loom cannot currently set up `minecraft-server.jar`: both project-local Gradle caches fail with `AccessDeniedException` during configuration.
 - No client or server runtime smoke test has been performed yet.
 - M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
+- Jungle camp placement, concrete world movement/AI, and Flash solid-block validation await MapDefinition/world integration in M13; M7 provides the authoritative domain hooks.
 
 ## Files/modules added
 - `docs/IMPLEMENTATION_STATUS.md`
@@ -93,6 +97,12 @@ M5 — Lane Minions + Towers + Throne (audit remediation in progress)
 - `src/main/java/com/zeravorn/item/`
 - `src/main/java/com/zeravorn/economy/`
 - `src/test/java/com/zeravorn/item/ShopServiceTest.java`
+- `src/main/java/com/zeravorn/jungle/`
+- `src/main/java/com/zeravorn/buff/`
+- `src/main/java/com/zeravorn/spell/`
+- `src/main/resources/config_defaults/jungle.json`
+- `src/main/resources/config_defaults/spells.json`
+- `src/test/java/com/zeravorn/jungle/JungleAndSpellTest.java`
 
 ## Files/modules changed
 - `gradle.properties`
@@ -113,9 +123,10 @@ M5 — Lane Minions + Towers + Throne (audit remediation in progress)
 - M5: `.\gradlew.bat --no-daemon build` — PASS.
 - M6: `.\gradlew.bat --no-daemon test` — PASS.
 - M6: `.\gradlew.bat --no-daemon build` — PASS.
+- M7: `GRADLE_USER_HOME=.gradle-user .\gradlew.bat test` — NOT VERIFIED; initial sandbox run was denied network access, approved retry timed out while downloading Gradle 9.5.1.
 
 ## Next milestone
-M7 — Jungle + Buffs + Summoner Spells
+M8A — Shelianer (after M7 build/test verification)
 
 ## Git checkpoint
 - Branch: `main`

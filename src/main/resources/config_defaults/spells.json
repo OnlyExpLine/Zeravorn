@@ -1,0 +1,6 @@
+{"spells":[
+  {"id":"FLASH","cooldownSeconds":120,"rangeOrPercent":5.0},
+  {"id":"RETRIBUTION","cooldownSeconds":35,"rangeOrPercent":500.0},
+  {"id":"CLEANSE","cooldownSeconds":90,"rangeOrPercent":1.0},
+  {"id":"REGENERATION","cooldownSeconds":75,"rangeOrPercent":0.25}
+]}

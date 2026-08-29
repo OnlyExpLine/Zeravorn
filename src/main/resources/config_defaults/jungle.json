@@ -1,0 +1,14 @@
+{
+  "mobs": [
+    {"id":"RED","health":1000,"damage":45,"attackInterval":1.5,"gold":150,"experience":220,"respawnSeconds":180,"leashRadius":9,"rewardBuff":"RED","specialCrowdControl":""},
+    {"id":"BLUE","health":1000,"damage":40,"attackInterval":1.5,"gold":150,"experience":220,"respawnSeconds":180,"leashRadius":9,"rewardBuff":"BLUE","specialCrowdControl":""},
+    {"id":"GREEN_A","health":700,"damage":35,"attackInterval":1.5,"gold":130,"experience":190,"respawnSeconds":120,"leashRadius":8,"rewardBuff":"","specialCrowdControl":"KNOCKBACK_2_CD_7"},
+    {"id":"GREEN_B","health":700,"damage":35,"attackInterval":1.5,"gold":130,"experience":190,"respawnSeconds":120,"leashRadius":8,"rewardBuff":"","specialCrowdControl":"KNOCKUP_1_CD_8"},
+    {"id":"CONTESTED_A","health":500,"damage":28,"attackInterval":1.4,"gold":110,"experience":160,"respawnSeconds":90,"leashRadius":7,"rewardBuff":"","specialCrowdControl":""},
+    {"id":"CONTESTED_B","health":500,"damage":28,"attackInterval":1.4,"gold":110,"experience":160,"respawnSeconds":90,"leashRadius":7,"rewardBuff":"","specialCrowdControl":""}
+  ],
+  "buffDurationSeconds":120,
+  "redOutgoingHeroDamageMultiplier":1.10,
+  "blueMaxManaMultiplier":1.15,
+  "blueCooldownReduction":0.10
+}
