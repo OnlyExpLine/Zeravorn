@@ -1,6 +1,7 @@
 package com.zeravorn.hero;
 
 import com.zeravorn.ability.AbilitySlot;
+import com.zeravorn.ability.AbilityRuntime;
 import com.zeravorn.team.TeamId;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,6 +49,10 @@ public final class HeroRuntime {
         return ability == null ? 0 : abilityRank(ability.id());
     }
     public int abilityRank(String abilityId) { return abilityRanks.getOrDefault(abilityId, 0); }
+    public AbilityRuntime abilityRuntime(AbilitySlot slot) {
+        var ability = definition.ability(slot);
+        return ability == null ? null : new AbilityRuntime(ability, abilityRank(ability.id()));
+    }
 
 	void applyProgression(int experience, int level, int skillPointsGained) {
 		if (experience < 0 || level < 1 || level > HeroDefinition.MAX_LEVEL || skillPointsGained < 0) {
@@ -73,5 +78,18 @@ public final class HeroRuntime {
 		spendSkillPoint();
 		abilityRanks.put(abilityId, currentRank + 1);
 		return true;
+	}
+	public void receiveDamage(int amount) {
+		if (amount < 0) throw new IllegalArgumentException("Damage cannot be negative");
+		health = Math.max(0, health - amount);
+		if (health == 0) alive = false;
+	}
+	public void spendMana(int amount) {
+		if (amount < 0 || amount > mana) throw new IllegalArgumentException("Invalid mana spend");
+		mana -= amount;
+	}
+	public void heal(int amount) {
+		if (amount < 0) throw new IllegalArgumentException("Healing cannot be negative");
+		health = Math.min(stats().health(), health + amount);
 	}
 }
