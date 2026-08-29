@@ -1,10 +1,10 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M2 — Hero Core + Levels + Skill Points (implementation corrected; verification pending)
+M5 — Lane Minions + Structures + Throne (completed)
 
 ## Last completed milestone
-M1 — Match Core
+M5 — Lane Minions + Structures + Throne
 
 ## Build status
 - build: PASS (`.\gradlew.bat build`)
@@ -34,7 +34,14 @@ M1 — Match Core
 - Balance values live in `config_defaults` hero/progression definitions, not gameplay Java logic.
 - M1 finish is the only transition into FINISHED, so winner and finish reason are always recorded; match reset clears both rosters.
 - HeroRuntime exposes effective base stats, stores ability ranks by `AbilityId`, and keeps progression/rank mutations inside authoritative services.
-- Concrete ability effects and combat systems are deferred to later milestones; M2 contains definitions and progression only.
+- M2 is complete and verified by the project build.
+- M3 adds server-side combat primitives; concrete hero ability effects remain deferred to M4/M8.
+- M3 includes damage, cooldown, mana, CC, targeting, basic attacks, projectiles, combat events, and cast validation.
+- M4 Jason slice includes server-simulated Q, two-phase E, radial R, rank/cooldown/range validation, Q healing, and Jason-specific tests.
+- M4 also includes server-confirmed ability events and Jason dash/flight validation hooks.
+- M4 implementation is verified by the full project test/build.
+- M5 adds config-backed default lane minion definitions, deterministic 30-second wave scheduling, 3-melee/2-ranged composition with every third siege minion, waypoint state, and documented time scaling.
+- M5 adds server-side Tower/Throne controllers with T1→T2→T3 vulnerability, throne unlock after an enemy T3 falls, no-wave hero damage protection, basic-attack-only structure damage, and tank/non-tank damage rules.
 - `MatchSession` is a common/server domain class and has no client-only dependencies.
 - Common/server code must not depend on client-only classes.
 
@@ -43,7 +50,9 @@ M1 — Match Core
 
 ## Known issues
 - Concrete hero ability effects, combat, economy, map, HUD, and bot systems are not implemented yet.
+- No known M5 test/build failures remain.
 - No client or server runtime smoke test has been performed yet.
+- M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
 
 ## Files/modules added
 - `docs/IMPLEMENTATION_STATUS.md`
@@ -53,6 +62,27 @@ M1 — Match Core
 - `src/main/java/com/zeravorn/hero/`
 - `src/main/java/com/zeravorn/ability/`
 - `src/test/java/com/zeravorn/hero/HeroCoreTest.java`
+- `src/main/java/com/zeravorn/combat/`
+- `src/main/java/com/zeravorn/combat/CombatEvent.java`
+- `src/main/java/com/zeravorn/projectile/`
+- `src/main/java/com/zeravorn/ability/AbilityExecution.java`
+- `src/main/java/com/zeravorn/ability/AbilityContext.java`
+- `src/main/java/com/zeravorn/ability/AbilityExecutionResult.java`
+- `src/main/java/com/zeravorn/ability/AbilityRuntime.java`
+- `src/main/java/com/zeravorn/ability/AbilityCastValidator.java`
+- `src/main/java/com/zeravorn/hero/JasonAbilityDefinitions.java`
+- `src/main/java/com/zeravorn/hero/JasonAbilityResult.java`
+- `src/main/java/com/zeravorn/hero/JasonAbilityService.java`
+- `src/main/java/com/zeravorn/hero/JasonMovementResult.java`
+- `src/main/java/com/zeravorn/hero/JasonMovementService.java`
+- `src/main/java/com/zeravorn/ability/AbilityEvent.java`
+- `src/test/java/com/zeravorn/hero/JasonAbilityTest.java`
+- `src/test/java/com/zeravorn/combat/CombatCoreTest.java`
+- `src/main/java/com/zeravorn/map/Position.java`
+- `src/main/java/com/zeravorn/minion/`
+- `src/main/java/com/zeravorn/structure/`
+- `src/test/java/com/zeravorn/minion/LaneMinionTest.java`
+- `src/test/java/com/zeravorn/structure/StructureServiceTest.java`
 
 ## Files/modules changed
 - `gradle.properties`
@@ -65,10 +95,15 @@ M1 — Match Core
 ## Verification
 - M1: ` .\gradlew.bat --no-daemon test` — PASS.
 - M1: ` .\gradlew.bat --no-daemon build` — PASS.
-- M2: source and tests added/expanded; Gradle verification is blocked because the Gradle 9.5.1 distribution is absent from all available local caches. An elevated download attempt did not complete and did not create a usable distribution.
+- M2: `.\gradlew.bat build` — PASS (confirmed by user).
+- M3: `.\gradlew.bat build` — PASS (confirmed by user).
+- M4: `.\gradlew.bat --no-daemon test` — PASS.
+- M4: `.\gradlew.bat --no-daemon build` — PASS.
+- M5: `.\gradlew.bat --no-daemon test` — PASS.
+- M5: `.\gradlew.bat --no-daemon build` — PASS.
 
 ## Next milestone
-M3 — Combat Core (after Gradle verification of M2)
+M6 — Economy + Items + Shop
 
 ## Git checkpoint
 - Branch: `main`

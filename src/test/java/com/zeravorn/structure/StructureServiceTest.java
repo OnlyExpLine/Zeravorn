@@ -1,0 +1,6 @@
+package com.zeravorn.structure;
+import com.zeravorn.hero.HeroClass; import com.zeravorn.minion.Lane; import com.zeravorn.team.TeamId; import org.junit.jupiter.api.Test; import static org.junit.jupiter.api.Assertions.*;
+class StructureServiceTest {
+ @Test void vulnerabilityChainAndProtection(){var s=new StructureService(); assertFalse(s.towerVulnerable(TeamId.RED,Lane.MID,TowerOrder.T2)); assertTrue(s.damageTower(TeamId.BLUE,TeamId.RED,Lane.MID,TowerOrder.T1,100,true,true).accepted()); assertFalse(s.damageTower(TeamId.BLUE,TeamId.RED,Lane.MID,TowerOrder.T2,100,true,true).accepted()); var t=s.tower(TeamId.RED,Lane.MID,TowerOrder.T1); t.damage(t.health()); assertTrue(s.towerVulnerable(TeamId.RED,Lane.MID,TowerOrder.T2)); }
+ @Test void noWaveProtectionAndThrone(){var s=new StructureService(); var r=s.damageTower(TeamId.BLUE,TeamId.RED,Lane.TOP,TowerOrder.T1,100,false,true); assertEquals(20,r.appliedDamage()); assertFalse(s.damageThrone(TeamId.BLUE,TeamId.RED,100,true,true).accepted()); s.tower(TeamId.RED,Lane.TOP,TowerOrder.T3).damage(5200); assertTrue(s.throneVulnerable(TeamId.BLUE)); assertEquals(26,s.heroDamageToTower(HeroClass.FIGHTER,100)); assertEquals(17,s.heroDamageToTower(HeroClass.TANK,100)); }
+}
