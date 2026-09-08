@@ -3,6 +3,7 @@
 # Gradle wrapper/dependency cache (including local CI/dev override)
 .gradle/
 .gradle-local/
+.gradle-user/
 
 # Build outputs and generated reports/classes
 build/

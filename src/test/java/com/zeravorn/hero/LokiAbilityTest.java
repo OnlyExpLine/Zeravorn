@@ -17,8 +17,12 @@ import static org.junit.jupiter.api.Assertions.*;
 final class LokiAbilityTest {
     @Test void qDealsPhysicalDamageAndAppliesPull() {
         HeroRuntime caster = loki(); HeroRuntime target = target(); caster.upgradeAbility(AbilitySlot.Q); CrowdControlService cc = new CrowdControlService();
-        var result = new LokiAbilityService(new CooldownService(), new DamageService(), cc).castQ(caster, target, snapshot(target, 9), new AbilityContext(0, true));
-        assertTrue(result.executed()); assertEquals(45 + 31, result.damage()); assertTrue(cc.effects(target.owner()).stream().anyMatch(effect -> effect.type() == CrowdControlType.PULL));
+        LokiAbilityService service = new LokiAbilityService(new CooldownService(), new DamageService(), cc);
+        var result = service.castQ(caster, target, snapshot(target, 9), new AbilityContext(0, true));
+        assertTrue(result.executed()); assertEquals(0, result.damage()); assertTrue(cc.effects(target.owner()).isEmpty());
+        UUID hook = service.activeHookIds().iterator().next(); service.advanceHook(hook, 1);
+        assertEquals(45 + 31, service.confirmHookHit(hook, target, snapshot(target, 1), 1).damage());
+        assertTrue(cc.effects(target.owner()).stream().anyMatch(effect -> effect.type() == CrowdControlType.PULL));
     }
     @Test void eHasTimedConfiguredMoveBonus() {
         HeroRuntime caster = loki(); caster.upgradeAbility(AbilitySlot.E); LokiAbilityService service = service();

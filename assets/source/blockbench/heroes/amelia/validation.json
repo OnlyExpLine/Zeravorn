@@ -1,0 +1,51 @@
+{
+  "structural": "PASS",
+  "runtimeExport": "PASS",
+  "loopContinuity": "PASS",
+  "qOverlay": "PASS",
+  "negativeRegressionTests": 2,
+  "motion": {
+    "feet": {
+      "samples": 148,
+      "maxContactError": 0.024146752908487557,
+      "minGeometryY": -0.006724237406420253
+    },
+    "reticle": {
+      "samples": 273,
+      "failures": [],
+      "verticalFov": 70,
+      "aspect": 1.7777777777777777,
+      "protectedNdc": [
+        0.12,
+        0.1
+      ]
+    }
+  },
+  "models": [
+    {
+      "model": "amelia",
+      "elements": 984,
+      "bones": 65,
+      "triangles": 20960,
+      "clips": 18
+    },
+    {
+      "model": "amelia_first_person",
+      "elements": 106,
+      "bones": 24,
+      "triangles": 3160,
+      "clips": 13
+    },
+    {
+      "model": "amelia_staff",
+      "elements": 34,
+      "bones": 12,
+      "triangles": 744,
+      "clips": 0
+    }
+  ],
+  "blockbenchGui": "NOT RUN",
+  "fabricIntegration": "NOT IMPLEMENTED",
+  "visualLikeness": "NOT APPROVED",
+  "fullAnimationClippingAudit": "PENDING"
+}

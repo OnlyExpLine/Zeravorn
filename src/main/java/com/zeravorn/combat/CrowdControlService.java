@@ -11,16 +11,8 @@ public final class CrowdControlService {
 
     public void apply(UUID target, CrowdControlEffect effect) {
         List<CrowdControlEffect> effects = active.computeIfAbsent(target, ignored -> new ArrayList<>());
-        if (effect.type() == CrowdControlType.SLOW) {
-            CrowdControlEffect strongest = effects.stream()
-                    .filter(existing -> existing.type() == CrowdControlType.SLOW)
-                    .max(java.util.Comparator.comparingDouble(CrowdControlEffect::strength))
-                    .orElse(null);
-            effects.removeIf(existing -> existing.type() == CrowdControlType.SLOW);
-            if (strongest == null || effect.strength() >= strongest.strength()) strongest = effect;
-            effects.add(strongest);
-            return;
-        }
+        // Keep overlapping slows independently. movementMultiplier selects the
+        // strongest active one, allowing a weaker, longer slow to resume later.
         effects.add(effect);
     }
     public void tick(long serverTick) { active.values().forEach(effects -> effects.removeIf(effect -> effect.expiresAtTick() <= serverTick)); active.values().removeIf(List::isEmpty); }

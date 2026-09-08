@@ -8,6 +8,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 final class VisionServiceTest {
+    @Test void balanceValuesLoadFromVisionConfig() {
+        VisionService service = new VisionService();
+        assertEquals(16.0, service.radius(VisionSourceType.HERO));
+        assertEquals(20, service.config().bushAttackRevealTicks());
+        assertEquals(40, service.config().alliedUnitAttackRevealTicks());
+    }
     @Test void lineOfSightAndRangeDetermineEnemyVisibility() {
         VisionService service = new VisionService(); VisionSource blue = source(TeamId.BLUE, new Position(0, 0, 0), 16, null); VisionTarget red = target(TeamId.RED, new Position(10, 0, 0), null);
         assertTrue(service.recompute(TeamId.BLUE, List.of(blue), List.of(red), (from, to) -> true, 0).showIds().contains(red.id()));

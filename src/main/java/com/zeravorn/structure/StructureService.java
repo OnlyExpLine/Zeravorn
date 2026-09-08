@@ -26,12 +26,15 @@ public final class StructureService {
     /** A throne becomes vulnerable only after one T3 belonging to that throne's team falls. */
     public boolean throneVulnerable(TeamId defendingTeam){ return towers.get(defendingTeam).values().stream().anyMatch(a->a[2].destroyed()); }
     public StructureDamageResult damageTower(TeamId attacker,TeamId defender,Lane lane,TowerOrder order,int amount,boolean alliedWave,boolean basicAttack){
+        if(attacker==null||defender==null||lane==null||order==null)throw new IllegalArgumentException("Structure target is required");
+        if(attacker==defender)return StructureDamageResult.rejected("INVALID_TARGET",tower(defender,lane,order).health());
+        if(amount<0)throw new IllegalArgumentException("Structure damage cannot be negative");
         if(!basicAttack)return StructureDamageResult.rejected("ABILITY_CANNOT_DAMAGE_STRUCTURE",tower(defender,lane,order).health());
         Tower target=tower(defender,lane,order); if(!towerVulnerable(defender,lane,order))return StructureDamageResult.rejected("STRUCTURE_PROTECTED",target.health());
         int applied=amount; if(!alliedWave) applied=(int)Math.floor(amount*0.20); target.damage(applied); return new StructureDamageResult(true,applied,target.destroyed(),"");
     }
     public StructureDamageResult damageThrone(TeamId attacker,TeamId defender,int amount,boolean alliedWave,boolean basicAttack){
-        Throne target=throne(defender); if(!basicAttack)return StructureDamageResult.rejected("ABILITY_CANNOT_DAMAGE_STRUCTURE",target.health()); if(!throneVulnerable(defender))return StructureDamageResult.rejected("STRUCTURE_PROTECTED",target.health()); int applied=alliedWave?amount:(int)Math.floor(amount*.20); boolean wasDestroyed=target.destroyed(); target.damage(applied);
+        if(attacker==null||defender==null)throw new IllegalArgumentException("Structure target is required"); Throne target=throne(defender); if(attacker==defender)return StructureDamageResult.rejected("INVALID_TARGET",target.health()); if(amount<0)throw new IllegalArgumentException("Structure damage cannot be negative"); if(target.destroyed())return StructureDamageResult.rejected("DESTROYED",target.health()); if(!basicAttack)return StructureDamageResult.rejected("ABILITY_CANNOT_DAMAGE_STRUCTURE",target.health()); if(!throneVulnerable(defender))return StructureDamageResult.rejected("STRUCTURE_PROTECTED",target.health()); int applied=alliedWave?amount:(int)Math.floor(amount*.20); boolean wasDestroyed=target.destroyed(); target.damage(applied);
         if (!wasDestroyed && target.destroyed() && match != null) match.finish(attacker, MatchFinishReason.THRONE_DESTROYED);
         return new StructureDamageResult(true,applied,target.destroyed(),"");
     }

@@ -1,0 +1,132 @@
+{
+  "schema": "zeravorn.amelia.presentation.v1",
+  "gameplayAuthority": "server",
+  "runtimeIntegration": "pending: renderer/network bridge not implemented in repository",
+  "markers": [
+    {
+      "id": "amelia.basic.projectile_spawn",
+      "clip": "amelia.basic",
+      "time": 0.25,
+      "gate": "ProjectileEvent.SPAWN"
+    },
+    {
+      "id": "amelia.q.channel_start",
+      "clip": "amelia.q_start",
+      "time": 0,
+      "gate": "AbilityEvent.Q.START"
+    },
+    {
+      "id": "amelia.q.tick",
+      "clip": "amelia.q_loop",
+      "time": 0.5,
+      "gate": "AbilityEvent.Q.HIT"
+    },
+    {
+      "id": "amelia.q.channel_end",
+      "clip": "amelia.q_end",
+      "time": 0,
+      "gate": "AbilityEvent.Q.END_OR_CANCEL"
+    },
+    {
+      "id": "amelia.e.impact",
+      "clip": "amelia.e",
+      "time": 0.35,
+      "gate": "AbilityEvent.E.HIT"
+    },
+    {
+      "id": "amelia.r.telegraph_start",
+      "clip": "amelia.r",
+      "time": 0,
+      "gate": "AbilityEvent.R.START"
+    },
+    {
+      "id": "amelia.r.impact",
+      "clip": "amelia.r",
+      "time": 0.55,
+      "gate": "AbilityEvent.R.HIT"
+    },
+    {
+      "id": "amelia.recall.start",
+      "clip": "amelia.recall_start",
+      "time": 0,
+      "gate": "Recall.START"
+    },
+    {
+      "id": "amelia.recall.end",
+      "clip": "amelia.recall_end",
+      "time": 0.4,
+      "gate": "Recall.COMPLETE"
+    }
+  ],
+  "recall": {
+    "durationSeconds": 5,
+    "startSeconds": 0.6,
+    "loopUntilServerEnd": true,
+    "endSeconds": 0.4,
+    "cancelPlaysEnd": false
+  },
+  "layers": {
+    "q": "upper_body_overlay_on_locomotion",
+    "root": "stationary_lower_body",
+    "knockback": "server_trajectory",
+    "knockup": "server_trajectory"
+  },
+  "vfx": [
+    "amelia.vfx.idle_frost",
+    "amelia.vfx.staff_glow",
+    "amelia.vfx.basic_charge",
+    "amelia.vfx.basic_spawn",
+    "amelia.vfx.basic_hit",
+    "amelia.vfx.q_start",
+    "amelia.vfx.q_loop",
+    "amelia.vfx.q_tick",
+    "amelia.vfx.q_end",
+    "amelia.vfx.e_charge",
+    "amelia.vfx.e_ring",
+    "amelia.vfx.e_hit",
+    "amelia.vfx.r_telegraph",
+    "amelia.vfx.r_ground_crack",
+    "amelia.vfx.r_spikes",
+    "amelia.vfx.r_hit",
+    "amelia.vfx.recall_start",
+    "amelia.vfx.recall_loop",
+    "amelia.vfx.recall_end"
+  ],
+  "sfx": [
+    "amelia.basic.cast",
+    "amelia.basic.travel",
+    "amelia.basic.hit",
+    "amelia.q.cast",
+    "amelia.q.loop",
+    "amelia.q.hit",
+    "amelia.q.end",
+    "amelia.e.cast",
+    "amelia.e.hit",
+    "amelia.r.cast",
+    "amelia.r.telegraph",
+    "amelia.r.impact",
+    "amelia.hit",
+    "amelia.death",
+    "amelia.recall",
+    "amelia.level_up"
+  ],
+  "sockets": [
+    "staff_socket",
+    "staff_vfx_origin",
+    "vfx_chest",
+    "vfx_left_hand",
+    "vfx_right_hand",
+    "vfx_feet",
+    "vfx_head"
+  ],
+  "knownGameplayConflicts": [
+    "E currently applies damage immediately; documented impact is 0.35s.",
+    "Active Q currently does not cancel on stun/knock-up."
+  ],
+  "reference": {
+    "source": "User-attached Amelia concept sheet, 2026-09-08",
+    "requestedLocalPath": "docs/reference/characters/amelia_concept.png",
+    "localFilePresent": false,
+    "likenessApproved": false
+  }
+}

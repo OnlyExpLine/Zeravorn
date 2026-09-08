@@ -11,10 +11,30 @@ import java.util.UUID;
 
 /** Computes team vision on the server and filters every visibility/minimap delta. */
 public final class VisionService {
-    public static final double HERO_RADIUS = 16.0, LANE_MINION_RADIUS = 10.0, TOWER_RADIUS = 18.0, THRONE_RADIUS = 20.0, FOUNTAIN_RADIUS = 20.0;
+    private final VisionConfig config;
     private final Map<TeamId, VisionState> states = new EnumMap<>(TeamId.class);
     private final Map<TeamId, Map<UUID, Long>> revealUntil = new EnumMap<>(TeamId.class);
-    public VisionService() { for (TeamId team : TeamId.values()) { states.put(team, new VisionState()); revealUntil.put(team, new HashMap<>()); } }
+    public VisionService() { this(VisionConfig.loadDefault()); }
+    public VisionService(VisionConfig config) {
+        this.config = java.util.Objects.requireNonNull(config);
+        for (TeamId team : TeamId.values()) { states.put(team, new VisionState()); revealUntil.put(team, new HashMap<>()); }
+    }
+    public VisionConfig config() { return config; }
+    public double radius(VisionSourceType type) {
+        return switch (type) {
+            case HERO -> config.heroRadius();
+            case LANE_MINION -> config.laneMinionRadius();
+            case TOWER -> config.towerRadius();
+            case THRONE -> config.throneRadius();
+            case FOUNTAIN -> config.fountainRadius();
+        };
+    }
+    public void revealBushAttack(TeamId owner, UUID attacker, long serverTick) {
+        revealToEnemies(owner, attacker, serverTick, config.bushAttackRevealTicks());
+    }
+    public void revealAlliedUnitAttack(TeamId owner, UUID attacker, long serverTick) {
+        revealToEnemies(owner, attacker, serverTick, config.alliedUnitAttackRevealTicks());
+    }
     public VisionDelta recompute(TeamId receivingTeam, Collection<VisionSource> sources, Collection<VisionTarget> targets, LineOfSight los, long serverTick) {
         VisionState state = states.get(receivingTeam); Set<UUID> before = state.visibleIds(), visible = new HashSet<>();
         Map<UUID, Long> reveals = revealUntil.get(receivingTeam); reveals.entrySet().removeIf(entry -> entry.getValue() <= serverTick);

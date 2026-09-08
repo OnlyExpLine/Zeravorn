@@ -16,8 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 final class AmeliaAbilityTest {
     @Test void qChannelsSixMagicTicksAndConsumesMana() {
         HeroRuntime caster = amelia(); HeroRuntime target = target(); caster.upgradeAbility(AbilitySlot.Q); int mana = caster.mana();
-        var result = service().castQ(caster, List.of(snapshot(target, 5)), Map.of(target.owner(), target), new AbilityContext(0, true));
-        assertTrue(result.executed()); assertEquals(6 * 23, result.damage()); assertEquals(mana - 90, caster.mana());
+        AmeliaAbilityService service = service(); var result = service.castQ(caster, List.of(snapshot(target, 5)), Map.of(target.owner(), target), new AbilityContext(0, true));
+        assertTrue(result.executed()); assertEquals(0, result.damage()); assertEquals(mana - 90, caster.mana());
+        Map<UUID, HeroRuntime> heroes = Map.of(caster.owner(), caster, target.owner(), target);
+        for (long tick = 0; tick <= 50; tick += 10) service.tick(tick, true, heroes);
+        assertEquals(900 - 6 * 23, target.health());
     }
     @Test void eDamagesOnlyTargetsInsideRadius() {
         HeroRuntime caster = amelia(); HeroRuntime near = target(); HeroRuntime far = target(); caster.upgradeAbility(AbilitySlot.E);
@@ -27,7 +30,8 @@ final class AmeliaAbilityTest {
     @Test void rUnlocksAtFourAndUsesConfiguredDelayEventTick() {
         HeroRuntime caster = amelia(); HeroRuntime target = target(); new LevelService().addExperience(caster, 850); caster.upgradeAbility(AbilitySlot.R);
         AmeliaAbilityService service = service(); assertTrue(service.castR(caster, List.of(snapshot(target, 2)), Map.of(target.owner(), target), new AbilityContext(100, true)).executed());
-        assertEquals(111, service.events().getLast().serverTick()); assertEquals(725, target.health());
+        assertEquals(100, service.events().getLast().serverTick()); assertEquals(900, target.health());
+        service.tick(111, true, Map.of(caster.owner(), caster, target.owner(), target)); assertEquals(725, target.health());
     }
     private static HeroRuntime amelia() { return new HeroRuntime(UUID.randomUUID(), TeamId.BLUE, HeroDefinitions.AMELIA); }
     private static HeroRuntime target() { return new HeroRuntime(UUID.randomUUID(), TeamId.RED, HeroDefinitions.AMELIA); }

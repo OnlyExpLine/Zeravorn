@@ -31,6 +31,17 @@ class JasonAbilityTest {
     }
 
     @Test
+    void abilitiesScaleFromEffectiveItemAttack() {
+        HeroRuntime jason = new HeroRuntime(UUID.randomUUID(), TeamId.BLUE, HeroDefinitions.JASON);
+        jason.upgradeAbility(com.zeravorn.ability.AbilitySlot.Q);
+        jason.addGold(2000);
+        assertTrue(new com.zeravorn.item.ShopService(new com.zeravorn.item.ItemCatalog()).buy(jason, "iron_blade").success());
+        HeroRuntime target = new HeroRuntime(UUID.randomUUID(), TeamId.RED, HeroDefinitions.LOKI);
+        JasonAbilityResult result = service().castQ(jason, target, snapshot(target, 2), new AbilityContext(0, true));
+        assertEquals(60 + jason.effectiveStats().attack(), result.damage());
+    }
+
+    @Test
     void eRequiresSecondPhaseInsideWindowAndAppliesHardCc() {
         HeroRuntime jason = new HeroRuntime(UUID.randomUUID(), TeamId.BLUE, HeroDefinitions.JASON);
         HeroRuntime target = new HeroRuntime(UUID.randomUUID(), TeamId.RED, HeroDefinitions.AMELIA);

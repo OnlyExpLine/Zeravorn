@@ -1,0 +1,9 @@
+{
+  "heroRadius": 16.0,
+  "laneMinionRadius": 10.0,
+  "towerRadius": 18.0,
+  "throneRadius": 20.0,
+  "fountainRadius": 20.0,
+  "bushAttackRevealSeconds": 1.0,
+  "alliedUnitAttackRevealSeconds": 2.0
+}

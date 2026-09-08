@@ -3,6 +3,7 @@ package com.zeravorn.buff;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import com.zeravorn.hero.HeroRuntime;
 
 /** Keeps buff authority on the server and deliberately has no Minecraft client dependencies. */
 public final class BuffService {
@@ -29,6 +30,14 @@ public final class BuffService {
     public double maxManaMultiplier(UUID owner, long serverTick) {
         TimedBuff blue = get(owner, BuffType.BLUE, serverTick);
         return blue == null ? 1.0 : blue.maxManaMultiplier();
+    }
+    public int effectiveMaxMana(HeroRuntime hero, long serverTick) {
+        return (int) Math.round(hero.effectiveStats().maxMana() * maxManaMultiplier(hero.owner(), serverTick));
+    }
+    /** Blue CDR applies only when a new hero-ability cooldown starts. */
+    public long heroAbilityCooldownTicks(UUID owner, long baseTicks, long serverTick) {
+        if (baseTicks < 0) throw new IllegalArgumentException("Cooldown cannot be negative");
+        return Math.max(0, Math.round(baseTicks * (1.0 - cooldownReduction(owner, serverTick))));
     }
     private void expire(long serverTick) {
         active.values().forEach(buffs -> buffs.values().removeIf(buff -> buff.expiresAtTick() <= serverTick));

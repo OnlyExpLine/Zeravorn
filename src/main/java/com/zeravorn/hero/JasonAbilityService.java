@@ -19,17 +19,23 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.ArrayList;
 import java.util.Collections;
+import com.zeravorn.buff.BuffService;
 
 public final class JasonAbilityService {
     private final CooldownService cooldowns;
     private final DamageService damage;
     private final CrowdControlService crowdControl;
     private final AbilityCastValidator validator;
+    private final BuffService buffs;
     private final Map<UUID, Long> pendingDoubleDash = new HashMap<>();
     private final List<AbilityEvent> events = new ArrayList<>();
 
     public JasonAbilityService(CooldownService cooldowns, DamageService damage, CrowdControlService crowdControl) {
+        this(cooldowns, damage, crowdControl, null);
+    }
+    public JasonAbilityService(CooldownService cooldowns, DamageService damage, CrowdControlService crowdControl, BuffService buffs) {
         this.cooldowns = cooldowns; this.damage = damage; this.crowdControl = crowdControl;
+        this.buffs = buffs;
         this.validator = new AbilityCastValidator(crowdControl);
     }
 
@@ -38,9 +44,9 @@ public final class JasonAbilityService {
         if (!error.isEmpty()) return JasonAbilityResult.rejected(error);
         if (!validEnemy(caster, target, snapshot, 2)) return JasonAbilityResult.rejected("INVALID_TARGET");
         int rank = caster.abilityRank(AbilitySlot.Q); JasonAbilityDefinitions.Q config = JasonAbilityDefinitions.q(rank);
-        if (!cooldowns.tryStart(caster.owner(), "jason_q", context.serverTick(), config.cooldownTicks())) return JasonAbilityResult.rejected("COOLDOWN");
-        int amount = config.baseDamage() + caster.stats().attack();
-        DamageResult result = damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
+        if (!cooldowns.tryStart(caster.owner(), "jason_q", context.serverTick(), cooldown(caster, config.cooldownTicks(), context.serverTick()))) return JasonAbilityResult.rejected("COOLDOWN");
+        int amount = config.baseDamage() + caster.effectiveStats().attack();
+        DamageResult result = damage.applyAbility(caster, target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
         if (!result.applied()) return JasonAbilityResult.rejected(result.reason());
         int healing = (int) Math.floor(result.amount() * config.healRatio()); caster.heal(healing);
         events.add(new AbilityEvent(caster.owner(), AbilitySlot.Q, AbilityEvent.Phase.START, context.serverTick()));
@@ -52,7 +58,7 @@ public final class JasonAbilityService {
         String error = validator.validate(caster, AbilitySlot.E, context);
         if (!error.isEmpty()) return JasonAbilityResult.rejected(error);
         int rank = caster.abilityRank(AbilitySlot.E); JasonAbilityDefinitions.E config = JasonAbilityDefinitions.e(rank);
-        if (!cooldowns.tryStart(caster.owner(), "jason_e", context.serverTick(), config.cooldownTicks())) return JasonAbilityResult.rejected("COOLDOWN");
+        if (!cooldowns.tryStart(caster.owner(), "jason_e", context.serverTick(), cooldown(caster, config.cooldownTicks(), context.serverTick()))) return JasonAbilityResult.rejected("COOLDOWN");
         pendingDoubleDash.put(caster.owner(), context.serverTick() + config.windowTicks());
         events.add(new AbilityEvent(caster.owner(), AbilitySlot.E, AbilityEvent.Phase.START, context.serverTick()));
         return new JasonAbilityResult(true, "DASH_1", 0, 0);
@@ -66,8 +72,8 @@ public final class JasonAbilityService {
         if (!validEnemy(caster, target, snapshot, 2)) return JasonAbilityResult.rejected("INVALID_TARGET");
         pendingDoubleDash.remove(caster.owner());
         JasonAbilityDefinitions.E config = JasonAbilityDefinitions.e(caster.abilityRank(AbilitySlot.E));
-        int amount = config.baseDamage() + (int) Math.floor(caster.stats().attack() * config.attackRatio());
-        DamageResult result = damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
+        int amount = config.baseDamage() + (int) Math.floor(caster.effectiveStats().attack() * config.attackRatio());
+        DamageResult result = damage.applyAbility(caster, target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
         if (!result.applied()) return JasonAbilityResult.rejected(result.reason());
         crowdControl.apply(target.owner(), new CrowdControlEffect(caster.owner(), CrowdControlType.KNOCKUP, 1, context.serverTick() + config.stunTicks(), true));
         crowdControl.apply(target.owner(), new CrowdControlEffect(caster.owner(), CrowdControlType.STUN, 1, context.serverTick() + config.stunTicks(), true));
@@ -79,13 +85,13 @@ public final class JasonAbilityService {
         String error = validator.validate(caster, AbilitySlot.R, context);
         if (!error.isEmpty()) return JasonAbilityResult.rejected(error);
         int rank = caster.abilityRank(AbilitySlot.R); JasonAbilityDefinitions.R config = JasonAbilityDefinitions.r(rank);
-        if (!cooldowns.tryStart(caster.owner(), "jason_r", context.serverTick(), config.cooldownTicks())) return JasonAbilityResult.rejected("COOLDOWN");
+        if (!cooldowns.tryStart(caster.owner(), "jason_r", context.serverTick(), cooldown(caster, config.cooldownTicks(), context.serverTick()))) return JasonAbilityResult.rejected("COOLDOWN");
         int totalDamage = 0;
         for (TargetSnapshot snapshot : snapshots) {
             HeroRuntime target = targets.get(snapshot.id());
             if (!validEnemy(caster, target, snapshot, config.radius())) continue;
-            int amount = config.baseDamage() + (int) Math.floor(caster.stats().attack() * config.attackRatio());
-            DamageResult result = damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
+            int amount = config.baseDamage() + (int) Math.floor(caster.effectiveStats().attack() * config.attackRatio());
+            DamageResult result = damage.applyAbility(caster, target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), DamageType.PHYSICAL, amount, context.serverTick()));
             if (!result.applied()) continue;
             crowdControl.apply(target.owner(), new CrowdControlEffect(caster.owner(), CrowdControlType.STUN, 1, context.serverTick() + config.stunTicks(), true));
             totalDamage += result.amount();
@@ -96,6 +102,7 @@ public final class JasonAbilityService {
     }
 
     public List<AbilityEvent> events() { return Collections.unmodifiableList(events); }
+    private long cooldown(HeroRuntime caster, long base, long tick) { return buffs == null ? base : buffs.heroAbilityCooldownTicks(caster.owner(), base, tick); }
 
     private boolean validEnemy(HeroRuntime caster, HeroRuntime target, TargetSnapshot snapshot, double range) {
         return target != null && snapshot != null && snapshot.id().equals(target.owner()) && snapshot.alive() && target.alive()

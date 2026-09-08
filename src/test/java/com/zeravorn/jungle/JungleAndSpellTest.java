@@ -25,15 +25,25 @@ final class JungleAndSpellTest {
         JungleCamp camp = new JungleCamp("BLUE_GREEN_A", type, new Position(0, 64, 0));
         camp.tick(699, true, JungleService.FIRST_SPAWN_TICK); assertEquals(JungleCampState.WAITING, camp.state());
         camp.tick(700, true, JungleService.FIRST_SPAWN_TICK); assertEquals(JungleCampState.ALIVE, camp.state());
-        camp.damage(100, 701); camp.beginLeashReturn(); camp.completeLeashReturn(); assertEquals(type.health(), camp.health());
-        camp.damage(type.health(), 702); assertEquals(JungleCampState.DEAD_WAIT_RESPAWN, camp.state());
-        camp.tick(702 + type.respawnSeconds() * 20L, true, JungleService.FIRST_SPAWN_TICK); assertEquals(JungleCampState.ALIVE, camp.state());
+        camp.damage(500, 701); camp.beginLeashReturn(701); camp.completeLeashReturn(); assertEquals(350, camp.health());
+        camp.tick(741, true, JungleService.FIRST_SPAWN_TICK); assertEquals(525, camp.health());
+        camp.tick(781, true, JungleService.FIRST_SPAWN_TICK); assertEquals(type.health(), camp.health()); assertEquals(JungleCampState.ALIVE, camp.state());
+        camp.damage(type.health(), 782); assertEquals(JungleCampState.DEAD_WAIT_RESPAWN, camp.state());
+        camp.tick(782 + type.respawnSeconds() * 20L, true, JungleService.FIRST_SPAWN_TICK); assertEquals(JungleCampState.ALIVE, camp.state());
         assertEquals(1120, camp.scaledMaxHealth(6L * 180L * 20L));
     }
     @Test void buffsExpireAndAreRemovedOnDeath() {
         HeroRuntime hero = hero(); BuffService buffs = new BuffService(); JungleCamp camp = new JungleCamp("RED", JungleConfigLoader.loadDefaultDefinitions().get("RED"), new Position(0, 0, 0)); camp.spawn(); camp.damage(1000, 10);
         assertTrue(new JungleService(new GoldService(), new ExperienceService(), buffs).kill(hero, camp, 10, 20, 1.10, 1.15, .10));
         assertEquals(1.10, buffs.outgoingHeroDamageMultiplier(hero.owner(), 11)); buffs.onDeath(hero.owner()); assertEquals(1.0, buffs.outgoingHeroDamageMultiplier(hero.owner(), 11));
+    }
+    @Test void blueBuffChangesNewAbilityCooldownAndEffectiveMaxMana() {
+        HeroRuntime hero = new HeroRuntime(UUID.randomUUID(), TeamId.BLUE, HeroDefinitions.SHELIANER);
+        BuffService buffs = new BuffService();
+        buffs.apply(hero.owner(), new com.zeravorn.buff.TimedBuff(com.zeravorn.buff.BuffType.BLUE, 100, 1.0, 1.15, .10));
+        assertEquals(460, buffs.effectiveMaxMana(hero, 0));
+        assertEquals(90, buffs.heroAbilityCooldownTicks(hero.owner(), 100, 0));
+        assertEquals(100, buffs.heroAbilityCooldownTicks(hero.owner(), 100, 100));
     }
     @Test void validatesRetributionFlashBoundaryAndCleanse() {
         HeroRuntime hero = hero(); CrowdControlService cc = new CrowdControlService(); SpellService spells = new SpellService(SpellConfigLoader.loadDefaults(), new CooldownService(), cc);

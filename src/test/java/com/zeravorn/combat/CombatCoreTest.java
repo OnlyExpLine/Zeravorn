@@ -42,11 +42,12 @@ class CombatCoreTest {
         CrowdControlService cc = new CrowdControlService();
         UUID target = UUID.randomUUID();
         UUID source = UUID.randomUUID();
-        cc.apply(target, new CrowdControlEffect(source, CrowdControlType.SLOW, 0.20, 20, true));
-        cc.apply(target, new CrowdControlEffect(source, CrowdControlType.SLOW, 0.50, 30, true));
-        assertEquals(1, cc.effects(target).size());
-        assertEquals(0.50, cc.effects(target).getFirst().strength());
+        cc.apply(target, new CrowdControlEffect(source, CrowdControlType.SLOW, 0.20, 30, true));
+        cc.apply(target, new CrowdControlEffect(source, CrowdControlType.SLOW, 0.50, 20, true));
+        assertEquals(2, cc.effects(target).size());
         assertEquals(0.50, cc.movementMultiplier(target));
+        cc.tick(20);
+        assertEquals(0.80, cc.movementMultiplier(target));
         cc.apply(target, new CrowdControlEffect(source, CrowdControlType.STUN, 1, 40, true));
         assertTrue(cc.blocksBasicOrAbility(target));
         cc.tick(40);
@@ -89,6 +90,16 @@ class CombatCoreTest {
         assertTrue(projectiles.confirmHit(state.id(), target));
         assertFalse(projectiles.active(state.id()));
         assertThrows(IllegalArgumentException.class, () -> projectiles.confirmHit(state.id(), target));
+    }
+
+    @Test
+    void projectileAdvancesFromServerTicksAndExpiresAtConfiguredRange() {
+        ProjectileService projectiles = new ProjectileService();
+        ProjectileState state = projectiles.spawn(UUID.randomUUID(), new com.zeravorn.projectile.ProjectileDefinition(20, 2, 0.25, 0));
+        projectiles.advanceTicks(state.id(), 1, 20);
+        assertTrue(projectiles.active(state.id()));
+        projectiles.advanceTicks(state.id(), 1, 20);
+        assertFalse(projectiles.active(state.id()));
     }
 
     @Test

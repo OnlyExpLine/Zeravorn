@@ -1,14 +1,18 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M9 — Vision + Bushes + Minimap State (verification pending)
+M10 — Gameplay HUD + Input + Network Contracts (not started)
+
+An out-of-sequence M15 source-art preparation task has added deterministic Jason Blockbench source models, texture atlases, animation contracts, and validation under `assets/source/` and `tools/`. It does not add renderer or gameplay integration.
+
+2026-09-06: Jason source pipeline v2 replaces the rejected cube placeholder with a reference-based polygonal reconstruction (7205 triangles, 28 bones), embedded 256x256 textures, 15 third-person and 11 first-person clips, automatic glTF exports and geometry-based previews. Artwork acceptance remains pending; this is not a completed M15 runtime integration. Details: `docs/assets/JASON_ASSET.md`.
 
 ## Last completed milestone
-M8D — Loki
+M9 — Vision + Bushes + Minimap State
 
 ## Build status
-- build: PASS — M7 confirmed by user
-- test: PASS — M7 confirmed by user
+- build: NOT RUN after projectile follow-up — last PASS: `gradlew.bat --no-daemon build` (M0–M9 audit)
+- test: NOT RUN after projectile follow-up — last PASS: `gradlew.bat --no-daemon test`, 61 tests (M0–M9 audit)
 - client run: NOT CHECKED
 - server run: NOT CHECKED
 
@@ -58,14 +62,24 @@ M8D — Loki
 - M8C adds Amelia Q/E/R server execution with config-driven magical damage, AP scaling, six channel ticks, slow, knockback, and delayed Ice Spikes.
 - M8D adds Loki Q/E/R server execution with config-driven physical damage, PULL/ROOT control, timed Rampage movement bonus, and Iron Prison AoE.
 - M9 adds server-authoritative VisionState per team, LOS/bush/reveal rules, VisionDelta, and minimap position filtering.
+- M0-M9 audit remediation moved M9 vision radii/reveal durations into validated `vision.json` balance data.
+- M0-M9 audit remediation applies Blue Buff CDR to newly started hero ability cooldowns and exposes authoritative buff-adjusted Max Mana (Jason still receives CDR only).
+- M0-M9 audit remediation makes jungle spawn HP use time scaling and implements documented leash recovery stages (50% immediately, 75% after 2s, 100% after another 2s).
+- M0-M9 audit remediation makes Jason ability Attack scaling use effective item-adjusted Attack, preserves overlapping slows so weaker effects resume, rejects friendly/repeated structure damage, and keeps detached poison active after caster death.
+- M0-M9 audit remediation routes basic attacks through lifesteal and abilities through spell vamp, with Red Buff excluded from true damage, and bounds duplicate DamageInstance retention.
+- M0-M9 audit remediation converts Esaki R, Amelia Q/R and Shelianer R to server-tick-owned executions; they no longer apply future damage during the cast request.
+- M0-M9 audit remediation routes Shelianer Q, Esaki Q and Loki Q through `ProjectileService`: the cast creates an authoritative projectile, and damage/CC require a later server collision confirmation.
 
 ## Assumptions
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
 
 ## Known issues
+- Jason assets: real Blockbench GUI import and in-game renderer smoke tests are not performed. The source requires a mesh-capable renderer; cube-only export cannot preserve its shape. Hidden reference surfaces are reconstructed; exact visual likeness is not certified.
+- MEDIUM — projectile abilities now use `ProjectileService`, but the MapDefinition/world adapter still must provide real position transforms, wall collision policy and Loki Hook's visible return path in M13.
+- MEDIUM — Blue Buff adjusted Max Mana is exposed by `BuffService`, but regeneration/current-mana clamping on buff expiry still needs server tick orchestration integration.
+- MEDIUM — economy reward values, sell ratio and several structure rules remain Java constants instead of canonical validated config fields.
 - Economy reward helpers await integration with future world/entity event producers; no client/network/HUD layer is implemented before M10.
 - Full minion movement/combat and structure entity ticking require MapDefinition/world integration scheduled for M13; current M5 domain controllers provide deterministic wave, target-priority and damage rules.
-- Gradle/Fabric Loom cannot currently set up `minecraft-server.jar`: both project-local Gradle caches fail with `AccessDeniedException` during configuration.
 - No client or server runtime smoke test has been performed yet.
 - M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
 - Jungle camp placement, concrete world movement/AI, and Flash solid-block validation await MapDefinition/world integration in M13; M7 provides the authoritative domain hooks.
@@ -129,6 +143,7 @@ M8D — Loki
 - `src/main/resources/config_defaults/loki_abilities.json`
 - `src/test/java/com/zeravorn/hero/LokiAbilityTest.java`
 - `src/main/java/com/zeravorn/vision/`
+- `src/main/resources/config_defaults/vision.json`
 - `src/test/java/com/zeravorn/vision/VisionServiceTest.java`
 
 ## Files/modules changed
@@ -140,6 +155,11 @@ M8D — Loki
 - Removed template mixin classes and descriptors.
 
 ## Verification
+- Jason pipeline v2: asset-only generation, structural validation, deterministic regeneration, embedded/external PNG consistency, glTF checks, 5 defect regressions and 347 first-person reticle poses passed. Geometry-based visual previews inspected. Gradle build/test and cache generation intentionally not run at the owner's request.
+- M0-M9 audit: all `docs` files re-read; source/config/test static review completed; `git diff --check` completed with no whitespace errors (line-ending conversion warnings only).
+- M0-M9 audit: `GRADLE_USER_HOME=.gradle-user .\gradlew.bat --no-daemon test` — PASS (61 tests).
+- M0-M9 audit: `GRADLE_USER_HOME=.gradle-user .\gradlew.bat --no-daemon build` — PASS.
+- Projectile follow-up: tests/build intentionally NOT RUN at the owner's request; no Gradle cache was created.
 - M1: ` .\gradlew.bat --no-daemon test` — PASS.
 - M1: ` .\gradlew.bat --no-daemon build` — PASS.
 - M2: `.\gradlew.bat build` — PASS (confirmed by user).
@@ -158,7 +178,7 @@ M8D — Loki
 - M8D: `.\gradlew.bat build` and `.\gradlew.bat test` — PASS (confirmed by user).
 
 ## Next milestone
-M10 — Gameplay HUD + Input + Network Contracts (after M9 verification)
+M10 — Gameplay HUD + Input + Network Contracts
 
 ## Git checkpoint
 - Branch: `main`

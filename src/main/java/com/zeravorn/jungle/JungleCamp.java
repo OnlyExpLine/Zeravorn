@@ -12,6 +12,9 @@ public final class JungleCamp {
     private int health;
     private long respawnAtTick;
     private boolean deathRewardClaimed;
+    private int currentMaxHealth;
+    private long nextLeashHealTick;
+    private int leashHealStage;
 
     public JungleCamp(String id, JungleMobType definition, Position spawn) {
         this.id = Objects.requireNonNull(id); this.definition = Objects.requireNonNull(definition); this.spawn = Objects.requireNonNull(spawn);
@@ -25,15 +28,20 @@ public final class JungleCamp {
     /** Balance scaling: +10% HP and +6% damage every three minutes, capped at 18:00. */
     public int scaledMaxHealth(long matchElapsedTicks) { return scaled(definition.health(), 0.10, matchElapsedTicks); }
     public int scaledDamage(long matchElapsedTicks) { return scaled(definition.damage(), 0.06, matchElapsedTicks); }
-    public void spawn() { state = JungleCampState.ALIVE; health = definition.health(); respawnAtTick = 0; deathRewardClaimed = false; }
+    public void spawn() { spawn(0); }
+    public void spawn(long matchElapsedTicks) { state = JungleCampState.ALIVE; currentMaxHealth = scaledMaxHealth(matchElapsedTicks); health = currentMaxHealth; respawnAtTick = 0; deathRewardClaimed = false; leashHealStage = 0; }
     public boolean damage(int amount, long serverTick) {
         if (amount < 0 || !alive()) return false;
         health = Math.max(0, health - amount);
         if (health == 0) { state = JungleCampState.DEAD_WAIT_RESPAWN; respawnAtTick = serverTick + definition.respawnSeconds() * 20L; }
         return true;
     }
-    public void beginLeashReturn() { if (alive()) state = JungleCampState.LEASH_RETURN; }
-    public void completeLeashReturn() { if (state == JungleCampState.LEASH_RETURN) { state = JungleCampState.ALIVE; health = definition.health(); } }
+    public void beginLeashReturn() { beginLeashReturn(0); }
+    public void beginLeashReturn(long serverTick) {
+        if (alive()) { state = JungleCampState.LEASH_RETURN; health = Math.max(health, percentOfMax(0.50)); nextLeashHealTick = serverTick + 40; leashHealStage = 1; }
+    }
+    /** Compatibility hook: returning to spawn starts recovery; healing remains tick-driven. */
+    public void completeLeashReturn() { if (state == JungleCampState.LEASH_RETURN) health = Math.max(health, percentOfMax(0.50)); }
     /** Atomically claims this death's reward, preventing duplicate rewards from repeated kill events. */
     public boolean claimDeathReward() {
         if (state != JungleCampState.DEAD_WAIT_RESPAWN || health != 0 || deathRewardClaimed) return false;
@@ -42,9 +50,14 @@ public final class JungleCamp {
     }
     public void tick(long serverTick, boolean matchPlaying, long firstSpawnTick) {
         if (!matchPlaying) return;
-        if (state == JungleCampState.WAITING && serverTick >= firstSpawnTick) spawn();
-        if (state == JungleCampState.DEAD_WAIT_RESPAWN && serverTick >= respawnAtTick) spawn();
+        if (state == JungleCampState.WAITING && serverTick >= firstSpawnTick) spawn(serverTick);
+        if (state == JungleCampState.DEAD_WAIT_RESPAWN && serverTick >= respawnAtTick) spawn(serverTick);
+        if (state == JungleCampState.LEASH_RETURN && serverTick >= nextLeashHealTick) {
+            if (leashHealStage == 1) { health = Math.max(health, percentOfMax(0.75)); leashHealStage = 2; nextLeashHealTick += 40; }
+            else { health = currentMaxHealth; state = JungleCampState.ALIVE; leashHealStage = 0; }
+        }
     }
+    private int percentOfMax(double ratio) { return (int) Math.ceil(currentMaxHealth * ratio); }
     private static int scaled(int base, double perStage, long elapsedTicks) {
         long stages = Math.min(6, Math.max(0, elapsedTicks) / (180L * 20L));
         return (int) Math.floor(base * (1.0 + perStage * stages));

@@ -1,0 +1,319 @@
+{
+  "schema": "zeravorn.jason.animation-events/v2",
+  "authoritativeDamage": false,
+  "coordinate_system": {
+    "units_per_block": 16,
+    "forward": "-Z",
+    "up": "+Y"
+  },
+  "events": [
+    "basic_hit",
+    "q_charge",
+    "q_hit",
+    "q_heal_return",
+    "e_dash",
+    "e2_hit",
+    "r_launch",
+    "r_flight",
+    "r_impact"
+  ],
+  "timing_policy": "basic_hit=0.25s and q_hit=0.30s from Balance v1.1; E2 waits for collision and R waits for landing. Other times are authored cosmetic poses, not gameplay deadlines.",
+  "root_motion": "in-place; entity movement is owned by the server",
+  "animations": {
+    "jason.idle": {
+      "length": 3,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.walk": {
+      "length": 1.12,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.run": {
+      "length": 0.72,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.basic_1": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.basic_2": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.basic_3": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.q": {
+      "length": 0.95,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "q_charge",
+          "time": 0.1,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "q_hit",
+          "time": 0.3,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "q_heal_return",
+          "time": 0.58,
+          "gate": "server_heal",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.e_dash_1": {
+      "length": 0.48,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "e_dash",
+          "time": 0.07,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.e_dash_2": {
+      "length": 0.65,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "e_dash",
+          "time": 0.06,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "e2_hit",
+          "time": 0.27,
+          "gate": "server_collision",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.r": {
+      "length": 1.6,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "r_launch",
+          "time": 0.29,
+          "gate": "server_launch",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "r_flight",
+          "time": 0.45,
+          "gate": "server_flight",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "r_impact",
+          "time": 0.86,
+          "gate": "server_landing",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.hit": {
+      "length": 0.42,
+      "loop": "once",
+      "markers": []
+    },
+    "jason.stun": {
+      "length": 1.6,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.root": {
+      "length": 1.4,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.death": {
+      "length": 1.6,
+      "loop": "hold",
+      "markers": []
+    },
+    "jason.recall": {
+      "length": 5,
+      "loop": "hold",
+      "markers": []
+    },
+    "jason.fp.idle": {
+      "length": 3,
+      "loop": "loop",
+      "markers": []
+    },
+    "jason.fp.basic_1": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.basic_2": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.basic_3": {
+      "length": 1,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "basic_hit",
+          "time": 0.25,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.q": {
+      "length": 0.95,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "q_charge",
+          "time": 0.1,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "q_hit",
+          "time": 0.3,
+          "gate": "server_confirmed",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "q_heal_return",
+          "time": 0.58,
+          "gate": "server_heal",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.e": {
+      "length": 0.48,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "e_dash",
+          "time": 0.07,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.e_dash_1": {
+      "length": 0.48,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "e_dash",
+          "time": 0.07,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.e_dash_2": {
+      "length": 0.65,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "e_dash",
+          "time": 0.06,
+          "gate": "server_start",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "e2_hit",
+          "time": 0.27,
+          "gate": "server_collision",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.r": {
+      "length": 1.6,
+      "loop": "once",
+      "markers": [
+        {
+          "id": "r_launch",
+          "time": 0.29,
+          "gate": "server_launch",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "r_flight",
+          "time": 0.45,
+          "gate": "server_flight",
+          "authority": "cosmetic_only"
+        },
+        {
+          "id": "r_impact",
+          "time": 0.86,
+          "gate": "server_landing",
+          "authority": "cosmetic_only"
+        }
+      ]
+    },
+    "jason.fp.hit": {
+      "length": 0.42,
+      "loop": "once",
+      "markers": []
+    },
+    "jason.fp.recall": {
+      "length": 5,
+      "loop": "hold",
+      "markers": []
+    }
+  }
+}

@@ -25,6 +25,6 @@ public final class BasicAttackService {
         long interval = attackSpeed.intervalTicks(caster.definition().baseAttackInterval(), configuredMultiplier * attackSpeedMultiplier, ticksPerSecond);
         if (!cooldowns.tryStart(caster.owner(), "basic_attack", tick, interval)) return DamageResult.rejected("COOLDOWN", target.health());
         DamageType type = caster.definition().damageType() == com.zeravorn.hero.DamageType.MAGICAL ? DamageType.MAGICAL : DamageType.PHYSICAL;
-        return damage.apply(target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), type, caster.effectiveStats().attack(), tick));
+        return damage.applyBasic(caster, target, new DamageInstance(UUID.randomUUID(), caster.owner(), target.owner(), type, caster.effectiveStats().attack(), tick));
     }
 }

@@ -18,7 +18,9 @@ final class EsakiAbilityTest {
         HeroRuntime caster = esaki(); HeroRuntime target = target(); caster.upgradeAbility(AbilitySlot.Q); EsakiAbilityService service = service();
         assertEquals("INVALID_TARGET", service.castQ(caster, target, snapshot(target, 7.1), new AbilityContext(0, true)).reason());
         int mana = caster.mana(); var result = service.castQ(caster, target, snapshot(target, 7), new AbilityContext(0, true));
-        assertTrue(result.executed()); assertEquals(70 + 99, result.damage()); assertEquals(mana - 75, caster.mana());
+        assertTrue(result.executed()); assertEquals(0, result.damage()); assertEquals(mana - 75, caster.mana());
+        UUID projectile = service.activeProjectileIds().iterator().next(); service.advanceProjectile(projectile, 1);
+        assertEquals(70 + 99, service.confirmProjectileHit(projectile, target, snapshot(target, 1), 1).damage());
     }
     @Test void eHitsOnlyEnemiesInConfiguredRadiusAndAppliesKnockback() {
         HeroRuntime caster = esaki(); HeroRuntime near = target(); HeroRuntime far = target(); caster.upgradeAbility(AbilitySlot.E); CrowdControlService cc = new CrowdControlService();
@@ -27,9 +29,12 @@ final class EsakiAbilityTest {
     }
     @Test void rUnlocksAtLevelFourAndProducesThreePulses() {
         HeroRuntime caster = esaki(); HeroRuntime target = target(); new LevelService().addExperience(caster, 850); caster.upgradeAbility(AbilitySlot.R); int before = target.health();
-        var result = service().castR(caster, List.of(snapshot(target, 6)), Map.of(target.owner(), target), new AbilityContext(0, true));
+        EsakiAbilityService service = service(); var result = service.castR(caster, List.of(snapshot(target, 6)), Map.of(target.owner(), target), new AbilityContext(0, true));
         int perPulse = 55 + (int) Math.floor(caster.effectiveStats().attack() * .35);
-        assertTrue(result.executed()); assertEquals(before - 3 * perPulse, target.health()); assertEquals(3 * perPulse, result.damage());
+        assertTrue(result.executed()); assertEquals(0, result.damage()); assertEquals(before, target.health());
+        Map<UUID, HeroRuntime> heroes = Map.of(caster.owner(), caster, target.owner(), target);
+        service.tick(0, true, heroes); service.tick(20, true, heroes); service.tick(40, true, heroes);
+        assertEquals(before - 3 * perPulse, target.health());
     }
     private static HeroRuntime esaki() { return new HeroRuntime(UUID.randomUUID(), TeamId.BLUE, HeroDefinitions.ESAKI); }
     private static HeroRuntime target() { return new HeroRuntime(UUID.randomUUID(), TeamId.RED, HeroDefinitions.AMELIA); }

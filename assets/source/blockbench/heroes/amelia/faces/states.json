@@ -1,0 +1,12 @@
+{
+  "ids": [
+    "amelia.face.neutral",
+    "amelia.face.confident",
+    "amelia.face.serious",
+    "amelia.face.surprised",
+    "amelia.face.smile",
+    "amelia.face.eyes_closed"
+  ],
+  "runtimeSupport": false,
+  "source": "Separate editable head models; neutral is used by the main asset."
+}

@@ -10,7 +10,7 @@ import java.util.List;
 
 /** Rank-aware Shelianer balance definitions, loaded from packaged config. */
 public final class ShelianerAbilityDefinitions {
-    public record Q(int damage, double attackRatio, long cooldownTicks, int mana, double range) { }
+    public record Q(int damage, double attackRatio, long cooldownTicks, int mana, double range, double projectileSpeed) { }
     public record E(int damagePerTick, double attackRatio, long cooldownTicks, int mana, double slow, long durationTicks) { }
     public record F(long cooldownTicks, int mana, double dashDistance) { }
     public record R(int damagePerHit, double attackRatio, long cooldownTicks, int mana, double range, long stunTicks, int hits) { }
@@ -22,7 +22,7 @@ public final class ShelianerAbilityDefinitions {
             Q = q(root.getAsJsonArray("q")); E = e(root.getAsJsonArray("e")); F = f(root.getAsJsonArray("f")); R = r(root.getAsJsonArray("r"));
         } catch (Exception exception) { throw new IllegalStateException("Unable to load Shelianer ability config", exception); }
     }
-    private static List<Q> q(JsonArray rows) { List<Q> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new Q(v.get("damage").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("mana").getAsInt(), v.get("range").getAsDouble())); } return List.copyOf(values); }
+    private static List<Q> q(JsonArray rows) { List<Q> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new Q(v.get("damage").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("mana").getAsInt(), v.get("range").getAsDouble(), v.get("projectileSpeed").getAsDouble())); } return List.copyOf(values); }
     private static List<E> e(JsonArray rows) { List<E> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new E(v.get("damagePerTick").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("mana").getAsInt(), v.get("slow").getAsDouble(), v.get("durationTicks").getAsLong())); } return List.copyOf(values); }
     private static List<F> f(JsonArray rows) { List<F> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new F(v.get("cooldownTicks").getAsLong(), v.get("mana").getAsInt(), v.get("dashDistance").getAsDouble())); } return List.copyOf(values); }
     private static List<R> r(JsonArray rows) { List<R> values = new ArrayList<>(); for (var row : rows) { var v = row.getAsJsonObject(); values.add(new R(v.get("damagePerHit").getAsInt(), v.get("attackRatio").getAsDouble(), v.get("cooldownTicks").getAsLong(), v.get("mana").getAsInt(), v.get("range").getAsDouble(), v.get("stunTicks").getAsLong(), v.get("hits").getAsInt())); } return List.copyOf(values); }
