@@ -1,0 +1,130 @@
+{
+  "structural": "PASS",
+  "loopSeams": "PASS",
+  "motion": {
+    "elbowKeysChecked": 2210,
+    "elbowDirection": "forward",
+    "kneeDirection": "backward",
+    "maxStanceFootHeightError": 0.0010550740702583994
+  },
+  "geometryValidation": {
+    "stableHierarchy": "PASS",
+    "sockets": "PASS",
+    "sixKnives": [
+      "throwing_knife_l_01",
+      "throwing_knife_l_02",
+      "throwing_knife_l_03",
+      "throwing_knife_r_01",
+      "throwing_knife_r_02",
+      "throwing_knife_r_03"
+    ],
+    "triangles": 8808,
+    "elements": 303,
+    "heightUnits": 29.88,
+    "heightBlocks": 1.8675,
+    "gameplayHitboxUnchanged": {
+      "width": 0.6,
+      "height": 1.8
+    },
+    "evaluatedPoses": 112,
+    "clipping": "Visual contact sheets reviewed; exhaustive triangle collision audit not performed. Legacy ability clips are provisional."
+  },
+  "clipping": {
+    "scope": "Non-adjacent bracer/palm/blade against torso/chest/hood/face; 33 sampled poses. Cloth/body and adjacent layered armor excluded.",
+    "testedPairs": 1782,
+    "intersectionFindings": [],
+    "exhaustive": false
+  },
+  "stableBonesPreserved": [
+    "root",
+    "body",
+    "torso",
+    "head",
+    "upper_arm_left",
+    "forearm_left",
+    "hand_left",
+    "dagger_left",
+    "upper_arm_right",
+    "forearm_right",
+    "hand_right",
+    "dagger_right",
+    "cape_0",
+    "cape_1",
+    "cape_2",
+    "cape_3",
+    "cape_4",
+    "cape_5",
+    "cape_6",
+    "leg_left",
+    "shin_left",
+    "foot_left",
+    "tabard_left",
+    "leg_right",
+    "shin_right",
+    "foot_right",
+    "tabard_right",
+    "flask_socket"
+  ],
+  "newBones": [
+    "face",
+    "hood_top",
+    "hood_front_left",
+    "hood_front_right",
+    "hood_side_left",
+    "hood_side_right",
+    "hood_back_upper",
+    "hood_back_lower",
+    "weapon_socket_left",
+    "poison_flask_origin",
+    "shoulder_armor_left",
+    "weapon_socket_right",
+    "q_throw_origin",
+    "shoulder_armor_right",
+    "cloak_side_left",
+    "cloak_back_left",
+    "cloak_back_center",
+    "cloak_back_right",
+    "cloak_side_right",
+    "front_tabard_left",
+    "front_tabard_right",
+    "throwing_knife_l_01",
+    "throwing_knife_l_01_socket",
+    "throwing_knife_l_02",
+    "throwing_knife_l_02_socket",
+    "throwing_knife_l_03",
+    "throwing_knife_l_03_socket",
+    "throwing_knife_r_01",
+    "throwing_knife_r_01_socket",
+    "throwing_knife_r_02",
+    "throwing_knife_r_02_socket",
+    "throwing_knife_r_03",
+    "throwing_knife_r_03_socket",
+    "front_tabard_center"
+  ],
+  "models": [
+    {
+      "name": "shelianer",
+      "meshes": 303,
+      "bones": 62,
+      "animations": 16,
+      "triangles": 8808
+    },
+    {
+      "name": "shelianer_first_person",
+      "meshes": 120,
+      "bones": 14,
+      "animations": 15,
+      "triangles": 2952
+    },
+    {
+      "name": "shelianer_dagger",
+      "meshes": 16,
+      "bones": 1,
+      "animations": 0,
+      "triangles": 300
+    }
+  ],
+  "blockbenchGui": "NOT RUN",
+  "runtimeIntegration": false,
+  "visualApproval": "pending"
+}

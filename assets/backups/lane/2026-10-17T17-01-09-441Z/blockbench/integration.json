@@ -1,0 +1,29 @@
+{
+  "status": "exported_not_connected_to_game_renderer",
+  "scale": "16 authoring units = 1 block",
+  "front": "-Z",
+  "clips_are_visual_only": true,
+  "server_controls": [
+    "attack start",
+    "release timing",
+    "damage",
+    "hitbox",
+    "movement"
+  ],
+  "required_renderer_features": [
+    "hierarchical cuboid transforms",
+    "per-face UV",
+    "team texture selection",
+    "emissive pass",
+    "linear keyframe interpolation",
+    "socket world transforms",
+    "death hold and despawn"
+  ],
+  "not_verified": [
+    "Blockbench GUI import",
+    "Minecraft dev-client rendering",
+    "runtime clipping",
+    "in-game performance"
+  ],
+  "notes": "No lane entity renderer or render-state synchronization exists in this checkout. glTF and cuboid JSON are exports, not automatic Fabric integration. Playback rate must be driven by existing server attack cadence, not clip duration."
+}

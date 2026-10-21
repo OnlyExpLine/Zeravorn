@@ -1,0 +1,1439 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "free",
+    "box_uv": false
+  },
+  "name": "ruin_wall_small",
+  "model_identifier": "zeravorn:ruin_wall_small",
+  "resolution": {
+    "width": 128,
+    "height": 128
+  },
+  "elements": [
+    {
+      "name": "brick_0_0",
+      "uuid": "dd166dd9-d30e-4a86-a069-60eaf163e45f",
+      "type": "cube",
+      "from": [
+        -19.85,
+        0.1499999999999999,
+        -4
+      ],
+      "to": [
+        -10.15,
+        5.85,
+        4
+      ],
+      "origin": [
+        -15,
+        3,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "brick_1_0",
+      "uuid": "866170a4-38f9-4bdc-acd5-cf79e58769da",
+      "type": "cube",
+      "from": [
+        -9.85,
+        0.1499999999999999,
+        -4
+      ],
+      "to": [
+        -0.15000000000000036,
+        5.85,
+        4
+      ],
+      "origin": [
+        -5,
+        3,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_2_0",
+      "uuid": "c27c9fcc-c8d4-4f12-a776-f2df43926ba4",
+      "type": "cube",
+      "from": [
+        0.15000000000000036,
+        0.1499999999999999,
+        -4
+      ],
+      "to": [
+        9.85,
+        5.85,
+        4
+      ],
+      "origin": [
+        5,
+        3,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_3_0",
+      "uuid": "142171ee-1d0c-40e9-ae79-25c7ac162f66",
+      "type": "cube",
+      "from": [
+        10.15,
+        0.1499999999999999,
+        -4
+      ],
+      "to": [
+        19.85,
+        5.85,
+        4
+      ],
+      "origin": [
+        15,
+        3,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_0_1",
+      "uuid": "99e5b539-d1bb-4015-aabd-1fb8d2611a40",
+      "type": "cube",
+      "from": [
+        -17.85,
+        6.15,
+        -4
+      ],
+      "to": [
+        -8.15,
+        11.85,
+        4
+      ],
+      "origin": [
+        -13,
+        9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_1_1",
+      "uuid": "3e14ef40-4bf2-4d44-a439-fb4d3a10ff96",
+      "type": "cube",
+      "from": [
+        -7.85,
+        6.15,
+        -4
+      ],
+      "to": [
+        1.8499999999999996,
+        11.85,
+        4
+      ],
+      "origin": [
+        -3,
+        9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_2_1",
+      "uuid": "e47aa52f-9f7a-409c-a00f-e150e5877654",
+      "type": "cube",
+      "from": [
+        2.1500000000000004,
+        6.15,
+        -4
+      ],
+      "to": [
+        11.85,
+        11.85,
+        4
+      ],
+      "origin": [
+        7,
+        9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_3_1",
+      "uuid": "f5889df9-bd0b-498a-a07a-63ee49412b9d",
+      "type": "cube",
+      "from": [
+        12.15,
+        6.15,
+        -4
+      ],
+      "to": [
+        21.85,
+        11.85,
+        4
+      ],
+      "origin": [
+        17,
+        9,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_0_2",
+      "uuid": "3f5af1f8-b54b-4cc3-a6bd-d0d8df94d0eb",
+      "type": "cube",
+      "from": [
+        -19.85,
+        12.15,
+        -4
+      ],
+      "to": [
+        -10.15,
+        17.85,
+        4
+      ],
+      "origin": [
+        -15,
+        15,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_1_2",
+      "uuid": "2800f0f5-4c59-4004-a50a-f9e4b5dadd3b",
+      "type": "cube",
+      "from": [
+        -9.85,
+        12.15,
+        -4
+      ],
+      "to": [
+        -0.15000000000000036,
+        17.85,
+        4
+      ],
+      "origin": [
+        -5,
+        15,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_2_2",
+      "uuid": "9ef720fd-c67e-442e-a654-3a2b2531d821",
+      "type": "cube",
+      "from": [
+        0.15000000000000036,
+        12.15,
+        -4
+      ],
+      "to": [
+        9.85,
+        17.85,
+        4
+      ],
+      "origin": [
+        5,
+        15,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_3_2",
+      "uuid": "2c830a15-6d7f-469c-aff9-bfd5a53f7bda",
+      "type": "cube",
+      "from": [
+        10.15,
+        12.15,
+        -4
+      ],
+      "to": [
+        19.85,
+        17.85,
+        4
+      ],
+      "origin": [
+        15,
+        15,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "brick_0_3",
+      "uuid": "1ffdb7b9-33c5-4d24-a62a-eb660260ff84",
+      "type": "cube",
+      "from": [
+        -17.85,
+        18.15,
+        -4
+      ],
+      "to": [
+        -8.15,
+        23.85,
+        4
+      ],
+      "origin": [
+        -13,
+        21,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_1_3",
+      "uuid": "bed9e635-eef4-4190-a72f-5254c6781202",
+      "type": "cube",
+      "from": [
+        -7.85,
+        18.15,
+        -4
+      ],
+      "to": [
+        1.8499999999999996,
+        23.85,
+        4
+      ],
+      "origin": [
+        -3,
+        21,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "brick_2_3",
+      "uuid": "ae1c05af-37fd-4a5a-a8ae-1f979abcbdef",
+      "type": "cube",
+      "from": [
+        2.1500000000000004,
+        18.15,
+        -4
+      ],
+      "to": [
+        11.85,
+        23.85,
+        4
+      ],
+      "origin": [
+        7,
+        21,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "brick_3_3",
+      "uuid": "10652adb-46b3-469c-a680-57a5d7f05db3",
+      "type": "cube",
+      "from": [
+        12.15,
+        18.15,
+        -4
+      ],
+      "to": [
+        21.85,
+        23.85,
+        4
+      ],
+      "origin": [
+        17,
+        21,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    }
+  ],
+  "outliner": [
+    {
+      "name": "root",
+      "uuid": "412c6527-3670-42d1-aaec-a9f611218bb5",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "export": true,
+      "isOpen": true,
+      "children": [
+        "dd166dd9-d30e-4a86-a069-60eaf163e45f",
+        "866170a4-38f9-4bdc-acd5-cf79e58769da",
+        "c27c9fcc-c8d4-4f12-a776-f2df43926ba4",
+        "142171ee-1d0c-40e9-ae79-25c7ac162f66",
+        "99e5b539-d1bb-4015-aabd-1fb8d2611a40",
+        "3e14ef40-4bf2-4d44-a439-fb4d3a10ff96",
+        "e47aa52f-9f7a-409c-a00f-e150e5877654",
+        "f5889df9-bd0b-498a-a07a-63ee49412b9d",
+        "3f5af1f8-b54b-4cc3-a6bd-d0d8df94d0eb",
+        "2800f0f5-4c59-4004-a50a-f9e4b5dadd3b",
+        "9ef720fd-c67e-442e-a654-3a2b2531d821",
+        "2c830a15-6d7f-469c-aff9-bfd5a53f7bda",
+        "1ffdb7b9-33c5-4d24-a62a-eb660260ff84",
+        "bed9e635-eef4-4190-a72f-5254c6781202",
+        "ae1c05af-37fd-4a5a-a8ae-1f979abcbdef",
+        "10652adb-46b3-469c-a680-57a5d7f05db3"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "ruin_wall_small_forest.png",
+      "id": "0",
+      "uuid": "78d735a1-3f04-4992-a434-1e7e6b573893",
+      "mode": "bitmap",
+      "source": "data:image/png;base64,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",
+      "internal": true,
+      "saved": true,
+      "width": 128,
+      "height": 128,
+      "uv_width": 128,
+      "uv_height": 128
+    }
+  ],
+  "animations": [],
+  "zeravorn": {
+    "units_per_block": 16,
+    "front": "-Z",
+    "team_variant": "Apply blue or red texture to all faces; shared UVs and geometry",
+    "authority": "presentation_only",
+    "category": "environment",
+    "variants": [
+      "forest"
+    ],
+    "phase": "G",
+    "authoring_status": "first_pass_pending_visual_review"
+  }
+}

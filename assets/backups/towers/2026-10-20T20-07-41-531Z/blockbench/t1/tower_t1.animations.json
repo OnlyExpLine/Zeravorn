@@ -1,0 +1,581 @@
+{
+  "schema": "zeravorn.tower.animation.v1",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "clips": [
+    {
+      "name": "animation.zeravorn.tower_t1.idle",
+      "length": 3,
+      "loop": "loop",
+      "tracks": {
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.5,
+            "value": [
+              0,
+              12,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 3,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "rotating_element": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.5,
+            "value": [
+              0,
+              -15,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 3,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.tower_t1.target",
+      "length": 0.55,
+      "loop": "hold",
+      "tracks": {
+        "upper_body": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.55,
+            "value": [
+              0,
+              25,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.55,
+            "value": [
+              -8,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.tower_t1.attack",
+      "length": 1,
+      "loop": "once",
+      "tracks": {
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.55,
+            "value": [
+              -12,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.7,
+            "value": [
+              8,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.55,
+            "value": [
+              0,
+              2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.7,
+            "value": [
+              0,
+              -1,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "weapon_core": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.55,
+            "value": [
+              0,
+              0,
+              -2
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.7,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "PROJECTILE_RELEASE",
+          "time": 0.67,
+          "socket": "projectile_origin",
+          "authority": "visual_only"
+        }
+      ]
+    },
+    {
+      "name": "animation.zeravorn.tower_t1.hit",
+      "length": 0.3,
+      "loop": "once",
+      "tracks": {
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.1,
+            "value": [
+              8,
+              0,
+              7
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.3,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.tower_t1.low_hp",
+      "length": 1.6,
+      "loop": "loop",
+      "tracks": {
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              null
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.4,
+            "value": [
+              5,
+              -5,
+              4
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.8,
+            "value": [
+              -4,
+              4,
+              -5
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.2,
+            "value": [
+              6,
+              0,
+              2
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.6,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "banner_left": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.8,
+            "value": [
+              0,
+              0,
+              -8
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.6,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.tower_t1.destroy",
+      "length": 2,
+      "loop": "hold",
+      "tracks": {
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.55,
+            "value": [
+              0,
+              45,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.1,
+            "value": [
+              15,
+              90,
+              20
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              25,
+              100,
+              35
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.7,
+            "value": [
+              0,
+              4,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1.3,
+            "value": [
+              0,
+              -9,
+              1
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              -12,
+              2
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "upper_body": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              3,
+              0,
+              8
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "banner_left": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              0,
+              -35
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "banner_right": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              0,
+              28
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "CORE_OVERLOAD",
+          "time": 0.7,
+          "socket": "vfx_origin",
+          "authority": "visual_only"
+        },
+        {
+          "name": "DEBRIS_BURST",
+          "time": 1.25,
+          "socket": "vfx_origin",
+          "authority": "visual_only"
+        }
+      ]
+    }
+  ]
+}

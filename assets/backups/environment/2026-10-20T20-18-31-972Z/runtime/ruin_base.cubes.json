@@ -1,0 +1,265 @@
+{
+  "schema": "zeravorn.world.cuboids.v1",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "front": "-Z",
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "cubes": [
+    {
+      "name": "step_0",
+      "bone": "root",
+      "from": [
+        -16,
+        0,
+        -16
+      ],
+      "to": [
+        16,
+        4,
+        16
+      ],
+      "pivot": [
+        0,
+        2,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "step_1",
+      "bone": "root",
+      "from": [
+        -13.5,
+        4,
+        -13.5
+      ],
+      "to": [
+        13.5,
+        8,
+        13.5
+      ],
+      "pivot": [
+        0,
+        6,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "step_2",
+      "bone": "root",
+      "from": [
+        -11,
+        8,
+        -11
+      ],
+      "to": [
+        11,
+        12,
+        11
+      ],
+      "pivot": [
+        0,
+        10,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      }
+    }
+  ],
+  "textures": {
+    "forest": "ruin_base_forest.png"
+  },
+  "emissive": {
+    "forest": "ruin_base_forest_emissive.png"
+  }
+}

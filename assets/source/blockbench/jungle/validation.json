@@ -1,0 +1,74 @@
+{
+  "status": "structural_validation_passed",
+  "scope": [
+    "hierarchy",
+    "cuboid UV and budget",
+    "distinct geometry",
+    "required animations and markers",
+    "81 pose samples per clip",
+    "loop seam continuity",
+    "PNG decode and emissive mask",
+    "source/export parity",
+    "glTF buffers/accessors",
+    "viewer syntax",
+    "existing gameplay ID mapping"
+  ],
+  "not_validated": [
+    "Blockbench GUI import",
+    "reference fidelity",
+    "limb clipping",
+    "Minecraft renderer",
+    "VFX runtime",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "jungle_red_buff",
+      "bones": 18,
+      "cubes": 105,
+      "triangles": 1260,
+      "clips": 6,
+      "pose_samples": 486,
+      "minimum_animated_y": 0.03363396366225402,
+      "technical_status": "pass",
+      "clipping": "not certified",
+      "in_game": "not tested"
+    },
+    {
+      "name": "jungle_blue_buff",
+      "bones": 18,
+      "cubes": 98,
+      "triangles": 1176,
+      "clips": 6,
+      "pose_samples": 486,
+      "minimum_animated_y": 0.03363396366225402,
+      "technical_status": "pass",
+      "clipping": "not certified",
+      "in_game": "not tested"
+    },
+    {
+      "name": "jungle_green_1",
+      "bones": 18,
+      "cubes": 103,
+      "triangles": 1236,
+      "clips": 7,
+      "pose_samples": 567,
+      "minimum_animated_y": 0.02813652297258784,
+      "technical_status": "pass",
+      "clipping": "not certified",
+      "in_game": "not tested"
+    },
+    {
+      "name": "jungle_green_2",
+      "bones": 18,
+      "cubes": 110,
+      "triangles": 1320,
+      "clips": 7,
+      "pose_samples": 567,
+      "minimum_animated_y": 0.03363396366225402,
+      "technical_status": "pass",
+      "clipping": "not certified",
+      "in_game": "not tested"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "sprites": 20,
+  "checks": [
+    "transparent and visible pixels",
+    "source/runtime byte parity"
+  ],
+  "runtime": "not registered"
+}

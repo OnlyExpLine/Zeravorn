@@ -1,0 +1,51 @@
+{
+  "status": "structural_validation_passed",
+  "scope": [
+    "hierarchy",
+    "UV",
+    "finite animation transforms",
+    "ground clearance",
+    "loop closure",
+    "source/export parity",
+    "team geometry equality",
+    "PNG decoding",
+    "glTF buffers"
+  ],
+  "not_verified": [
+    "Blockbench GUI",
+    "reference fidelity",
+    "inter-part clipping",
+    "Minecraft renderer",
+    "VFX callbacks",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "tower_t1",
+      "cuboids": 58,
+      "bones": 12,
+      "clips": 6,
+      "sampled_poses": 246,
+      "height_blocks": 4.75,
+      "status": "pass"
+    },
+    {
+      "name": "tower_t2",
+      "cuboids": 76,
+      "bones": 12,
+      "clips": 6,
+      "sampled_poses": 246,
+      "height_blocks": 5.6875,
+      "status": "pass"
+    },
+    {
+      "name": "tower_t3",
+      "cuboids": 100,
+      "bones": 12,
+      "clips": 6,
+      "sampled_poses": 246,
+      "height_blocks": 6.795930924122162,
+      "status": "pass"
+    }
+  ]
+}

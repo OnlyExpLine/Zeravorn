@@ -1,0 +1,33 @@
+{
+  "status": "structural_validation_passed",
+  "scope": [
+    "required model inventory",
+    "hierarchy and UUIDs",
+    "UV and cuboid budgets",
+    "finite sampled transforms",
+    "loop closure",
+    "source/export parity",
+    "team geometry equality",
+    "PNG decoding",
+    "glTF buffer integrity",
+    "viewer syntax"
+  ],
+  "not_verified": [
+    "Blockbench GUI import",
+    "reference fidelity",
+    "inter-part clipping",
+    "Minecraft integration",
+    "VFX runtime",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "throne",
+      "cuboids": 94,
+      "bones": 18,
+      "clips": 7,
+      "sampled_poses": 287,
+      "status": "pass"
+    }
+  ]
+}

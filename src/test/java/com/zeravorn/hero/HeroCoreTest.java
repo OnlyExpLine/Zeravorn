@@ -12,6 +12,36 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroCoreTest {
     @Test
+    void matchTickRegeneratesOnlyTheAuthoritativeHeroResources() {
+        HeroRuntime hero = runtime(HeroDefinitions.AMELIA);
+        hero.receiveDamage(100);
+        hero.spendMana(50);
+        for (int tick = 0; tick < 20; tick++) hero.tickRegeneration(hero.effectiveStats().maxMana());
+        assertEquals(804, hero.health());
+        assertEquals(506, hero.mana());
+        hero.receiveDamage(hero.health());
+        for (int tick = 0; tick < 20; tick++) hero.tickRegeneration(hero.effectiveStats().maxMana());
+        assertEquals(0, hero.health());
+        assertFalse(hero.alive());
+    }
+
+    @Test
+    void respawnRestoresBothResourcesAndClearsTheDeathTimer() {
+        HeroRuntime hero = runtime(HeroDefinitions.AMELIA);
+        hero.spendMana(90);
+        hero.receiveDamage(hero.health());
+        assertFalse(hero.alive());
+        hero.scheduleRespawn(400);
+        hero.scheduleRespawn(800);
+        assertEquals(400, hero.respawnAtTick());
+        hero.respawn();
+        assertTrue(hero.alive());
+        assertEquals(hero.effectiveStats().maxHealth(), hero.health());
+        assertEquals(hero.effectiveStats().maxMana(), hero.mana());
+        assertEquals(0, hero.respawnAtTick());
+    }
+
+    @Test
     void definitionsContainAllFiveHeroesAndDocumentedCaps() {
         assertEquals(5, HeroDefinitions.all().size());
         assertEquals(4, HeroDefinitions.JASON.ability(AbilitySlot.Q).maxRank());

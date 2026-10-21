@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "free",
+    "box_uv": false
+  },
+  "name": "rock_small",
+  "model_identifier": "zeravorn:rock_small",
+  "resolution": {
+    "width": 128,
+    "height": 128
+  },
+  "elements": [
+    {
+      "name": "main_layer_0",
+      "uuid": "7458d1ff-04d4-4883-a53a-435ebd4b5ecc",
+      "type": "cube",
+      "from": [
+        -4.7,
+        0.3899999999999999,
+        -3.4000000000000004
+      ],
+      "to": [
+        3.1000000000000005,
+        3.99,
+        3.4000000000000004
+      ],
+      "origin": [
+        -0.8,
+        2.19,
+        0
+      ],
+      "rotation": [
+        0,
+        17,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "main_layer_1",
+      "uuid": "e4ba7f76-d821-4960-a409-c2c5ba51216c",
+      "type": "cube",
+      "from": [
+        -5,
+        3,
+        -3.57
+      ],
+      "to": [
+        5,
+        6.6,
+        4.93
+      ],
+      "origin": [
+        0,
+        4.8,
+        0.68
+      ],
+      "rotation": [
+        0,
+        30,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "main_layer_2",
+      "uuid": "4e09180a-cf0b-48bf-a842-167ed1320443",
+      "type": "cube",
+      "from": [
+        -3.1000000000000005,
+        5.61,
+        -3.4000000000000004
+      ],
+      "to": [
+        4.7,
+        9.21,
+        3.4000000000000004
+      ],
+      "origin": [
+        0.8,
+        7.41,
+        0
+      ],
+      "rotation": [
+        0,
+        43,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "main_moss",
+      "uuid": "eb69b632-d0bd-4405-a281-b9c999db2461",
+      "type": "cube",
+      "from": [
+        -1.2,
+        8.71,
+        -2.3375000000000004
+      ],
+      "to": [
+        3.8,
+        9.71,
+        2.3375000000000004
+      ],
+      "origin": [
+        1.3,
+        9.21,
+        0
+      ],
+      "rotation": [
+        0,
+        17,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "team"
+    },
+    {
+      "name": "main_fissure",
+      "uuid": "de3227b1-33f1-43a7-ac4f-fa0a504a673a",
+      "type": "cube",
+      "from": [
+        1,
+        3,
+        -4.485
+      ],
+      "to": [
+        1.6,
+        6.6,
+        -4.185
+      ],
+      "origin": [
+        1.3,
+        4.8,
+        -4.335
+      ],
+      "rotation": [
+        0,
+        17,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "broken_face_layer_0",
+      "uuid": "bc4099a1-9981-42a6-a3ea-d883fc1d1361",
+      "type": "cube",
+      "from": [
+        1.62,
+        0.29500000000000004,
+        -4.800000000000001
+      ],
+      "to": [
+        4.74,
+        2.095,
+        0.8000000000000003
+      ],
+      "origin": [
+        3.18,
+        1.195,
+        -2
+      ],
+      "rotation": [
+        0,
+        -12,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    },
+    {
+      "name": "broken_face_layer_1",
+      "uuid": "e093749d-d524-4fbd-a17a-c9613296ae2b",
+      "type": "cube",
+      "from": [
+        1.5,
+        1.6,
+        -4.9399999999999995
+      ],
+      "to": [
+        5.5,
+        3.4,
+        2.06
+      ],
+      "origin": [
+        3.5,
+        2.5,
+        -1.44
+      ],
+      "rotation": [
+        0,
+        1,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "broken_face_layer_2",
+      "uuid": "e9bc2530-96b9-4cd2-aaf1-93b1a46ff929",
+      "type": "cube",
+      "from": [
+        2.26,
+        2.905,
+        -4.800000000000001
+      ],
+      "to": [
+        5.38,
+        4.705,
+        0.8000000000000003
+      ],
+      "origin": [
+        3.82,
+        3.8049999999999997,
+        -2
+      ],
+      "rotation": [
+        0,
+        14,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            96.5,
+            0.5,
+            127.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "steel"
+    },
+    {
+      "name": "broken_face_moss",
+      "uuid": "270ecb63-0834-4471-af10-88be734b0d73",
+      "type": "cube",
+      "from": [
+        3.0199999999999996,
+        4.205,
+        -3.9250000000000003
+      ],
+      "to": [
+        5.02,
+        5.205,
+        -0.07499999999999973
+      ],
+      "origin": [
+        4.02,
+        4.705,
+        -2
+      ],
+      "rotation": [
+        0,
+        -12,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.5,
+            0.5,
+            31.5,
+            31.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "team"
+    },
+    {
+      "name": "broken_face_fissure",
+      "uuid": "518d2dc5-691b-4df9-a9f3-1bcc6961a4de",
+      "type": "cube",
+      "from": [
+        3.7199999999999998,
+        1.6,
+        -5.720000000000001
+      ],
+      "to": [
+        4.319999999999999,
+        3.4,
+        -5.42
+      ],
+      "origin": [
+        4.02,
+        2.5,
+        -5.57
+      ],
+      "rotation": [
+        0,
+        -12,
+        0
+      ],
+      "box_uv": false,
+      "faces": {
+        "north": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32.5,
+            32.5,
+            63.5,
+            63.5
+          ],
+          "texture": 0
+        }
+      },
+      "visibility": true,
+      "export": true,
+      "zeravorn_material": "dark"
+    }
+  ],
+  "outliner": [
+    {
+      "name": "root",
+      "uuid": "7a6c0a0c-1733-4afc-acac-fa14f1746d52",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "export": true,
+      "isOpen": true,
+      "children": [
+        "7458d1ff-04d4-4883-a53a-435ebd4b5ecc",
+        "e4ba7f76-d821-4960-a409-c2c5ba51216c",
+        "4e09180a-cf0b-48bf-a842-167ed1320443",
+        "eb69b632-d0bd-4405-a281-b9c999db2461",
+        "de3227b1-33f1-43a7-ac4f-fa0a504a673a",
+        "bc4099a1-9981-42a6-a3ea-d883fc1d1361",
+        "e093749d-d524-4fbd-a17a-c9613296ae2b",
+        "e9bc2530-96b9-4cd2-aaf1-93b1a46ff929",
+        "270ecb63-0834-4471-af10-88be734b0d73",
+        "518d2dc5-691b-4df9-a9f3-1bcc6961a4de"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "rock_small_forest.png",
+      "id": "0",
+      "uuid": "1992a206-fe0e-4907-a631-045ba6e04587",
+      "mode": "bitmap",
+      "source": "data:image/png;base64,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",
+      "internal": true,
+      "saved": true,
+      "width": 128,
+      "height": 128,
+      "uv_width": 128,
+      "uv_height": 128
+    }
+  ],
+  "animations": [],
+  "zeravorn": {
+    "units_per_block": 16,
+    "front": "-Z",
+    "team_variant": "Apply blue or red texture to all faces; shared UVs and geometry",
+    "authority": "presentation_only",
+    "category": "environment",
+    "variants": [
+      "forest"
+    ],
+    "phase": "G",
+    "authoring_status": "first_pass_pending_visual_review"
+  }
+}

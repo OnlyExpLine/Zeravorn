@@ -1,0 +1,14 @@
+{
+  "key.category.zeravorn.moba": "Zeravorn MOBA",
+  "key.zeravorn.basic": "Basic Attack",
+  "key.zeravorn.q": "Ability Q",
+  "key.zeravorn.e": "Ability E",
+  "key.zeravorn.f": "Ability F (Shelianer)",
+  "key.zeravorn.r": "Ultimate R",
+  "key.zeravorn.spell": "Summoner Spell",
+  "key.zeravorn.shop": "Shop",
+  "key.zeravorn.stats": "Stats and Skill Points",
+  "key.zeravorn.recall": "Recall",
+  "key.zeravorn.scoreboard": "Scoreboard",
+  "key.zeravorn.arena_debug": "Arena Debug Overlay"
+}

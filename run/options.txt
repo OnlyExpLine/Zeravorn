@@ -13,7 +13,7 @@ fovEffectScale:1.0
 darknessEffectScale:1.0
 glintSpeed:0.5
 glintStrength:0.75
-preferredGraphicsBackend:"default"
+preferredGraphicsBackend:"opengl"
 graphicsPreset:"fancy"
 prioritizeChunkUpdates:1
 fullscreen:false
@@ -170,6 +170,18 @@ key_key.debug.profilingChart:key.keyboard.1
 key_key.debug.fpsCharts:key.keyboard.2
 key_key.debug.networkCharts:key.keyboard.3
 key_key.debug.lightmapTexture:key.keyboard.4
+key_key.zeravorn.basic:key.mouse.left
+key_key.zeravorn.q:key.keyboard.q
+key_key.zeravorn.e:key.keyboard.e
+key_key.zeravorn.f:key.keyboard.f
+key_key.zeravorn.r:key.keyboard.r
+key_key.zeravorn.spell:key.keyboard.g
+key_key.zeravorn.shop:key.keyboard.b
+key_key.zeravorn.stats:key.keyboard.c
+key_key.zeravorn.recall:key.keyboard.v
+key_key.zeravorn.scoreboard:key.keyboard.tab
+key_key.zeravorn.arena_debug:key.keyboard.f9
+key_key.zeravorn.lobby:key.keyboard.l
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0

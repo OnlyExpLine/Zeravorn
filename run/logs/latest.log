@@ -1,6 +1,6 @@
-[07:14:30] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.2 with Fabric Loader 0.19.4
-[07:14:30] [main/INFO] (FabricLoader/Mappings) Mappings not present!
-[07:14:30] [main/INFO] (FabricLoader) Loading 51 mods:
+[21:24:10] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.2 with Fabric Loader 0.19.4
+[21:24:10] [main/INFO] (FabricLoader/Mappings) Mappings not present!
+[21:24:10] [main/INFO] (FabricLoader) Loading 51 mods:
 	- fabric-api 0.158.0+26.2
 	- fabric-api-base 2.0.4+ece063239e
 	- fabric-api-lookup-api-v1 2.0.17+11e1c9a39e
@@ -52,79 +52,83 @@
 	- minecraft 26.2
 	- mixinextras 0.5.4
 	- zeravorn 1.0.0
-[07:14:30] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/Jason/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[07:14:33] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
-[07:14:35] [Datafixer Bootstrap #0/INFO] (Minecraft) 295 Datafixer optimizations took 522 milliseconds
-[07:14:35] [main/WARN] (PerfDataUtil) Failed to add PDH Counter: \Paging File(_Total)\% Usage, Error code: 0xC0000BB8
-[07:14:35] [main/WARN] (PerfCounterQueryHandler) Failed to add counter for PDH counter: \Paging File(_Total)\% Usage
-[07:14:35] [main/INFO] (PerfCounterQuery) Disabling further attempts to query Paging File.
-[07:14:38] [main/WARN] (WmiQueryHandler) COM exception: Invalid Query: SELECT PERCENTUSAGE FROM Win32_PerfRawData_PerfOS_PagingFile
-[07:14:38] [main/WARN] (PerfCounterWildcardQuery) Failed to locate performance object for Process in the registry. Performance counters may be corrupt. Pdh call failed with error code 0xC0000BB8
-[07:14:38] [main/INFO] (PerfCounterWildcardQuery) Disabling further attempts to query Process.
-[07:14:40] [main/WARN] (WmiQueryHandler) COM exception: Invalid Query: SELECT NAME,PRIORITYBASE,ELAPSEDTIME,IDPROCESS,CREATINGPROCESSID,IOREADBYTESPERSEC,IOWRITEBYTESPERSEC,PRIVATEBYTES,PAGEFAULTSPERSEC FROM Win32_PerfRawData_PerfProc_Process WHERE NOT Name LIKE "%_Total"
-[07:14:40] [main/WARN] (Minecraft) Failed to get system info for Process Loads
+[21:24:10] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/Jason/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[21:24:12] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.4).
+[21:24:14] [Datafixer Bootstrap #0/INFO] (Minecraft) 295 Datafixer optimizations took 799 milliseconds
+[21:24:15] [main/WARN] (PerfDataUtil) Failed to add PDH Counter: \Paging File(_Total)\% Usage, Error code: 0xC0000BB8
+[21:24:15] [main/WARN] (PerfCounterQueryHandler) Failed to add counter for PDH counter: \Paging File(_Total)\% Usage
+[21:24:15] [main/INFO] (PerfCounterQuery) Disabling further attempts to query Paging File.
+[21:24:17] [main/WARN] (WmiQueryHandler) COM exception: Invalid Query: SELECT PERCENTUSAGE FROM Win32_PerfRawData_PerfOS_PagingFile
+[21:24:17] [main/WARN] (PerfCounterWildcardQuery) Failed to locate performance object for Process in the registry. Performance counters may be corrupt. Pdh call failed with error code 0xC0000BB8
+[21:24:17] [main/INFO] (PerfCounterWildcardQuery) Disabling further attempts to query Process.
+[21:24:19] [main/WARN] (WmiQueryHandler) COM exception: Invalid Query: SELECT NAME,PRIORITYBASE,ELAPSEDTIME,IDPROCESS,CREATINGPROCESSID,IOREADBYTESPERSEC,IOWRITEBYTESPERSEC,PRIVATEBYTES,PAGEFAULTSPERSEC FROM Win32_PerfRawData_PerfProc_Process WHERE NOT Name LIKE "%_Total"
+[21:24:19] [main/WARN] (Minecraft) Failed to get system info for Process Loads
 java.lang.NullPointerException: Cannot invoke "oshi.software.os.OSProcess.getUserTime()" because "process" is null
-	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$0(SystemReport.java:191)
+	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$0(SystemReport.java:190)
 	at knot//net.minecraft.SystemReport.setDetail(SystemReport.java:96)
-	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:188)
-	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:115)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
-	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:115)
+	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:189)
+	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:116)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
+	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:116)
 	at knot//net.minecraft.SystemReport.lambda$new$7(SystemReport.java:68)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
 	at knot//net.minecraft.SystemReport.<init>(SystemReport.java:68)
-	at knot//net.minecraft.CrashReport.<init>(CrashReport.java)
-	at knot//net.minecraft.CrashReport.preload(CrashReport.java:239)
-	at knot//net.minecraft.client.main.Main.main(Main.java:156)
+	at knot//net.minecraft.CrashReport.<init>(CrashReport.java:35)
+	at knot//net.minecraft.CrashReport.preload(CrashReport.java:252)
+	at knot//net.minecraft.client.main.Main.main(Main.java:172)
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
-[07:14:40] [main/WARN] (Minecraft) Failed to get system info for Process Virtual Size (MiB)
+[21:24:19] [main/WARN] (Minecraft) Failed to get system info for Process Virtual Size (MiB)
 java.lang.NullPointerException: Cannot invoke "oshi.software.os.OSProcess.getVirtualSize()" because "process" is null
-	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$1(SystemReport.java:208)
+	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$1(SystemReport.java:202)
 	at knot//net.minecraft.SystemReport.setDetail(SystemReport.java:96)
-	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:208)
-	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:115)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
-	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:115)
+	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:202)
+	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:116)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
+	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:116)
 	at knot//net.minecraft.SystemReport.lambda$new$7(SystemReport.java:68)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
 	at knot//net.minecraft.SystemReport.<init>(SystemReport.java:68)
-	at knot//net.minecraft.CrashReport.<init>(CrashReport.java)
-	at knot//net.minecraft.CrashReport.preload(CrashReport.java:239)
-	at knot//net.minecraft.client.main.Main.main(Main.java:156)
+	at knot//net.minecraft.CrashReport.<init>(CrashReport.java:35)
+	at knot//net.minecraft.CrashReport.preload(CrashReport.java:252)
+	at knot//net.minecraft.client.main.Main.main(Main.java:172)
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
-[07:14:40] [main/WARN] (Minecraft) Failed to get system info for Process Resident Size (MiB)
+[21:24:19] [main/WARN] (Minecraft) Failed to get system info for Process Resident Size (MiB)
 java.lang.NullPointerException: Cannot invoke "oshi.software.os.OSProcess.getResidentSetSize()" because "process" is null
-	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$2(SystemReport.java:209)
+	at knot//net.minecraft.SystemReport.lambda$putProcessDetails$2(SystemReport.java:203)
 	at knot//net.minecraft.SystemReport.setDetail(SystemReport.java:96)
-	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:209)
-	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:115)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
-	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:115)
+	at knot//net.minecraft.SystemReport.putProcessDetails(SystemReport.java:203)
+	at knot//net.minecraft.SystemReport.lambda$putSoftware$0(SystemReport.java:116)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
+	at knot//net.minecraft.SystemReport.putSoftware(SystemReport.java:116)
 	at knot//net.minecraft.SystemReport.lambda$new$7(SystemReport.java:68)
-	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:120)
+	at knot//net.minecraft.SystemReport.ignoreErrors(SystemReport.java:121)
 	at knot//net.minecraft.SystemReport.<init>(SystemReport.java:68)
-	at knot//net.minecraft.CrashReport.<init>(CrashReport.java)
-	at knot//net.minecraft.CrashReport.preload(CrashReport.java:239)
-	at knot//net.minecraft.client.main.Main.main(Main.java:156)
+	at knot//net.minecraft.CrashReport.<init>(CrashReport.java:35)
+	at knot//net.minecraft.CrashReport.preload(CrashReport.java:252)
+	at knot//net.minecraft.client.main.Main.main(Main.java:172)
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:517)
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:72)
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
-[07:14:48] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[07:14:48] [Render thread/INFO] (Minecraft) Setting user: Player836
-[07:14:48] [Render thread/INFO] (zeravorn) Zeravorn initialized (server-authoritative bootstrap)
-[07:14:48] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[07:14:49] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
+[21:24:27] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[21:24:27] [Render thread/INFO] (Minecraft) Setting user: Player177
+[21:24:27] [Render thread/INFO] (zeravorn) Zeravorn initialized (server-authoritative bootstrap)
+[21:24:27] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[21:24:28] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1-snapshot
+[21:24:28] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.148201 Core Profile Forward-Compatible Context 20.50.02 27.20.15002.118
+[21:24:28] [Render thread/INFO] (Minecraft) Using graphics device: AMD Radeon(TM) Graphics (ATI Technologies Inc.)
+[21:24:28] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
+[21:24:28] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at knot//com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:70)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:173)
-	at knot//net.minecraft.client.Minecraft.lambda$new$1(Minecraft.java:418)
+	at knot//net.minecraft.client.Minecraft.lambda$new$1(Minecraft.java:438)
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
@@ -136,123 +140,227 @@ Caused by: MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=Er
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:65)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:123)
 	... 5 more
-[07:14:49] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.1-snapshot
-[07:14:49] [Render thread/WARN] (Minecraft) Device [AMD Radeon(TM) Graphics] does not support required extensions, missing: [VK_KHR_synchronization2, VK_KHR_push_descriptor, VK_KHR_dynamic_rendering]
-[07:14:49] [Render thread/WARN] (Minecraft) Device [AMD Radeon(TM) Graphics] does not have required feature [dynamicRendering]
-[07:14:50] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 3.3.148201 Core Profile Forward-Compatible Context 20.50.02 27.20.15002.118
-[07:14:50] [Render thread/INFO] (Minecraft) Using graphics device: AMD Radeon(TM) Graphics (ATI Technologies Inc.)
-[07:14:50] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_multi_draw_indirect, GL_ARB_buffer_storage, GL_ARB_shader_draw_parameters, GL_ARB_base_instance, GL_KHR_debug, GL_ARB_draw_indirect, GL_ARB_clip_control, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access, GL_EXT_texture_filter_anisotropic
-[07:14:51] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, zeravorn
-[07:14:51] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[07:14:51] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
+[21:24:29] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, zeravorn
+[21:24:30] [Worker-Main-4/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[21:24:30] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[21:24:30] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[21:24:30] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
-	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:509)
-	at knot//com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:159)
+	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:528)
+	at knot//com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:187)
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[07:14:51] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
-[07:14:51] [Worker-Main-3/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
-[07:14:52] [Worker-Main-5/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
-[07:14:54] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speaker (Realtek(R) Audio)
-[07:14:54] [Render thread/INFO] (Minecraft) Sound engine started
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[07:14:54] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
-[07:14:55] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
-[07:14:55] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
-[07:14:55] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[07:14:55] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
-[07:14:55] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[07:14:56] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[07:14:56] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[07:14:56] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[07:14:56] [Download-2/ERROR] (Minecraft) Couldn't connect to realms
+[21:24:30] [Worker-Main-1/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[21:24:32] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speaker (Realtek(R) Audio)
+[21:24:32] [Render thread/INFO] (Minecraft) Sound engine started
+[21:24:32] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[21:24:32] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[21:24:32] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[21:24:32] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[21:24:33] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[21:24:34] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[21:24:34] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[21:24:34] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21:24:35] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[21:24:35] [Download-2/ERROR] (Minecraft) Couldn't connect to realms
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
-	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:509)
-	at knot//com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:281)
-	at knot//com.mojang.realmsclient.RealmsAvailability.lambda$check$0(RealmsAvailability.java:47)
+	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:528)
+	at knot//com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:308)
+	at knot//com.mojang.realmsclient.RealmsAvailability.lambda$check$0(RealmsAvailability.java:48)
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[07:15:27] [Render thread/INFO] (Minecraft) Loaded 1585 recipes
-[07:15:27] [Render thread/INFO] (Minecraft) Loaded 1688 advancements
-[07:15:57] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 66 new biomes in 1.674 ms
-[07:15:57] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
-[07:15:57] [Server thread/INFO] (Minecraft) Generating keypair
-[07:15:58] [Server thread/INFO] (Minecraft) Selecting global world spawn...
-[07:15:59] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
-[07:15:59] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[07:16:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[07:16:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[07:16:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[07:16:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[07:16:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[07:16:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[07:16:01] [Server thread/INFO] (Minecraft) Loading 47 chunks for player spawn...
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:01] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:02] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:02] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[07:16:03] [Server thread/INFO] (Minecraft) Preparing spawn area: 29%
-[07:16:03] [Server thread/INFO] (Minecraft) Preparing spawn area: 29%
-[07:16:04] [Server thread/INFO] (Minecraft) Preparing spawn area: 57%
-[07:16:04] [Server thread/INFO] (Minecraft) Preparing spawn area: 57%
-[07:16:04] [Server thread/INFO] (Minecraft) Time elapsed: 6687 ms
-[07:16:04] [Server thread/INFO] (Minecraft) Player836[local:E:9c77b37a] logged in with entity id 70 at (8.5, 69.0, -9.5)
-[07:16:05] [Server thread/INFO] (Minecraft) Player836 joined the game
-[07:16:05] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
-[07:16:05] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[07:16:05] [Download-3/ERROR] (Minecraft) Failed to retrieve profile key pair
+[21:29:24] [Render thread/INFO] (Minecraft) Loaded 1585 recipes
+[21:29:24] [Render thread/INFO] (Minecraft) Loaded 1688 advancements
+[21:29:24] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 66 new biomes in 1.285 ms
+[21:29:24] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
+[21:29:24] [Server thread/INFO] (Minecraft) Generating keypair
+[21:29:25] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[21:29:25] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:29:25] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:29:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:29:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:29:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:29:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:29:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (lobby): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (test_arena): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (arena_v1): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:29:26] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:29:27] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[21:29:27] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:29:27] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:29:27] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:29:27] [Server thread/INFO] (Minecraft) Time elapsed: 1616 ms
+[21:29:27] [Server thread/INFO] (Minecraft) Player177[local:E:5ff3dc73] logged in with entity id 1 at (49.6395550979104, 65.0, 72.94600284783586)
+[21:29:27] [Server thread/INFO] (Minecraft) Player177 joined the game
+[21:29:27] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
+[21:29:27] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[21:29:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[21:29:28] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[21:29:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[21:29:28] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[21:29:28] [Download-3/ERROR] (Minecraft) Failed to retrieve profile key pair
 MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=ErrorResponse[path=/player/certificates, error=null, errorMessage=null, details=null]]
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.buildHttpException(MinecraftClient.java:170)
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readServiceResponse(MinecraftClient.java:147)
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.post(MinecraftClient.java:89)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.getKeyPair(YggdrasilUserApiService.java:62)
-	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.fetchProfileKeyPair(AccountProfileKeyPairManager.java:119)
-	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.lambda$readOrFetchProfileKeyPair$0(AccountProfileKeyPairManager.java:72)
+	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.fetchProfileKeyPair(AccountProfileKeyPairManager.java:128)
+	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.lambda$readOrFetchProfileKeyPair$0(AccountProfileKeyPairManager.java:77)
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[07:16:05] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[07:16:05] [Render thread/INFO] (Minecraft) Loaded 2 advancements
-[07:16:05] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[07:16:06] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[07:16:06] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
-[07:16:06] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[07:16:06] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
-[07:16:06] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
-[07:16:09] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
-[07:16:13] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
-[07:16:24] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
-[07:16:37] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
-[07:16:41] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[07:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[07:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[07:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[07:16:42] [Render thread/INFO] (Minecraft) Stopping!
-[07:16:42] [Server thread/INFO] (Minecraft) Stopping server
-[07:16:42] [Server thread/INFO] (Minecraft) Saving players
-[07:16:42] [Server thread/INFO] (Minecraft) Player836 lost connection: Disconnected
-[07:16:42] [Server thread/INFO] (Minecraft) Player836 left the game
-[07:16:42] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[07:16:42] [Server thread/INFO] (Minecraft) Saving worlds
-[07:16:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[07:16:47] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[07:16:47] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[07:16:47] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
-[07:16:47] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[07:16:47] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[07:16:47] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:29:28] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[21:29:29] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[21:29:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[21:29:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[21:29:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[21:29:30] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[21:29:31] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[21:29:36] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[21:29:37] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=2, y=64, z=-3}
+[21:29:37] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=2, y=64, z=-3}
+[21:29:51] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
+[21:30:17] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:30:17] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:50:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:50:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:52:52] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:52:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:55:04] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:55:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:55:16] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:55:16] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:55:31] [Server thread/INFO] (Minecraft) Player177 lost connection: Disconnected
+[21:55:31] [Server thread/INFO] (Minecraft) Player177 left the game
+[21:55:31] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[21:55:31] [Server thread/INFO] (Minecraft) Stopping server
+[21:55:31] [Server thread/INFO] (Minecraft) Saving players
+[21:55:31] [Server thread/INFO] (Minecraft) Saving worlds
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:55:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (lobby): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (test_arena): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (arena_v1): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:55:32] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:55:35] [Render thread/INFO] (Minecraft) Loaded 1585 recipes
+[21:55:35] [Render thread/INFO] (Minecraft) Loaded 1688 advancements
+[21:55:35] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 66 new biomes in 4.469 ms
+[21:55:35] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.2
+[21:55:35] [Server thread/INFO] (Minecraft) Generating keypair
+[21:55:36] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[21:55:36] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:55:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (lobby): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (test_arena): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (arena_v1): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:55:36] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:55:37] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[21:55:37] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:55:37] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:55:37] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[21:55:37] [Server thread/INFO] (Minecraft) Time elapsed: 1620 ms
+[21:55:37] [Server thread/INFO] (Minecraft) Player177[local:E:60e3133b] logged in with entity id 14071 at (-55.97090533057592, 65.0, -68.6972569423367)
+[21:55:37] [Server thread/INFO] (Minecraft) Player177 joined the game
+[21:55:37] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
+[21:55:37] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[21:55:37] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[21:55:38] [Download-8/ERROR] (Minecraft) Failed to retrieve profile key pair
+MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=ErrorResponse[path=/player/certificates, error=null, errorMessage=null, details=null]]
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.buildHttpException(MinecraftClient.java:170)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readServiceResponse(MinecraftClient.java:147)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.post(MinecraftClient.java:89)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.getKeyPair(YggdrasilUserApiService.java:62)
+	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.fetchProfileKeyPair(AccountProfileKeyPairManager.java:128)
+	at knot//net.minecraft.client.multiplayer.AccountProfileKeyPairManager.lambda$readOrFetchProfileKeyPair$0(AccountProfileKeyPairManager.java:77)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+[21:55:45] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=-8, y=65, z=0}
+[21:55:50] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=-8, y=65, z=0}
+[21:55:50] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=-8, y=65, z=0}
+[21:55:54] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=8, y=65, z=0}
+[21:55:58] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=8, y=65, z=0}
+[21:55:58] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=8, y=65, z=0}
+[21:56:00] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=0, y=0, z=0} BlockPos{x=0, y=65, z=-4}
+[21:56:15] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:56:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:56:19] [Server thread/INFO] (Minecraft) Stopping server
+[21:56:19] [Server thread/INFO] (Minecraft) Saving players
+[21:56:19] [Server thread/INFO] (Minecraft) Player177 lost connection: Disconnected
+[21:56:19] [Server thread/INFO] (Minecraft) Player177 left the game
+[21:56:20] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[21:56:20] [Server thread/INFO] (Minecraft) Saving worlds
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:lobby
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:test_arena
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/zeravorn:arena_v1
+[21:56:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (lobby): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (test_arena): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (arena_v1): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:56:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:58:14] [Render thread/INFO] (Minecraft) Stopping!

@@ -1,0 +1,48 @@
+{
+  "schema": "zeravorn.world.animation.v1",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "rotation_convention": "Blockbench: negate X/Y for right-handed XYZ matrices",
+  "clips": [
+    {
+      "name": "animation.zeravorn.lantern_wall.idle",
+      "length": 3,
+      "loop": "loop",
+      "tracks": {
+        "lamp": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              -3
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.5,
+            "value": [
+              0,
+              0,
+              3
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 3,
+            "value": [
+              0,
+              0,
+              -3
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    }
+  ]
+}

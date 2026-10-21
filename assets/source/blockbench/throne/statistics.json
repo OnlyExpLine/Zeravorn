@@ -1,0 +1,36 @@
+[
+  {
+    "name": "throne",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 18,
+    "cuboids": 94,
+    "triangles": 1128,
+    "clips": [
+      "animation.zeravorn.throne.idle",
+      "animation.zeravorn.throne.protected",
+      "animation.zeravorn.throne.vulnerable",
+      "animation.zeravorn.throne.attack",
+      "animation.zeravorn.throne.hit",
+      "animation.zeravorn.throne.low_hp",
+      "animation.zeravorn.throne.destroy"
+    ],
+    "bounds": [
+      [
+        -52,
+        52
+      ],
+      [
+        0,
+        82.5125
+      ],
+      [
+        -44.5,
+        35
+      ]
+    ],
+    "height_blocks": 5.15703125
+  }
+]

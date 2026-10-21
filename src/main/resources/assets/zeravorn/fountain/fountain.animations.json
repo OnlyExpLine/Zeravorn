@@ -1,0 +1,403 @@
+{
+  "schema": "zeravorn.world.animation.v1",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "rotation_convention": "Blockbench: negate X/Y for right-handed XYZ matrices",
+  "clips": [
+    {
+      "name": "animation.zeravorn.fountain.idle",
+      "length": 4,
+      "loop": "loop",
+      "tracks": {
+        "central_crystal": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              1,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "floating_crystal_01": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              15,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "floating_crystal_02": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              -2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              -15,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "floating_crystal_03": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              15,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "floating_crystal_04": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              -2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2,
+            "value": [
+              0,
+              -15,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "CORE_PULSE",
+          "time": 2,
+          "socket": "energy_origin",
+          "authority": "visual_only"
+        }
+      ]
+    },
+    {
+      "name": "animation.zeravorn.fountain.heal",
+      "length": 2,
+      "loop": "loop",
+      "tracks": {
+        "central_crystal": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1,
+            "value": [
+              0,
+              2,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "HEAL_PARTICLES",
+          "time": 0.2,
+          "socket": "energy_origin",
+          "authority": "visual_only"
+        },
+        {
+          "name": "HEAL_PARTICLES",
+          "time": 1.2,
+          "socket": "energy_origin",
+          "authority": "visual_only"
+        }
+      ]
+    },
+    {
+      "name": "animation.zeravorn.fountain.danger",
+      "length": 1,
+      "loop": "loop",
+      "tracks": {
+        "central_crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.4,
+            "value": [
+              0,
+              25,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "DANGER_BEAM",
+          "time": 0.4,
+          "socket": "energy_origin",
+          "authority": "visual_only"
+        }
+      ]
+    }
+  ]
+}

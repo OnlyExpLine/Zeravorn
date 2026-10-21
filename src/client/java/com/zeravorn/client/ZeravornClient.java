@@ -1,10 +1,18 @@
 package com.zeravorn.client;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import com.zeravorn.map.ArenaActorEntity;
 
 public class ZeravornClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+		EntityRendererRegistry.register(ArenaActorEntity.TYPE, ArenaActorRenderer::new);
+		ClientMobaNetworking.initialize();
+		ClientInputRouter.initialize();
+		ArenaHudGuard.initialize();
+		GameplayHud.initialize();
+		ArenaDebugOverlay.initialize();
+		LobbyUiController.initialize();
 	}
 }

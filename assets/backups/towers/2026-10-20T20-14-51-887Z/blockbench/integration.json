@@ -1,0 +1,24 @@
+{
+  "status": "exported_not_connected_to_game_renderer",
+  "mapping": {
+    "T1": "tower_t1",
+    "T2": "tower_t2",
+    "T3": "tower_t3"
+  },
+  "variants": [
+    "blue",
+    "red"
+  ],
+  "authority": "presentation_only",
+  "required_runtime": [
+    "structure renderer",
+    "server-driven state selection and aiming",
+    "emissive intensity",
+    "projectile socket and VFX events"
+  ],
+  "not_verified": [
+    "Blockbench GUI import",
+    "in-game scale and clipping",
+    "performance"
+  ]
+}

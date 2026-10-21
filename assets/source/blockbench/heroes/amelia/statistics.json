@@ -1,9 +1,9 @@
 [
   {
     "model": "amelia",
-    "elements": 984,
-    "triangles": 20960,
-    "bones": 65,
+    "elements": 502,
+    "triangles": 13409,
+    "bones": 84,
     "animations": 18,
     "texture": [
       256,
@@ -12,9 +12,9 @@
   },
   {
     "model": "amelia_first_person",
-    "elements": 106,
-    "triangles": 3160,
-    "bones": 24,
+    "elements": 104,
+    "triangles": 2730,
+    "bones": 28,
     "animations": 13,
     "texture": [
       256,

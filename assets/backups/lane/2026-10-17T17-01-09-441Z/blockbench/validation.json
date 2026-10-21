@@ -1,0 +1,91 @@
+{
+  "status": "structural_validation_passed",
+  "scope": "JSON hierarchy, UVs, PNG decoding, budgets, keyframes, sampled transforms, team export equality, glTF buffer/accessor integrity, viewer JavaScript syntax",
+  "not_acceptance": [
+    "Blockbench import UI",
+    "visual parity with reference",
+    "clipping clearance",
+    "Minecraft rendering",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "lane_warrior",
+      "bones": 15,
+      "cubes": 91,
+      "triangles": 1092,
+      "clip_count": 6,
+      "pose_samples": 126,
+      "bind_bounds": [
+        [
+          -8.793521636859422,
+          8.924999999999999
+        ],
+        [
+          0.040000000000000036,
+          23.123904468358806
+        ],
+        [
+          -4.325,
+          2.6325219322728604
+        ]
+      ],
+      "minimum_animated_y": -4.870180520468327,
+      "technical_checks": "pass",
+      "clipping": "not certified; see motion sheets",
+      "in_game": "not run; renderer integration absent"
+    },
+    {
+      "name": "lane_ranged",
+      "bones": 18,
+      "cubes": 91,
+      "triangles": 1092,
+      "clip_count": 5,
+      "pose_samples": 105,
+      "bind_bounds": [
+        [
+          -5.16473750737758,
+          5.675
+        ],
+        [
+          0.040000000000000036,
+          23.123904468358806
+        ],
+        [
+          -4.699999999999999,
+          4.35
+        ]
+      ],
+      "minimum_animated_y": -4.370180520468327,
+      "technical_checks": "pass",
+      "clipping": "not certified; see motion sheets",
+      "in_game": "not run; renderer integration absent"
+    },
+    {
+      "name": "lane_siege",
+      "bones": 10,
+      "cubes": 101,
+      "triangles": 1212,
+      "clip_count": 5,
+      "pose_samples": 105,
+      "bind_bounds": [
+        [
+          -9.725000000000001,
+          9.725000000000001
+        ],
+        [
+          0.09878066911802463,
+          20.196097988940927
+        ],
+        [
+          -15.3,
+          9.401219330881975
+        ]
+      ],
+      "minimum_animated_y": -1.7012193308819752,
+      "technical_checks": "pass",
+      "clipping": "not certified; see motion sheets",
+      "in_game": "not run; renderer integration absent"
+    }
+  ]
+}

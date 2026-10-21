@@ -1,0 +1,154 @@
+{
+  "schema": "zeravorn.world.vfx.v1",
+  "authority": "presentation_only",
+  "status": "assets_only_not_registered",
+  "effects": {
+    "blue_trail": {
+      "texture": "vfx/blue_trail.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.22
+    },
+    "blue_impact": {
+      "texture": "vfx/blue_impact.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "blue_ring": {
+      "texture": "vfx/blue_ring.png",
+      "render": "horizontal_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "blue_spark": {
+      "texture": "vfx/blue_spark.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "red_trail": {
+      "texture": "vfx/red_trail.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.22
+    },
+    "red_impact": {
+      "texture": "vfx/red_impact.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "red_ring": {
+      "texture": "vfx/red_ring.png",
+      "render": "horizontal_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "red_spark": {
+      "texture": "vfx/red_spark.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "fire_trail": {
+      "texture": "vfx/fire_trail.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.22
+    },
+    "fire_impact": {
+      "texture": "vfx/fire_impact.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "fire_ring": {
+      "texture": "vfx/fire_ring.png",
+      "render": "horizontal_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "fire_spark": {
+      "texture": "vfx/fire_spark.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "poison_trail": {
+      "texture": "vfx/poison_trail.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.22
+    },
+    "poison_impact": {
+      "texture": "vfx/poison_impact.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "poison_ring": {
+      "texture": "vfx/poison_ring.png",
+      "render": "horizontal_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "poison_spark": {
+      "texture": "vfx/poison_spark.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "basic_trail": {
+      "texture": "vfx/basic_trail.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.22
+    },
+    "basic_impact": {
+      "texture": "vfx/basic_impact.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "basic_ring": {
+      "texture": "vfx/basic_ring.png",
+      "render": "horizontal_billboard",
+      "visual_lifetime_seconds": 0.5
+    },
+    "basic_spark": {
+      "texture": "vfx/basic_spark.png",
+      "render": "camera_billboard",
+      "visual_lifetime_seconds": 0.5
+    }
+  },
+  "projectiles": {
+    "projectile_basic": {
+      "variant": "basic",
+      "trail": "basic_trail",
+      "impact": "basic_impact"
+    },
+    "projectile_ice": {
+      "variant": "blue",
+      "trail": "blue_trail",
+      "impact": "blue_spark"
+    },
+    "projectile_fire": {
+      "variant": "fire",
+      "trail": "fire_trail",
+      "impact": "fire_impact"
+    },
+    "projectile_poison": {
+      "variant": "poison",
+      "trail": "poison_trail",
+      "impact": "poison_ring"
+    },
+    "tower_shot": {
+      "variant": "server_team",
+      "trail": "{team}_trail",
+      "impact": "{team}_impact"
+    },
+    "throne_shot": {
+      "variant": "server_team",
+      "trail": "{team}_trail",
+      "impact": "{team}_ring",
+      "additional_shards": true
+    }
+  },
+  "event_mapping": {
+    "CORE_PULSE": "emissive intensity cycle",
+    "PROJECTILE_RELEASE": "spawn core with colored trail",
+    "CORE_OVERLOAD": "impact",
+    "DEBRIS_BURST": "bounded stone fragments",
+    "SHIELD_ACTIVE": "ring shell around shield_origin",
+    "SHIELD_COLLAPSE": "ring fade",
+    "CRYSTAL_CRACK": "core crack material and sparks",
+    "CRACK_SPARKS": "spark",
+    "NEXUS_BURST": "impact and core shards",
+    "CORE_EXTINGUISH": "emissive fade",
+    "HEAL_PARTICLES": "rising spark",
+    "DANGER_BEAM": "beam to server target"
+  }
+}

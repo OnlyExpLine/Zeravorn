@@ -1,0 +1,193 @@
+{
+  "status": "structural_validation_passed",
+  "scope": [
+    "required model inventory",
+    "hierarchy and UUIDs",
+    "UV and cuboid budgets",
+    "finite sampled transforms",
+    "loop closure",
+    "source/export parity",
+    "team geometry equality",
+    "PNG decoding",
+    "glTF buffer integrity",
+    "viewer syntax"
+  ],
+  "not_verified": [
+    "Blockbench GUI import",
+    "reference fidelity",
+    "inter-part clipping",
+    "Minecraft integration",
+    "VFX runtime",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "bush_small",
+      "cuboids": 45,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "bush_medium",
+      "cuboids": 45,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "bush_large",
+      "cuboids": 45,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "bush_corner",
+      "cuboids": 40,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "tree_a",
+      "cuboids": 26,
+      "bones": 2,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "tree_b",
+      "cuboids": 26,
+      "bones": 2,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "tree_c",
+      "cuboids": 26,
+      "bones": 2,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "rock_small",
+      "cuboids": 10,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "rock_medium",
+      "cuboids": 10,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "rock_large",
+      "cuboids": 10,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "rock_cluster",
+      "cuboids": 15,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_column_full",
+      "cuboids": 11,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_column_broken",
+      "cuboids": 12,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_arch",
+      "cuboids": 21,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_wall_small",
+      "cuboids": 16,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_base",
+      "cuboids": 3,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_stairs",
+      "cuboids": 5,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "ruin_rubble",
+      "cuboids": 40,
+      "bones": 1,
+      "clips": 0,
+      "sampled_poses": 0,
+      "status": "pass"
+    },
+    {
+      "name": "lantern_post",
+      "cuboids": 19,
+      "bones": 3,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "lantern_wall",
+      "cuboids": 18,
+      "bones": 3,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "lantern_hanging",
+      "cuboids": 16,
+      "bones": 3,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    }
+  ]
+}

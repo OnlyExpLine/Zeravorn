@@ -1,0 +1,27 @@
+{
+  "schema": "zeravorn.jungle.vfx.v1",
+  "status": "assets_only_not_registered",
+  "authority": "presentation_only",
+  "effects": {
+    "KNOCKBACK_SHOCKWAVE": {
+      "texture": "vfx/shockwave.png",
+      "socket": "vfx_origin",
+      "render": "horizontal expanding billboard",
+      "visual_lifetime_seconds": 0.45
+    },
+    "ROOT_ERUPTION": {
+      "texture": "vfx/root_eruption.png",
+      "socket": "vfx_origin",
+      "render": "upward billboard burst",
+      "visual_lifetime_seconds": 0.6
+    },
+    "CORE_PULSE": {
+      "render": "emissive intensity modulation",
+      "socket": "energy_core"
+    },
+    "CORE_EXTINGUISH": {
+      "render": "fade emissive to zero",
+      "socket": "energy_core"
+    }
+  }
+}

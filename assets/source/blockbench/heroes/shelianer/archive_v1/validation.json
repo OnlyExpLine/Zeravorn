@@ -1,0 +1,33 @@
+{
+  "structural": "PASS",
+  "loopSeams": "PASS",
+  "motion": {
+    "elbowKeysChecked": 2208,
+    "elbowDirection": "forward",
+    "kneeDirection": "backward",
+    "maxStanceFootHeightError": 0.0010550740702583994
+  },
+  "models": [
+    {
+      "name": "shelianer",
+      "meshes": 230,
+      "bones": 28,
+      "animations": 15
+    },
+    {
+      "name": "shelianer_first_person",
+      "meshes": 68,
+      "bones": 8,
+      "animations": 15
+    },
+    {
+      "name": "shelianer_dagger",
+      "meshes": 9,
+      "bones": 1,
+      "animations": 0
+    }
+  ],
+  "blockbenchGui": "NOT RUN",
+  "runtimeIntegration": false,
+  "visualApproval": "pending"
+}

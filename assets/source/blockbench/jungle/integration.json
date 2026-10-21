@@ -1,0 +1,25 @@
+{
+  "status": "exported_not_connected_to_game_renderer",
+  "mapping": {
+    "red_buff": "RED",
+    "blue_buff": "BLUE",
+    "green_1": "GREEN_A",
+    "green_2": "GREEN_B"
+  },
+  "config_source": "src/main/resources/config_defaults/jungle.json",
+  "excluded": [
+    "CONTESTED_A",
+    "CONTESTED_B",
+    "bosses"
+  ],
+  "authority": "server owns damage, CC, movement, hitboxes and leash; clip events are visual only",
+  "open_requirements": [
+    "Blockbench GUI import",
+    "Minecraft renderer and render-state sync",
+    "debug gallery",
+    "VFX registration",
+    "emissive pulse/fade",
+    "in-game animation/clipping/scale/performance validation"
+  ],
+  "phase_a_status": "unchanged; integration remains open"
+}

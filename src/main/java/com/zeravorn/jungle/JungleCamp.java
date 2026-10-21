@@ -24,6 +24,7 @@ public final class JungleCamp {
     public Position spawnPoint() { return spawn; }
     public JungleCampState state() { return state; }
     public int health() { return health; }
+    public int maxHealth() { return currentMaxHealth; }
     public boolean alive() { return state == JungleCampState.ALIVE || state == JungleCampState.LEASH_RETURN; }
     /** Balance scaling: +10% HP and +6% damage every three minutes, capped at 18:00. */
     public int scaledMaxHealth(long matchElapsedTicks) { return scaled(definition.health(), 0.10, matchElapsedTicks); }

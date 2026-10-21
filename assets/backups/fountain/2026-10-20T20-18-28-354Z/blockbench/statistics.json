@@ -1,0 +1,32 @@
+[
+  {
+    "name": "fountain",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 10,
+    "cuboids": 91,
+    "triangles": 1092,
+    "clips": [
+      "animation.zeravorn.fountain.idle",
+      "animation.zeravorn.fountain.heal",
+      "animation.zeravorn.fountain.danger"
+    ],
+    "bounds": [
+      [
+        -34,
+        34
+      ],
+      [
+        0,
+        60.5125
+      ],
+      [
+        -34,
+        34
+      ]
+    ],
+    "height_blocks": 3.78203125
+  }
+]

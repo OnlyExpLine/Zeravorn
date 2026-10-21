@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.zeravorn.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["MouseHandlerMixin", "AmeliaAvatarMixin", "AmeliaFirstPersonMixin"],
+  "injectors": {"defaultRequire": 1}
+}

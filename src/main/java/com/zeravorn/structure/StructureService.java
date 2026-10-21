@@ -38,7 +38,10 @@ public final class StructureService {
         if (!wasDestroyed && target.destroyed() && match != null) match.finish(attacker, MatchFinishReason.THRONE_DESTROYED);
         return new StructureDamageResult(true,applied,target.destroyed(),"");
     }
-    public int heroDamageToTower(HeroClass heroClass,int heroMaxHealth){return (int)Math.floor(heroMaxHealth*(heroClass==HeroClass.TANK?.17:.26));}
+    /** Structure hits deal a percentage of the victim hero's maximum HP (Balance section 10). */
+    public int structureDamageToHero(HeroClass heroClass,int heroMaxHealth){return (int)Math.floor(heroMaxHealth*(heroClass==HeroClass.TANK?.17:.26));}
+    /** Legacy name retained for callers; this is damage FROM a structure TO a hero. */
+    public int heroDamageToTower(HeroClass heroClass,int heroMaxHealth){return structureDamageToHero(heroClass,heroMaxHealth);}
     /** Tower priority: a hostile hero attacking an allied hero, otherwise an enemy minion, then hero. */
     public StructureTarget chooseTarget(TeamId defendingTeam, List<StructureTarget> targets, double attackRadius) {
         if (attackRadius <= 0) throw new IllegalArgumentException("attackRadius must be positive");

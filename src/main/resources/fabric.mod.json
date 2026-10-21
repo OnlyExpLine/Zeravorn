@@ -18,6 +18,9 @@
 			"com.zeravorn.client.ZeravornClient"
 		]
 	},
+	"mixins": [
+		{"config": "zeravorn.client.mixins.json", "environment": "client"}
+	],
 	"depends": {
 		"fabricloader": ">=0.19.4",
 		"minecraft": "~26.2",

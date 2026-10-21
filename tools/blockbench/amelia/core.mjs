@@ -16,8 +16,11 @@ export function atlas(emissive=false){
   for(let y=0;y<16;y++)for(let x=0;x<16;x++){
    const hash=((x*71+y*137+variant*29+m*11)%17-8)/240;
    let shade=.90+variant*.025+hash;
-   if(key.startsWith('hair'))shade+=((x+variant*3)%5===0?.075:0)-y*.002;
+   if(key.startsWith('hair'))shade+=((x+variant*3)%5===0?.045:0)-y*.0015;
    if(['blue','cloth','navy','white'].includes(key))shade+=((x%4===0||y%4===0)?-.035:0);
+   if(['silver','gold'].includes(key))shade+=(x<2||y<2?.10:0)-(x>13?.045:0);
+   if(key==='fur')shade+=((x*3+y*7)%11<3?.045:-.015);
+   if(key.startsWith('skin'))shade=.975+variant*.007+hash*.23;
    if(key.startsWith('ice'))shade+=x<8-y*.25?.13:-.09;
    const glow=key.startsWith('ice')?1:key==='eye'?.15:0, p=((oy+y)*256+ox+x)*4;
    for(let c=0;c<3;c++)pixels[p+c]=emissive?Math.round(color[c]*glow):Math.max(0,Math.min(255,Math.round(color[c]*shade)));

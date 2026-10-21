@@ -3,6 +3,11 @@ package com.zeravorn;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
+import com.zeravorn.network.FabricMobaNetworking;
+import com.zeravorn.lobby.FabricLobbyController;
+import com.zeravorn.map.ArenaMobGuard;
+import com.zeravorn.map.ArenaActorEntity;
+import com.zeravorn.map.ArenaVanillaGuard;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +26,11 @@ public class Zeravorn implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		FabricMobaNetworking.initialize();
+		ArenaActorEntity.initialize();
+		ArenaVanillaGuard.initialize();
+		ArenaMobGuard.initialize();
+		FabricLobbyController.initialize();
 		LOGGER.info("Zeravorn initialized (server-authoritative bootstrap)");
 	}
 

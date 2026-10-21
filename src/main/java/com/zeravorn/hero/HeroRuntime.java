@@ -21,7 +21,10 @@ public final class HeroRuntime {
 	private int availableSkillPoints = HeroProgressionConfig.startingSkillPoints();
     private int health;
     private int mana;
+    private double healthRegenRemainder;
+    private double manaRegenRemainder;
     private boolean alive = true;
+    private long respawnAtTick;
     private final MobaInventory inventory = new MobaInventory();
 
     public HeroRuntime(UUID owner, TeamId team, HeroDefinition definition) {
@@ -45,6 +48,16 @@ public final class HeroRuntime {
     public int health() { return health; }
     public int mana() { return mana; }
     public boolean alive() { return alive; }
+    public long respawnAtTick() { return respawnAtTick; }
+    public void scheduleRespawn(long tick) { if (!alive && respawnAtTick == 0) respawnAtTick = tick; }
+    public void respawn() {
+        health = effectiveStats().maxHealth();
+        mana = effectiveStats().maxMana();
+        healthRegenRemainder = 0;
+        manaRegenRemainder = 0;
+        alive = true;
+        respawnAtTick = 0;
+    }
     public MobaInventory inventory() { return inventory; }
     public void addGold(int amount) { if (amount < 0) throw new IllegalArgumentException("Gold amount cannot be negative"); gold = Math.addExact(gold, amount); }
     public boolean spendGold(int amount) { if (amount < 0 || amount > gold) return false; gold -= amount; return true; }
@@ -98,6 +111,29 @@ public final class HeroRuntime {
 		if (amount < 0) throw new IllegalArgumentException("Healing cannot be negative");
 		health = Math.min(effectiveStats().maxHealth(), health + amount);
 	}
+
+    public void restoreMana(int amount) {
+        if (amount < 0) throw new IllegalArgumentException("Negative mana restoration");
+        if (alive) mana = Math.min(effectiveStats().maxMana(), mana + amount);
+    }
+
+    /** Applies configured per-second regeneration at the authoritative 20 Hz match tick. */
+    public void tickRegeneration(int maxMana) {
+        if (!alive) return;
+        var stats = effectiveStats();
+        if (health < stats.maxHealth()) {
+            healthRegenRemainder += stats.healthRegen() / 20.0;
+            int restored = (int) Math.floor(healthRegenRemainder + 1e-9);
+            health = Math.min(stats.maxHealth(), health + restored);
+            healthRegenRemainder -= restored;
+        } else healthRegenRemainder = 0;
+        if (mana < maxMana) {
+            manaRegenRemainder += stats.manaRegen() / 20.0;
+            int restored = (int) Math.floor(manaRegenRemainder + 1e-9);
+            mana = Math.min(maxMana, mana + restored);
+            manaRegenRemainder -= restored;
+        } else manaRegenRemainder = 0;
+    }
 	/** Re-clamps current resources after an inventory stat removal. */
 	public void clampResourcesToEffectiveMaximums() {
 		health = Math.min(health, effectiveStats().maxHealth());

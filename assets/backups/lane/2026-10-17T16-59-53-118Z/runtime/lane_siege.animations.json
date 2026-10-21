@@ -1,0 +1,851 @@
+{
+  "schema": "zeravorn.lane.animation.v1",
+  "units": "Blockbench authoring units; 16 = 1 block",
+  "rotation_convention": "Blockbench: negate X/Y for right-handed XYZ matrices",
+  "authority": "presentation_only",
+  "clips": [
+    {
+      "name": "animation.zeravorn.lane_siege.idle",
+      "length": 2.4,
+      "loop": "loop",
+      "tracks": {
+        "body": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1.2,
+            "value": [
+              0,
+              0.18,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 2.4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "crystal": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.2,
+            "value": [
+              0,
+              5,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 2.4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.lane_siege.move",
+      "length": 1,
+      "loop": "loop",
+      "tracks": {
+        "wheel_front_right": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.125,
+            "value": [
+              -45,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.25,
+            "value": [
+              -90,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.375,
+            "value": [
+              -135,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.5,
+            "value": [
+              -180,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.625,
+            "value": [
+              -225,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.75,
+            "value": [
+              -270,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.875,
+            "value": [
+              -315,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              -360,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "wheel_back_right": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.125,
+            "value": [
+              -45,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.25,
+            "value": [
+              -90,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.375,
+            "value": [
+              -135,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.5,
+            "value": [
+              -180,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.625,
+            "value": [
+              -225,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.75,
+            "value": [
+              -270,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.875,
+            "value": [
+              -315,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              -360,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "wheel_front_left": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.125,
+            "value": [
+              -45,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.25,
+            "value": [
+              -90,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.375,
+            "value": [
+              -135,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.5,
+            "value": [
+              -180,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.625,
+            "value": [
+              -225,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.75,
+            "value": [
+              -270,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.875,
+            "value": [
+              -315,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              -360,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "wheel_back_left": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.125,
+            "value": [
+              -45,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.25,
+            "value": [
+              -90,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.375,
+            "value": [
+              -135,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.5,
+            "value": [
+              -180,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.625,
+            "value": [
+              -225,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.75,
+            "value": [
+              -270,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.875,
+            "value": [
+              -315,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1,
+            "value": [
+              -360,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "body": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.25,
+            "value": [
+              0,
+              0.12,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.5,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.75,
+            "value": [
+              0,
+              0.12,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.lane_siege.attack",
+      "length": 1.1,
+      "loop": "once",
+      "tracks": {
+        "turret": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.22,
+            "value": [
+              0,
+              6,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.4,
+            "value": [
+              0,
+              6,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "barrel": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.39,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.44,
+            "value": [
+              0,
+              0,
+              1.8
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.7,
+            "value": [
+              0,
+              0,
+              0.7
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1.1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "body": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.4,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.46,
+            "value": [
+              -3,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.7,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.1,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "PROJECTILE_RELEASE",
+          "time": 0.4,
+          "socket": "projectile_origin",
+          "authority": "visual_only"
+        }
+      ]
+    },
+    {
+      "name": "animation.zeravorn.lane_siege.hit",
+      "length": 0.3,
+      "loop": "once",
+      "tracks": {
+        "body": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.08,
+            "value": [
+              0,
+              0,
+              4
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.3,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    },
+    {
+      "name": "animation.zeravorn.lane_siege.death",
+      "length": 1.2,
+      "loop": "hold",
+      "tracks": {
+        "body": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.3,
+            "value": [
+              0,
+              -0.5,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.7,
+            "value": [
+              0,
+              -1.8,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1.2,
+            "value": [
+              0,
+              -1.8,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "turret": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.4,
+            "value": [
+              -9,
+              0,
+              9
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.2,
+            "value": [
+              -18,
+              0,
+              18
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "barrel": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 1.2,
+            "value": [
+              -18,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ],
+        "crystal": [
+          {
+            "channel": "position",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 0.5,
+            "value": [
+              0,
+              0.5,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "position",
+            "time": 1.2,
+            "value": [
+              0,
+              -3,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "EXTINGUISH_CORE",
+          "time": 1.1,
+          "authority": "visual_only"
+        }
+      ]
+    }
+  ]
+}

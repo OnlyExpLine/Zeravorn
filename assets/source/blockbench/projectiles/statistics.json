@@ -1,0 +1,166 @@
+[
+  {
+    "name": "projectile_basic",
+    "variants": [
+      "basic"
+    ],
+    "bones": 4,
+    "cuboids": 3,
+    "triangles": 36,
+    "clips": [
+      "animation.zeravorn.projectile_basic.flight"
+    ],
+    "bounds": [
+      [
+        -2.073576451552532,
+        2.073576451552532
+      ],
+      [
+        -0.3,
+        0.3
+      ],
+      [
+        -6.123109403198639,
+        4
+      ]
+    ],
+    "height_blocks": 0.0375
+  },
+  {
+    "name": "projectile_ice",
+    "variants": [
+      "blue"
+    ],
+    "bones": 4,
+    "cuboids": 8,
+    "triangles": 96,
+    "clips": [
+      "animation.zeravorn.projectile_ice.flight"
+    ],
+    "bounds": [
+      [
+        -1.2020815280171306,
+        3.2962321895750106
+      ],
+      [
+        -1.2020815280171306,
+        3.2962321895750106
+      ],
+      [
+        -6.51,
+        4
+      ]
+    ],
+    "height_blocks": 0.28114460734950886
+  },
+  {
+    "name": "projectile_fire",
+    "variants": [
+      "fire"
+    ],
+    "bones": 4,
+    "cuboids": 6,
+    "triangles": 72,
+    "clips": [
+      "animation.zeravorn.projectile_fire.flight"
+    ],
+    "bounds": [
+      [
+        -2.142264255217374,
+        2.142264255217374
+      ],
+      [
+        -2.095574541147318,
+        2.095574541147318
+      ],
+      [
+        -6,
+        6.044717909227146
+      ]
+    ],
+    "height_blocks": 0.26194681764341476
+  },
+  {
+    "name": "projectile_poison",
+    "variants": [
+      "poison"
+    ],
+    "bones": 4,
+    "cuboids": 6,
+    "triangles": 72,
+    "clips": [
+      "animation.zeravorn.projectile_poison.flight"
+    ],
+    "bounds": [
+      [
+        -2.6732050807568877,
+        2.6732050807568877
+      ],
+      [
+        -1.462609523851797,
+        1.8848388188315757
+      ],
+      [
+        -6,
+        4
+      ]
+    ],
+    "height_blocks": 0.2092155214177108
+  },
+  {
+    "name": "tower_shot",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 4,
+    "cuboids": 8,
+    "triangles": 96,
+    "clips": [
+      "animation.zeravorn.tower_shot.flight"
+    ],
+    "bounds": [
+      [
+        -2.043538597629122,
+        3.9962321895750126
+      ],
+      [
+        -2.043538597629122,
+        3.9962321895750126
+      ],
+      [
+        -6.51,
+        4
+      ]
+    ],
+    "height_blocks": 0.3774856742002584
+  },
+  {
+    "name": "throne_shot",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 4,
+    "cuboids": 12,
+    "triangles": 144,
+    "clips": [
+      "animation.zeravorn.throne_shot.flight"
+    ],
+    "bounds": [
+      [
+        -4.696232189575013,
+        4.696232189575013
+      ],
+      [
+        -4.696232189575013,
+        4.696232189575013
+      ],
+      [
+        -9.11,
+        6
+      ]
+    ],
+    "height_blocks": 0.5870290236968766
+  }
+]

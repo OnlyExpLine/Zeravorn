@@ -1,0 +1,72 @@
+{
+  "authority": "server",
+  "markers": {
+    "basic": [
+      [
+        0.18,
+        "hit_right"
+      ],
+      [
+        0.48,
+        "hit_left"
+      ],
+      [
+        0.78,
+        "hit_cross"
+      ]
+    ],
+    "q": [
+      [
+        0.15,
+        "knife_release"
+      ]
+    ],
+    "e": [
+      [
+        0.25,
+        "flask_release"
+      ]
+    ],
+    "f": [
+      [
+        0.05,
+        "dash_start"
+      ]
+    ],
+    "r": [
+      [
+        0.15,
+        "slash_1"
+      ],
+      [
+        0.35,
+        "slash_2"
+      ],
+      [
+        0.55,
+        "slash_3"
+      ],
+      [
+        0.7500000000000001,
+        "slash_4"
+      ],
+      [
+        0.9500000000000001,
+        "slash_5"
+      ],
+      [
+        1.15,
+        "slash_6"
+      ]
+    ]
+  },
+  "notes": "Presentation timings only. R: six hits; movement and damage controlled by server. Basic clip contains three combo stages; runtime must select stages for individual attacks.",
+  "vfx": [
+    "violet_slash",
+    "knife_trail",
+    "green_poison_cloud",
+    "dash_afterimage",
+    "death_dance"
+  ],
+  "runtimeIntegration": false
+}

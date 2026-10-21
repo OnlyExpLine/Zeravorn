@@ -1,0 +1,14 @@
+{
+  "key.category.zeravorn.moba": "Zeravorn MOBA",
+  "key.zeravorn.basic": "Обычная атака",
+  "key.zeravorn.q": "Способность Q",
+  "key.zeravorn.e": "Способность E",
+  "key.zeravorn.f": "Способность F (Shelianer)",
+  "key.zeravorn.r": "Ультимейт R",
+  "key.zeravorn.spell": "Заклинание призывателя",
+  "key.zeravorn.shop": "Магазин",
+  "key.zeravorn.stats": "Характеристики и очки навыков",
+  "key.zeravorn.recall": "Возвращение",
+  "key.zeravorn.scoreboard": "Таблица счёта",
+  "key.zeravorn.arena_debug": "Отладочная схема арены"
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "name": "lane_warrior",
+    "bones": 15,
+    "elements": 91,
+    "triangles": 1092,
+    "texture_resolution": "128x128",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "meshes_in_source": 0,
+    "animations": [
+      "animation.zeravorn.lane_warrior.idle",
+      "animation.zeravorn.lane_warrior.walk",
+      "animation.zeravorn.lane_warrior.attack",
+      "animation.zeravorn.lane_warrior.spawn",
+      "animation.zeravorn.lane_warrior.hit",
+      "animation.zeravorn.lane_warrior.death"
+    ],
+    "sockets": [
+      "weapon_socket",
+      "shield_socket"
+    ],
+    "source": "assets/source/blockbench/lane/warrior/lane_warrior.bbmodel"
+  },
+  {
+    "name": "lane_ranged",
+    "bones": 18,
+    "elements": 91,
+    "triangles": 1092,
+    "texture_resolution": "128x128",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "meshes_in_source": 0,
+    "animations": [
+      "animation.zeravorn.lane_ranged.idle",
+      "animation.zeravorn.lane_ranged.walk",
+      "animation.zeravorn.lane_ranged.attack",
+      "animation.zeravorn.lane_ranged.hit",
+      "animation.zeravorn.lane_ranged.death"
+    ],
+    "sockets": [
+      "projectile_origin"
+    ],
+    "source": "assets/source/blockbench/lane/ranged/lane_ranged.bbmodel"
+  },
+  {
+    "name": "lane_siege",
+    "bones": 10,
+    "elements": 101,
+    "triangles": 1212,
+    "texture_resolution": "128x128",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "meshes_in_source": 0,
+    "animations": [
+      "animation.zeravorn.lane_siege.idle",
+      "animation.zeravorn.lane_siege.move",
+      "animation.zeravorn.lane_siege.attack",
+      "animation.zeravorn.lane_siege.hit",
+      "animation.zeravorn.lane_siege.death"
+    ],
+    "sockets": [
+      "projectile_origin"
+    ],
+    "source": "assets/source/blockbench/lane/siege/lane_siege.bbmodel"
+  }
+]

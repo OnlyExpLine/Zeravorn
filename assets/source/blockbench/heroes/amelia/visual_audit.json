@@ -1,0 +1,511 @@
+{
+  "scope": "8 retained-clip poses; sampled triangle crossings, excluding intentional adjacent layers. Not exhaustive.",
+  "testedPairs": 6560,
+  "findings": [
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "arm_hair",
+      "a": "detached_sleeve_left",
+      "b": "loose_lock_left1"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "skirt_front_light_trim_left_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_right_1"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_right_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light_trim_left_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light_trim_left_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "dress_front_white_right"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "dress_front_white_right_trim_right_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "dress_front_white_right_trim_right_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "skirt_front_light_trim_right_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left_trim_left_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left_trim_left_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light_trim_right_2"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light_trim_right_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "dress_front_white_left"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "dress_front_white_left_trim_left_3"
+    },
+    {
+      "clip": "walk",
+      "time": 0.3,
+      "category": "hair_back_dress",
+      "a": "back_lower_curl_4",
+      "b": "skirt_back_center_layer"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "arm_hair",
+      "a": "detached_sleeve_left",
+      "b": "loose_lock_left1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "skirt_front_light_trim_left_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "skirt_front_light_trim_left_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_left_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_left_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_right_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_right_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "outer_panel_blue_right"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "outer_panel_blue_right_trim_right_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light_trim_left_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "skirt_front_light_trim_left_3"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "dress_front_white_right"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_right",
+      "b": "dress_front_white_right_trim_right_3"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "skirt_front_light_trim_right_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "skirt_front_light_trim_right_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left_trim_left_1"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left_trim_left_3"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light_trim_right_2"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "skirt_front_light_trim_right_3"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "dress_front_white_left"
+    },
+    {
+      "clip": "run",
+      "time": 0.2,
+      "category": "leg_skirt",
+      "a": "boot_calf_left",
+      "b": "dress_front_white_left_trim_left_3"
+    },
+    {
+      "clip": "e",
+      "time": 0.35,
+      "category": "arm_chest",
+      "a": "bare_upper_arm_left",
+      "b": "chest_integrated_1"
+    },
+    {
+      "clip": "e",
+      "time": 0.35,
+      "category": "arm_chest",
+      "a": "bare_upper_arm_left",
+      "b": "corset_cup_1"
+    },
+    {
+      "clip": "e",
+      "time": 0.35,
+      "category": "arm_chest",
+      "a": "detached_sleeve_left",
+      "b": "chest_integrated_1"
+    },
+    {
+      "clip": "e",
+      "time": 0.35,
+      "category": "arm_chest",
+      "a": "detached_sleeve_left",
+      "b": "corset_cup_1"
+    },
+    {
+      "clip": "e",
+      "time": 0.35,
+      "category": "arm_hair",
+      "a": "bare_upper_arm_left",
+      "b": "side_curl_left0"
+    },
+    {
+      "clip": "death",
+      "time": 1.8,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right"
+    },
+    {
+      "clip": "death",
+      "time": 1.8,
+      "category": "leg_skirt",
+      "a": "thigh_right",
+      "b": "dress_front_white_right_trim_right_1"
+    },
+    {
+      "clip": "death",
+      "time": 1.8,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left"
+    },
+    {
+      "clip": "death",
+      "time": 1.8,
+      "category": "leg_skirt",
+      "a": "thigh_left",
+      "b": "dress_front_white_left_trim_left_1"
+    }
+  ],
+  "stableBonesPreserved": [
+    "amelia_root",
+    "body",
+    "pelvis",
+    "waist",
+    "torso",
+    "chest",
+    "vfx_chest",
+    "shoulder_left",
+    "upper_arm_left",
+    "forearm_left",
+    "hand_left",
+    "vfx_left_hand",
+    "shoulder_right",
+    "upper_arm_right",
+    "forearm_right",
+    "hand_right",
+    "vfx_right_hand",
+    "staff_socket",
+    "staff_root",
+    "staff_grip",
+    "staff_lower",
+    "staff_upper",
+    "crystal_mount",
+    "crystal_left_01",
+    "crystal_left_02",
+    "crystal_right_01",
+    "crystal_right_02",
+    "crystal_center",
+    "staff_vfx_origin",
+    "head",
+    "face",
+    "crown",
+    "crown_center_crystal",
+    "crown_left_01_crystal",
+    "crown_right_01_crystal",
+    "crown_left_02_crystal",
+    "crown_right_02_crystal",
+    "crown_back_crystal",
+    "hair_root",
+    "hair_front_left",
+    "hair_front_right",
+    "hair_side_left",
+    "hair_side_right",
+    "hair_back_upper",
+    "hair_back_mid",
+    "hair_back_lower",
+    "hair_strands_left",
+    "hair_strands_right",
+    "vfx_head",
+    "leg_right",
+    "lower_leg_right",
+    "foot_right",
+    "leg_left",
+    "lower_leg_left",
+    "foot_left",
+    "clothing",
+    "skirt_front_center",
+    "skirt_front_left",
+    "skirt_side_left",
+    "skirt_back_left",
+    "skirt_back_center",
+    "skirt_back_right",
+    "skirt_side_right",
+    "skirt_front_right",
+    "vfx_feet"
+  ],
+  "addedBones": [
+    "cuff_left_root",
+    "shoulder_decoration_left",
+    "cuff_right_root",
+    "shoulder_decoration_right",
+    "hair_back_lower_lock_0",
+    "hair_back_lower_lock_1",
+    "hair_back_lower_lock_2",
+    "hair_back_lower_lock_3",
+    "hair_back_lower_lock_4",
+    "hair_back_lower_lock_5",
+    "hair_back_lower_lock_6",
+    "hair_side_left_lower_0",
+    "hair_side_left_lower_1",
+    "hair_side_right_lower_0",
+    "hair_side_right_lower_1",
+    "inner_panel_left",
+    "outer_panel_left",
+    "outer_panel_right",
+    "inner_panel_right"
+  ],
+  "meshGeometry": true,
+  "concept": "User-attached Amelia sheet, 2026-10-04",
+  "visualApproval": "PENDING",
+  "animationPolish": "NOT STARTED"
+}

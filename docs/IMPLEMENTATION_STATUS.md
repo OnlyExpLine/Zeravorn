@@ -1,9 +1,47 @@
 # Zeravorn Implementation Status
 
 ## Current milestone
-M10 — Gameplay HUD + Input + Network Contracts (not started)
+M13 — MapDefinition and arena blockout integration (runtime client smoke pending)
+
+2026-10-03: M13 visual-world continuation adds an incremental, save-preserving arena scenery pass (forest canopy, sparse rock walls, walkable bush vegetation, camp rings, decorated bases/towers/thrones) and an arena-only vanilla Mob removal hook. Existing generated worlds are upgraded in place without deleting saves; unknown player blocks are not overwritten. This is map presentation and LOS geometry only. Runtime minion, jungle mob, tower and throne entities/controllers remain unbound, so full MOBA arena gameplay and in-game acceptance are still pending. Gradle/test/build and client smoke were not run at the owner's request.
+
+2026-10-03: M13 added `arena_v1.json`, `MapDefinition`, `MapLoader`, `MapValidator`, an independent `zeravorn:arena_v1` flat dimension, conservative incremental `ArenaWorld` blockout, world LOS/endpoint checks, a configured lobby-to-arena entry adapter, and a F9 map debug overlay. Map validation covers both bases, spawn/fountains/danger, thrones, 18 ordered towers, 6 routes with <=12-block runtime steps, 10 camps with valid M7 mob references/leash, bushes, boundary, route/hitbox separation and forbidden epic boss IDs. Player-vs-player requests now use live positions and existing server combat services. The arena is a blockout, not a fully functional match: minion/bot world actors, damageable structure actors and jungle mob entities are not yet wired, and Recall/respawn belong to M14. See `docs/M13_ARENA.md`; in-game visual/runtime acceptance pending.
+
+2026-10-03: M12 first slice adds BotController, BotPerception, BotRouteProfile, BotBuildProfile, BotBrain, BotActionExecutor boundary and deterministic BotRosterPlanner. The policy runs at 4 decisions/second, prioritizes low-health recall/retreat, considers only caller-supplied visible legal targets, and forbids structure attack without allied wave. Fixed class builds and unique-hero five-slot fill plans are tested. No bot actors are attached to the current M11 test arena: it has no M13 lane paths, waves, structures, world target queries or authoritative combat executor. M12 is NOT complete; live roster fill, actions through gameplay services, movement, purchases, ability use and respawn require follow-up integration. `gradlew.bat --no-daemon build --rerun-tasks` passed.
+
+2026-10-03: M12 continuation after owner explicitly declined bringing M13 map work forward. Lobby lock now fills both five-slot rosters with deterministic unique bots and includes bot hero/spell names in loading snapshots; the M11 test transfer skips their non-player UUIDs and the gateway can hold their HeroRuntime for scoreboard state. ServerBotActionExecutor sends buy, skill, basic, ability and recall through ServerRequestProcessor, with a server-only WorldPort for movement and live visible-target recheck. BotFleet schedules match-scoped decisions only in PLAYING. The WorldPort and perception source cannot be bound to the M11 test arena because it has no legal map paths, waves, structures or world combat queries; bots are roster/runtime entries there, not moving entities. Full M12 gameplay acceptance remains blocked on M13 and M14 world/lifecycle bindings, per the owner's stage-order choice. No fake bot combat is enabled in the test arena.
+
+2026-10-03 owner verification: `test` and `build` both stopped at `compileJava` with 10 Minecraft 26.2 API symbol errors. The M11 source was corrected to use `ServerPlayer.level().getServer()` and `Blocks.CONCRETE.blue()/red()`. These fixes have not yet been re-tested by the owner; Codex did not run Gradle.
+
+The owner's next `build`/`test` attempts confirmed the 10 symbol errors were gone and exposed one further `compileJava` error: the reassigned `LobbyRoom.pedestals` record parameter was captured by a lambda. The constructor now validates an effectively-final immutable copy and assigns it to the record component after validation. Re-test pending; Codex did not run Gradle.
+
+The next owner `test` run passed main-source compilation and stopped at five `compileClientJava` references to removed `Minecraft.screen`. M11 client screen checks now use the confirmed Minecraft 26.2 accessor `client.gui.screen()`. Owner re-test pending; Codex did not run Gradle.
+
+2026-10-03: M11 has server-owned lobby selection and snapshots, five slots per team, ally-unique heroes, jungler-only Retribution, Ready lock, pre-lock disconnect slot release, locked-player reconnect, client cards and spell/hero controls. Ready without a hero is explicitly a temporary owner-approved testing mode; at lock the server assigns a free hero. The GUI flags this mode and explains disabled Retribution. Test sources exist but were not run.
+
+The separate `zeravorn:lobby` flat dimension and a conservative room builder are implemented. Joining players are teleported to a stone/glass safe room if the dimension loads and the reserved construction space is empty. Five clickable pedestal blocks have named armor-stand preview placeholders; team blocks and a Ready block are also clickable. The physical callbacks check the actual dimension. The builder writes a completion marker and refuses to overwrite occupied space. The dimension load, teleport and interactions still require owner runtime verification; placeholders are not the final hero models.
+
+Lobby blocks are protected from player break/placement/attack/use outside the intended selection interactions. Floating labels identify Team, Ready and the L-key GUI access. These protections do not replace a full world-protection policy for non-player explosions or external mods.
+
+For M11 entry-flow testing, the owner approved a disposable `zeravorn:test_arena` flat dimension with separated blue/red spawn platforms. After LOADING, the server moves every selected player there, creates/retains their selected `HeroRuntime`, attaches one M10 match gateway, checks each player is present in that exact dimension with a live gateway, then runs a 5-second COUNTDOWN and server-confirmed START/PLAYING. Reconnect reuses the locked selection, hero runtime and gateway. The test gateway exposes only owner-safe visibility and rejects world-dependent combat/spell/recall actions with `TEST_ARENA_NO_GAMEPLAY`; the HUD labels this mode. Its floor and glass divider are protected from player interactions. M13 must replace this adapter with the full validated map and real world queries. The M11 controller owns match elapsed ticks after START; the client retains same-match loading UI across a gameplay snapshot. No Gradle/test/build commands were run and no cache was generated by Codex.
+
+The match-state transition is sent immediately to bound players at COUNTDOWN and START, with a countdown/START HUD overlay. `GameplayRequestValidator` now handles the M11 `SET_JUNGLER` intent exhaustively; source-level tests cover its payload validation and same-match lobby/loading snapshot continuity. Owner build, tests and in-game smoke are still pending.
+
+Loading now has a separate read-only roster screen with both teams, hero/spell choices, five slots each and server-status text. It closes at COUNTDOWN so players see the fountain and overlay. Portrait slots use clearly temporary initial-letter cards because final portraits for all five heroes are not yet available; these are not claimed as finished M15 art.
+
+M10 — Gameplay HUD + Input + Network Contracts (implementation delivered; owner build/test and runtime acceptance pending)
+
+2026-10-03: M10 network/HUD implementation adds Fabric 26.2 play payload registration, explicit JSON wire discriminators, C2S request handling, RequestResult, per-player sequence high-water protection, owner-only HeroDelta, full reconnect snapshot/sequence floor, periodic server deltas, vision-filtered minimap and event DTOs. Client-side input routing now has rebindable MOBA keys, suppresses conflicting vanilla combat/drop/inventory/hotbar controls during confirmed PLAYING, and sends Basic/Q/E/F/R, spell, recall, shop and skill requests. HUD renders confirmed HP/Mana/XP/Gold/KDA/ability ranks/cooldowns/items/spell, minimap and scoreboard; B opens a non-pausing double-click shop, C opens stats with server-requested skill plus controls. Source-level tests cover codecs, duplicate requests, ownership, dead-state exceptions, and hidden-position removal. G is the provisional summoner-spell key because project docs do not specify a default key. No Gradle, test or build command was run at the owner's request.
+
+M10 code coverage for the Playbook checklist is delivered, but the milestone is not yet verified/accepted: there is still no match-entry producer (M11), real arena/world query provider (M13), or live server runtime smoke test. The M10 gateway and action adapter expose explicit attachment interfaces; combat and spell requests cannot execute until those server-owned providers are installed. Jason E movement and Recall remain dependent on M13/M14. See Known issues.
+
+2026-10-03: Per owner decision, the Implementation Playbook controls milestone ordering where the Technical Specification's older milestone map differs. The initial M10.1 checkpoint added engine-independent typed C2S request intents, protocol/sequence envelope, stable request error/result types, a per-player sequence high-water guard and focused tests. The Fabric/HUD layers were added later the same day. Tests/build were intentionally not run and no Gradle cache was generated at the owner's request.
+
+2026-10-03: M10.2 adds a server-facts-only request admission validator: roster/hero ownership and team checks, match-state gating, dead-state exceptions for shop and skill upgrades, learned ability and selected spell checks, Retribution jungler restriction, and finite aim/point validation. It is not a gameplay executor: live cooldown, mana, target visibility/range, map safety, shop and lobby rules still belong to downstream authoritative services. Focused tests were added but not run.
 
 An out-of-sequence M15 source-art preparation task has added deterministic Jason Blockbench source models, texture atlases, animation contracts, and validation under `assets/source/` and `tools/`. It does not add renderer or gameplay integration.
+
+2026-09-08: Amelia source-art pipeline has been created independently from Jason and revised after owner feedback. The current model has a narrower adult face, confident expression, denser profile hair, an open rounded bust/corset, layered dress, crown and staff. It includes 18 third-person clips, 13 first-person clips, source-ready facial states, UI icons, glTF/runtime payloads, previews and an offline inspector. Structural/motion validation passes; Blockbench GUI, owner visual acceptance and Fabric rendering remain pending. Details: `docs/assets/AMELIA_ASSET.md`.
 
 2026-09-06: Jason source pipeline v2 replaces the rejected cube placeholder with a reference-based polygonal reconstruction (7205 triangles, 28 bones), embedded 256x256 textures, 15 third-person and 11 first-person clips, automatic glTF exports and geometry-based previews. Artwork acceptance remains pending; this is not a completed M15 runtime integration. Details: `docs/assets/JASON_ASSET.md`.
 
@@ -11,6 +49,8 @@ An out-of-sequence M15 source-art preparation task has added deterministic Jason
 M9 — Vision + Bushes + Minimap State
 
 ## Build status
+- M10 current changes: test/build NOT RUN at owner request; runtime smoke NOT CHECKED.
+- Amelia asset revision (2026-09-08): `gradlew.bat --no-daemon clean build` PASS; asset validation and deterministic regeneration PASS.
 - build: NOT RUN after projectile follow-up — last PASS: `gradlew.bat --no-daemon build` (M0–M9 audit)
 - test: NOT RUN after projectile follow-up — last PASS: `gradlew.bat --no-daemon test`, 61 tests (M0–M9 audit)
 - client run: NOT CHECKED
@@ -71,20 +111,33 @@ M9 — Vision + Bushes + Minimap State
 - M0-M9 audit remediation routes Shelianer Q, Esaki Q and Loki Q through `ProjectileService`: the cast creates an authoritative projectile, and damage/CC require a later server collision confirmation.
 
 ## Assumptions
+- M10 UX assumption: G is the default summoner-spell key; the six MOBA sell slots use wire indices 0–4 for normal items and 5 for boots. The documents specify the actions/slots but not these exact binding/index values; both are local protocol/UI choices, not balance changes.
 - The repository has Git metadata, but the current sandbox identity is not the repository owner; Git commands require an explicit safe-directory override.
 
 ## Known issues
+- M10 sequence high-water state is match-scoped and survives disconnect in the gateway; M11/M14 must reuse that gateway across reconnect and clear it only on match replacement.
+- M10 admission validation is wired to Fabric receive/dispatch. Actual target/range/LOS and Flash safety still need the M13 world adapter; lobby selection rules need M11. Accepted admission is never reported as a successful action until its authoritative handler succeeds.
+- M10 Fabric receiver/dispatcher is now wired, but no match entry currently calls `FabricMobaNetworking.attach`, so the in-game HUD has no active MatchSession to display. M11 must bind the player to the same HeroRuntime on entry/reconnect.
+- M10 `DomainGameplayActionAdapter.WorldQueries` must be supplied from M13 real world/map state; current code does not fabricate targets, range, walls, Flash endpoints or jungle camps. Jason E dash movement needs the world adapter; Recall requires M14 lifecycle implementation; lobby requests require M11.
+- M10 scoreboard K/D/A producer is exposed through `recordKill`/`recordAssist`, but combat orchestration must call it. Respawn timer and announcements await M14/M16; minimap arena shape/structure positions await M13.
+- M10 no client/server smoke test or build/test run after network and HUD changes; code remains unverified until owner runs checks.
+- Amelia assets are not connected to Minecraft because the repository still has no mesh-capable HeroRenderer/AnimationStateBridge. Blockbench GUI import, full animation clipping audit and owner visual acceptance are pending. Amelia E gameplay timing and Q hard-CC cancellation differ from the presentation contract and were not modified by the asset task.
 - Jason assets: real Blockbench GUI import and in-game renderer smoke tests are not performed. The source requires a mesh-capable renderer; cube-only export cannot preserve its shape. Hidden reference surfaces are reconstructed; exact visual likeness is not certified.
 - MEDIUM — projectile abilities now use `ProjectileService`, but the MapDefinition/world adapter still must provide real position transforms, wall collision policy and Loki Hook's visible return path in M13.
 - MEDIUM — Blue Buff adjusted Max Mana is exposed by `BuffService`, but regeneration/current-mana clamping on buff expiry still needs server tick orchestration integration.
 - MEDIUM — economy reward values, sell ratio and several structure rules remain Java constants instead of canonical validated config fields.
-- Economy reward helpers await integration with future world/entity event producers; no client/network/HUD layer is implemented before M10.
+- Economy reward helpers await integration with future world/entity event producers; M10 client/network/HUD now exists but awaits M11/M13 match/world attachment.
 - Full minion movement/combat and structure entity ticking require MapDefinition/world integration scheduled for M13; current M5 domain controllers provide deterministic wave, target-priority and damage rules.
 - No client or server runtime smoke test has been performed yet.
 - M5 uses engine-independent domain models; actual world geometry and Fabric entity/render integration remain deferred to M13.
 - Jungle camp placement, concrete world movement/AI, and Flash solid-block validation await MapDefinition/world integration in M13; M7 provides the authoritative domain hooks.
 
 ## Files/modules added
+- `src/main/java/com/zeravorn/network/` — M10 contracts, codec, server validation/dispatch, Fabric gateway, state DTOs.
+- `src/client/java/com/zeravorn/client/` — M10 input, replication receive, gameplay HUD, shop/stats screens.
+- `src/client/java/com/zeravorn/client/mixin/MouseHandlerMixin.java` — blocks vanilla hotbar wheel during MOBA play.
+- `src/main/resources/zeravorn.client.mixins.json` and `assets/zeravorn/lang/` — client registration and key labels.
+- `src/test/java/com/zeravorn/network/` — M10 protocol, sequence, validation and dispatch tests.
 - `docs/IMPLEMENTATION_STATUS.md`
 - `src/main/java/com/zeravorn/match/`
 - `src/main/java/com/zeravorn/team/`
@@ -155,6 +208,7 @@ M9 — Vision + Bushes + Minimap State
 - Removed template mixin classes and descriptors.
 
 ## Verification
+- M10 static checks: Fabric 26.2 API signatures inspected from existing local jars; official Fabric 26.2 documentation consulted; new JSON files parsed; tracked diff whitespace check completed. Gradle test/build and GUI/runtime checks intentionally not run by Codex.
 - Jason pipeline v2: asset-only generation, structural validation, deterministic regeneration, embedded/external PNG consistency, glTF checks, 5 defect regressions and 347 first-person reticle poses passed. Geometry-based visual previews inspected. Gradle build/test and cache generation intentionally not run at the owner's request.
 - M0-M9 audit: all `docs` files re-read; source/config/test static review completed; `git diff --check` completed with no whitespace errors (line-ending conversion warnings only).
 - M0-M9 audit: `GRADLE_USER_HOME=.gradle-user .\gradlew.bat --no-daemon test` — PASS (61 tests).

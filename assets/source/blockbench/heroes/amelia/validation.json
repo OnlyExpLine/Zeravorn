@@ -24,16 +24,16 @@
   "models": [
     {
       "model": "amelia",
-      "elements": 984,
-      "bones": 65,
-      "triangles": 20960,
+      "elements": 502,
+      "bones": 84,
+      "triangles": 13409,
       "clips": 18
     },
     {
       "model": "amelia_first_person",
-      "elements": 106,
-      "bones": 24,
-      "triangles": 3160,
+      "elements": 104,
+      "bones": 28,
+      "triangles": 2730,
       "clips": 13
     },
     {

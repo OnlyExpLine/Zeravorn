@@ -1,0 +1,536 @@
+[
+  {
+    "name": "bush_small",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 45,
+    "triangles": 540,
+    "clips": [],
+    "bounds": [
+      [
+        -8.98,
+        9.914641884051546
+      ],
+      [
+        0,
+        18.4
+      ],
+      [
+        -7.84,
+        8.87241545656032
+      ]
+    ],
+    "height_blocks": 1.15
+  },
+  {
+    "name": "bush_medium",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 45,
+    "triangles": 540,
+    "clips": [],
+    "bounds": [
+      [
+        -12.25,
+        12.434641884051546
+      ],
+      [
+        0,
+        23.2
+      ],
+      [
+        -12.25,
+        12.25
+      ]
+    ],
+    "height_blocks": 1.45
+  },
+  {
+    "name": "bush_large",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 45,
+    "triangles": 540,
+    "clips": [],
+    "bounds": [
+      [
+        -16.66,
+        16.66
+      ],
+      [
+        0,
+        28
+      ],
+      [
+        -16.66,
+        16.66
+      ]
+    ],
+    "height_blocks": 1.75
+  },
+  {
+    "name": "bush_corner",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 40,
+    "triangles": 480,
+    "clips": [],
+    "bounds": [
+      [
+        -13.72,
+        13.72
+      ],
+      [
+        0,
+        25.119999999999997
+      ],
+      [
+        -13.72,
+        13.72
+      ]
+    ],
+    "height_blocks": 1.5699999999999998
+  },
+  {
+    "name": "tree_a",
+    "variants": [
+      "forest"
+    ],
+    "bones": 2,
+    "cuboids": 26,
+    "triangles": 312,
+    "clips": [],
+    "bounds": [
+      [
+        -31.138550928818653,
+        30.52774007490399
+      ],
+      [
+        -0.0763641367262693,
+        77.5
+      ],
+      [
+        -29.9276519582024,
+        28.5
+      ]
+    ],
+    "height_blocks": 4.848522758545392
+  },
+  {
+    "name": "tree_b",
+    "variants": [
+      "forest"
+    ],
+    "bones": 2,
+    "cuboids": 26,
+    "triangles": 312,
+    "clips": [],
+    "bounds": [
+      [
+        -35.562517926717035,
+        33.39740126399766
+      ],
+      [
+        -0.0763641367262693,
+        87.5
+      ],
+      [
+        -35.7546475131971,
+        32.49306253532166
+      ]
+    ],
+    "height_blocks": 5.473522758545392
+  },
+  {
+    "name": "tree_c",
+    "variants": [
+      "forest"
+    ],
+    "bones": 2,
+    "cuboids": 26,
+    "triangles": 312,
+    "clips": [],
+    "bounds": [
+      [
+        -36.90246915829005,
+        35.19444432975766
+      ],
+      [
+        -0.0763641367262693,
+        97.5
+      ],
+      [
+        -33.815503094505786,
+        38.53670529489685
+      ]
+    ],
+    "height_blocks": 6.098522758545392
+  },
+  {
+    "name": "rock_small",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 10,
+    "triangles": 120,
+    "clips": [],
+    "bounds": [
+      [
+        -6.455127018922193,
+        6.455127018922193
+      ],
+      [
+        0.29500000000000004,
+        9.71
+      ],
+      [
+        -5.779095647355399,
+        6.8606079660838635
+      ]
+    ],
+    "height_blocks": 0.5884375000000001
+  },
+  {
+    "name": "rock_medium",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 10,
+    "triangles": 120,
+    "clips": [],
+    "bounds": [
+      [
+        -11.619228634059947,
+        11.619228634059947
+      ],
+      [
+        0.5310000000000001,
+        17.078
+      ],
+      [
+        -10.235095647355399,
+        12.349094338950955
+      ]
+    ],
+    "height_blocks": 1.0341875
+  },
+  {
+    "name": "rock_large",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 10,
+    "triangles": 120,
+    "clips": [],
+    "bounds": [
+      [
+        -18.074355652982142,
+        18.074355652982142
+      ],
+      [
+        0.8260000000000005,
+        26.287999999999997
+      ],
+      [
+        -15.8050956473554,
+        19.20970230503482
+      ]
+    ],
+    "height_blocks": 1.5913749999999998
+  },
+  {
+    "name": "rock_cluster",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 15,
+    "triangles": 180,
+    "clips": [],
+    "bounds": [
+      [
+        -18.965675367438866,
+        20.335858734453748
+      ],
+      [
+        0.1200000000000001,
+        17.999000000000002
+      ],
+      [
+        -11.892731646577706,
+        14.548208012734811
+      ]
+    ],
+    "height_blocks": 1.1174375
+  },
+  {
+    "name": "ruin_column_full",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 11,
+    "triangles": 132,
+    "clips": [],
+    "bounds": [
+      [
+        -8.5,
+        8.5
+      ],
+      [
+        0,
+        57
+      ],
+      [
+        -8.5,
+        8.5
+      ]
+    ],
+    "height_blocks": 3.5625
+  },
+  {
+    "name": "ruin_column_broken",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 12,
+    "triangles": 144,
+    "clips": [],
+    "bounds": [
+      [
+        -8.5,
+        20.80855262628917
+      ],
+      [
+        0,
+        29
+      ],
+      [
+        -8.5,
+        12.509902075056903
+      ]
+    ],
+    "height_blocks": 1.8125
+  },
+  {
+    "name": "ruin_arch",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 21,
+    "triangles": 252,
+    "clips": [],
+    "bounds": [
+      [
+        -30.5,
+        30.5
+      ],
+      [
+        0,
+        62
+      ],
+      [
+        -8.5,
+        8.5
+      ]
+    ],
+    "height_blocks": 3.875
+  },
+  {
+    "name": "ruin_wall_small",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 16,
+    "triangles": 192,
+    "clips": [],
+    "bounds": [
+      [
+        -19.85,
+        21.85
+      ],
+      [
+        0.1499999999999999,
+        23.85
+      ],
+      [
+        -4,
+        4
+      ]
+    ],
+    "height_blocks": 1.4812500000000002
+  },
+  {
+    "name": "ruin_base",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 3,
+    "triangles": 36,
+    "clips": [],
+    "bounds": [
+      [
+        -16,
+        16
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        -16,
+        16
+      ]
+    ],
+    "height_blocks": 0.75
+  },
+  {
+    "name": "ruin_stairs",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 5,
+    "triangles": 60,
+    "clips": [],
+    "bounds": [
+      [
+        -14,
+        14
+      ],
+      [
+        0,
+        20
+      ],
+      [
+        -17.5,
+        17.5
+      ]
+    ],
+    "height_blocks": 1.25
+  },
+  {
+    "name": "ruin_rubble",
+    "variants": [
+      "forest"
+    ],
+    "bones": 1,
+    "cuboids": 40,
+    "triangles": 480,
+    "clips": [],
+    "bounds": [
+      [
+        -13.546999633883088,
+        14.670753719214192
+      ],
+      [
+        0.06000000000000005,
+        7.4399999999999995
+      ],
+      [
+        -13.009101727345008,
+        14.227208986669682
+      ]
+    ],
+    "height_blocks": 0.46124999999999994
+  },
+  {
+    "name": "lantern_post",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 3,
+    "cuboids": 19,
+    "triangles": 228,
+    "clips": [
+      "animation.zeravorn.lantern_post.idle"
+    ],
+    "bounds": [
+      [
+        -17,
+        5.5
+      ],
+      [
+        0,
+        49.34164078649987
+      ],
+      [
+        -7,
+        7
+      ]
+    ],
+    "height_blocks": 3.083852549156242
+  },
+  {
+    "name": "lantern_wall",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 3,
+    "cuboids": 18,
+    "triangles": 216,
+    "clips": [
+      "animation.zeravorn.lantern_wall.idle"
+    ],
+    "bounds": [
+      [
+        -5.5,
+        5.5
+      ],
+      [
+        7.5,
+        34.5
+      ],
+      [
+        -11.5,
+        5.5
+      ]
+    ],
+    "height_blocks": 1.6875
+  },
+  {
+    "name": "lantern_hanging",
+    "variants": [
+      "blue",
+      "red"
+    ],
+    "bones": 3,
+    "cuboids": 16,
+    "triangles": 192,
+    "clips": [
+      "animation.zeravorn.lantern_hanging.idle"
+    ],
+    "bounds": [
+      [
+        -5.5,
+        5.5
+      ],
+      [
+        3.5,
+        24
+      ],
+      [
+        -5.5,
+        5.5
+      ]
+    ],
+    "height_blocks": 1.28125
+  }
+]

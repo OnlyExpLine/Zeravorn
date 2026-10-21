@@ -1,0 +1,54 @@
+{
+  "status": "exported_not_connected_to_game_renderer",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "front": "-Z",
+  "not_verified": [
+    "Blockbench GUI import",
+    "Minecraft renderer and state sync",
+    "in-game scale",
+    "clipping",
+    "runtime VFX",
+    "performance"
+  ],
+  "models": [
+    {
+      "name": "projectile_basic",
+      "variants": [
+        "basic"
+      ]
+    },
+    {
+      "name": "projectile_ice",
+      "variants": [
+        "blue"
+      ]
+    },
+    {
+      "name": "projectile_fire",
+      "variants": [
+        "fire"
+      ]
+    },
+    {
+      "name": "projectile_poison",
+      "variants": [
+        "poison"
+      ]
+    },
+    {
+      "name": "tower_shot",
+      "variants": [
+        "blue",
+        "red"
+      ]
+    },
+    {
+      "name": "throne_shot",
+      "variants": [
+        "blue",
+        "red"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "zeravorn.world.animation.v1",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "rotation_convention": "Blockbench: negate X/Y for right-handed XYZ matrices",
+  "clips": [
+    {
+      "name": "animation.zeravorn.projectile_fire.flight",
+      "length": 0.6,
+      "loop": "loop",
+      "tracks": {
+        "core": [
+          {
+            "channel": "rotation",
+            "time": 0,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.3,
+            "value": [
+              0,
+              0,
+              12
+            ],
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "time": 0.6,
+            "value": [
+              0,
+              0,
+              0
+            ],
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "events": []
+    }
+  ]
+}

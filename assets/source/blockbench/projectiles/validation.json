@@ -1,0 +1,73 @@
+{
+  "status": "structural_validation_passed",
+  "scope": [
+    "required model inventory",
+    "hierarchy and UUIDs",
+    "UV and cuboid budgets",
+    "finite sampled transforms",
+    "loop closure",
+    "source/export parity",
+    "team geometry equality",
+    "PNG decoding",
+    "glTF buffer integrity",
+    "viewer syntax"
+  ],
+  "not_verified": [
+    "Blockbench GUI import",
+    "reference fidelity",
+    "inter-part clipping",
+    "Minecraft integration",
+    "VFX runtime",
+    "performance"
+  ],
+  "results": [
+    {
+      "name": "projectile_basic",
+      "cuboids": 3,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "projectile_ice",
+      "cuboids": 8,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "projectile_fire",
+      "cuboids": 6,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "projectile_poison",
+      "cuboids": 6,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "tower_shot",
+      "cuboids": 8,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    },
+    {
+      "name": "throne_shot",
+      "cuboids": 12,
+      "bones": 4,
+      "clips": 1,
+      "sampled_poses": 41,
+      "status": "pass"
+    }
+  ]
+}

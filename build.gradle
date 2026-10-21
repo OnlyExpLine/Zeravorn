@@ -37,6 +37,10 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+// Exercise the asset animation sampler with the exact client implementation.
+sourceSets.test.compileClasspath += sourceSets.client.output
+sourceSets.test.runtimeClasspath += sourceSets.client.output
+
 processResources {
 	def version = project.version
 	inputs.property "version", version

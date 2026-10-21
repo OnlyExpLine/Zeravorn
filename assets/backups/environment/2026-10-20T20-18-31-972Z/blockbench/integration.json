@@ -1,0 +1,145 @@
+{
+  "status": "exported_not_connected_to_game_renderer",
+  "authority": "presentation_only",
+  "units_per_block": 16,
+  "front": "-Z",
+  "not_verified": [
+    "Blockbench GUI import",
+    "Minecraft renderer and state sync",
+    "in-game scale",
+    "clipping",
+    "runtime VFX",
+    "performance"
+  ],
+  "models": [
+    {
+      "name": "bush_small",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "bush_medium",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "bush_large",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "bush_corner",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "tree_a",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "tree_b",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "tree_c",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "rock_small",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "rock_medium",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "rock_large",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "rock_cluster",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_column_full",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_column_broken",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_arch",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_wall_small",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_base",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_stairs",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "ruin_rubble",
+      "variants": [
+        "forest"
+      ]
+    },
+    {
+      "name": "lantern_post",
+      "variants": [
+        "blue",
+        "red"
+      ]
+    },
+    {
+      "name": "lantern_wall",
+      "variants": [
+        "blue",
+        "red"
+      ]
+    },
+    {
+      "name": "lantern_hanging",
+      "variants": [
+        "blue",
+        "red"
+      ]
+    }
+  ]
+}

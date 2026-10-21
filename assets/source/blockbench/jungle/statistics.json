@@ -1,0 +1,157 @@
+[
+  {
+    "name": "jungle_red_buff",
+    "source": "assets/source/blockbench/jungle/red_buff/jungle_red_buff.bbmodel",
+    "bones": 18,
+    "elements": 105,
+    "triangles": 1260,
+    "texture_resolution": "128x128",
+    "meshes_in_source": 0,
+    "team_variants": "none; neutral jungle monster",
+    "animations": [
+      "animation.zeravorn.jungle_red_buff.idle",
+      "animation.zeravorn.jungle_red_buff.walk",
+      "animation.zeravorn.jungle_red_buff.leash_return",
+      "animation.zeravorn.jungle_red_buff.attack",
+      "animation.zeravorn.jungle_red_buff.hit",
+      "animation.zeravorn.jungle_red_buff.death"
+    ],
+    "sockets": [
+      "attack_origin",
+      "energy_core",
+      "lava_core",
+      "vfx_origin"
+    ],
+    "bounds": [
+      [
+        -18.796045008536485,
+        19.00173297538986
+      ],
+      [
+        0.09999999999999964,
+        32.7898537217501
+      ],
+      [
+        -10.527234958140024,
+        10.950492629923268
+      ]
+    ],
+    "height_blocks": 2.043115857609381
+  },
+  {
+    "name": "jungle_blue_buff",
+    "source": "assets/source/blockbench/jungle/blue_buff/jungle_blue_buff.bbmodel",
+    "bones": 18,
+    "elements": 98,
+    "triangles": 1176,
+    "texture_resolution": "128x128",
+    "meshes_in_source": 0,
+    "team_variants": "none; neutral jungle monster",
+    "animations": [
+      "animation.zeravorn.jungle_blue_buff.idle",
+      "animation.zeravorn.jungle_blue_buff.walk",
+      "animation.zeravorn.jungle_blue_buff.leash_return",
+      "animation.zeravorn.jungle_blue_buff.attack",
+      "animation.zeravorn.jungle_blue_buff.hit",
+      "animation.zeravorn.jungle_blue_buff.death"
+    ],
+    "sockets": [
+      "attack_origin",
+      "energy_core",
+      "vfx_origin"
+    ],
+    "bounds": [
+      [
+        -18,
+        18.930657113830218
+      ],
+      [
+        0.09999999999999964,
+        32.313260334911206
+      ],
+      [
+        -13.358722775992423,
+        14.011339642824478
+      ]
+    ],
+    "height_blocks": 2.0133287709319503
+  },
+  {
+    "name": "jungle_green_1",
+    "source": "assets/source/blockbench/jungle/green_1/jungle_green_1.bbmodel",
+    "bones": 18,
+    "elements": 103,
+    "triangles": 1236,
+    "texture_resolution": "128x128",
+    "meshes_in_source": 0,
+    "team_variants": "none; neutral jungle monster",
+    "animations": [
+      "animation.zeravorn.jungle_green_1.idle",
+      "animation.zeravorn.jungle_green_1.walk",
+      "animation.zeravorn.jungle_green_1.leash_return",
+      "animation.zeravorn.jungle_green_1.attack",
+      "animation.zeravorn.jungle_green_1.hit",
+      "animation.zeravorn.jungle_green_1.death",
+      "animation.zeravorn.jungle_green_1.special"
+    ],
+    "sockets": [
+      "attack_origin",
+      "energy_core",
+      "vfx_origin"
+    ],
+    "bounds": [
+      [
+        -18.873795501893365,
+        19.444366948281427
+      ],
+      [
+        0.09999999999999964,
+        32.53329271930988
+      ],
+      [
+        -12.204952251973653,
+        10.908857902959591
+      ]
+    ],
+    "height_blocks": 2.027080794956867
+  },
+  {
+    "name": "jungle_green_2",
+    "source": "assets/source/blockbench/jungle/green_2/jungle_green_2.bbmodel",
+    "bones": 18,
+    "elements": 110,
+    "triangles": 1320,
+    "texture_resolution": "128x128",
+    "meshes_in_source": 0,
+    "team_variants": "none; neutral jungle monster",
+    "animations": [
+      "animation.zeravorn.jungle_green_2.idle",
+      "animation.zeravorn.jungle_green_2.walk",
+      "animation.zeravorn.jungle_green_2.leash_return",
+      "animation.zeravorn.jungle_green_2.attack",
+      "animation.zeravorn.jungle_green_2.hit",
+      "animation.zeravorn.jungle_green_2.death",
+      "animation.zeravorn.jungle_green_2.special"
+    ],
+    "sockets": [
+      "attack_origin",
+      "energy_core",
+      "vfx_origin"
+    ],
+    "bounds": [
+      [
+        -17.9,
+        18.725651443065303
+      ],
+      [
+        0.09999999999999964,
+        50.34303389500478
+      ],
+      [
+        -9.45,
+        9.113273940720159
+      ]
+    ],
+    "height_blocks": 3.1401896184377986
+  }
+]

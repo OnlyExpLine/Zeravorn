@@ -1,5 +1,6 @@
 import {Model,mix} from './core.mjs';
-export const defaults={scale:1,headWidth:5.2,headHeight:5.5,torsoWidth:4.5,chestWidth:6.1,chestDepth:3.9,waistWidth:3.5,hipWidth:5.4,hairLength:18,hairVolume:1,skirtLength:13.6,staffLength:28,crystalSize:1};
+import {rework,reworkArms} from './visual_rework.mjs';
+export const defaults={scale:1,headWidth:4.75,headHeight:5.75,torsoWidth:4.5,chestWidth:6.85,chestDepth:4.45,waistWidth:3.5,hipWidth:5.4,hairLength:18,hairVolume:1.08,skirtLength:13.6,staffLength:30.5,crystalSize:1};
 
 function embroidery(m,name,bone,x,y,z,size,back=false){
  const r=size/2;
@@ -11,6 +12,18 @@ function embroidery(m,name,bone,x,y,z,size,back=false){
 }
 function trimPath(m,name,bone,path,material='gold',r=.055){for(let i=0;i<path.length-1;i++)m.rod(name+'_'+i,bone,path[i],path[i+1],r,material,5);}
 function gem(m,name,bone,x,y,z,s=.6){m.crystal(name,bone,[x,y-s/2,z],[x,y+s/2,z],s*.65,s*.45);}
+function bustCup(m,name,bone,c,rx,ry,rz,s){
+ const vertices=[],faces=[],rows=6,segments=12;
+ for(let j=0;j<=rows;j++){
+  const theta=-Math.PI/2+(Math.PI*.46)*j/rows;
+  for(let i=0;i<=segments;i++){
+   const phi=-Math.PI/2+Math.PI*i/segments;
+   vertices.push([c[0]+Math.sin(phi)*Math.cos(theta)*rx,c[1]+Math.sin(theta)*ry,c[2]-Math.cos(phi)*Math.cos(theta)*rz]);
+  }
+ }
+ for(let j=0;j<rows;j++)for(let i=0;i<segments;i++){const a=j*(segments+1)+i,b=a+1,c=a+segments+1,d=c+1;faces.push([a,b,d,c]);}
+ m.mesh(name,bone,vertices,faces,'white');
+}
 
 export function staff(m,parent,c=[6.2,0,-1.6],p=defaults){
  const [x,y,z]=c,ratio=p.staffLength/28, at=(a,b,d)=>[x+a,y+b*ratio,z+d];
@@ -119,7 +132,7 @@ function hair(m,p){
  m.bone('hair_root','head',[0,27,0]);
  for(const [name,o] of Object.entries({hair_front_left:[1.1,27.4,-1.8],hair_front_right:[-1.1,27.4,-1.8],hair_side_left:[2.45,25,0],hair_side_right:[-2.45,25,0],hair_back_upper:[0,27,1.5],hair_strands_left:[2.7,21,1],hair_strands_right:[-2.7,21,1]}))m.bone(name,'hair_root',o);
  m.bone('hair_back_mid','hair_back_upper',[0,21,2]);m.bone('hair_back_lower','hair_back_mid',[0,15.5,2.3]);
- m.loft('silver_hair_cap','hair_root',[[0,25.9,.18,2.69,1.97],[0,27.3,.15,2.72,2.03],[0,28.0,.1,2.51,1.87],[0,28.22,.15,2.14,1.65]],['hair','hairLight','hairShade','hair'],12,.32);
+ m.loft('silver_hair_cap','hair_root',[[0,25.75,.22,2.72,2.08],[0,27.3,.15,2.75,2.12],[0,28.15,.1,2.48,1.94],[0,28.45,.15,2.04,1.72]],['hair','hairLight','hairShade','hair'],12,.32);
  // Split curtain fringe: diagonally swept separate stepped locks.
  for(const s of [-1,1])for(let i=0;i<4;i++){
   const side=s===1?'left':'right',b='hair_front_'+side,w=.48+i*.08;
@@ -129,10 +142,12 @@ function hair(m,p){
  m.ribbon('center_fringe_tip','hair_root',[[0,27.55,-2.10],[-.1,26.45,-2.24],[.03,25.5,-2.3]],[.61,.63,.15],[.33,.32,.13],'hair');
  for(const s of [-1,1]){
   const side=s===1?'left':'right';
-  for(let j=0;j<3;j++){
-   const x=s*(2.15+j*.38),z=-.55+j*.65;
-   m.ribbon('temple_curl_'+side+'_'+j,'hair_side_'+side,[[x,26.65,z],[x+s*.18,24.3,z-.45],[x+s*.16,22.0,z-.7],[x+s*.67,20.6,z-.6],[x+s*.37,19.6,z-.78],[x+s*.85,18.8,z-.45]],[.62,.66,.67,.51,.40,.09],[.58,.55,.48,.40,.30,.12],j===1?'hairLight':'hair');
+  for(let j=0;j<5;j++){
+   const x=s*(1.86+j*.31),z=-1.18+j*.46;
+   m.ribbon('temple_curl_'+side+'_'+j,'hair_side_'+side,[[x,27.05,z],[x+s*(.18+j*.03),25.4,z-.43],[x-s*.06,23.55,z-.72],[x+s*(.55+j*.05),22.15,z-.67],[x+s*.22,20.65,z-.89],[x+s*.75,19.45,z-.62],[x+s*.48,18.65,z-.78]],[.68,.73,.76,.69,.55,.38,.09],[.64,.62,.58,.51,.42,.29,.10],j%3===1?'hairLight':j%3===2?'hairShade':'hair');
+   trimPath(m,'temple_curl_highlight_'+side+'_'+j,'hair_side_'+side,[[x-s*.12,26.8,z-.35],[x+s*.04,24.5,z-.72],[x+s*.35,22.2,z-.94],[x+s*.12,20.7,z-1.08]],'hairLight',.03);
   }
+  m.ribbon('profile_face_frame_'+side,'hair_side_'+side,[[s*1.74,27.15,-1.75],[s*2.18,25.7,-2.15],[s*2.32,23.95,-2.22],[s*2.48,22.25,-2.05],[s*2.78,20.75,-1.78],[s*2.55,19.25,-1.62]],[.72,.78,.74,.62,.40,.08],[.50,.48,.43,.38,.28,.08],'hairLight');
   for(let j=0;j<2;j++)m.ribbon('loose_long_lock_'+side+'_'+j,'hair_strands_'+side,[[s*(2.6+j*.3),23,1],[s*(3.1+j*.3),19,1.65],[s*(3.6+j*.4),15,1.95],[s*(3.0+j*.7),12,2.1],[s*(3.65+j*.6),10.7,1.5]],[.46,.50,.43,.35,.08],[.4,.4,.37,.28,.09],'hairShade');
  }
  const bottom=28-p.hairLength;
@@ -148,24 +163,23 @@ function hair(m,p){
 function head(m,p){
  m.bone('head','torso',[0,22.1,0]);m.bone('face','head',[0,24.5,-1.85]);m.bone('crown','head',[0,27.7,0]);
  const w=p.headWidth/2;
- m.loft('face_sculpt','face',[[0,22.35,-.12,w*.65,1.30],[0,22.7,-.05,w*.86,1.58],[0,23.7,0,w*.98,1.78],[0,26.35,0,w,1.81],[0,22.35+p.headHeight,0,w*.92,1.64]],'skin',12,.28);
+ m.loft('face_sculpt','face',[[0,22.32,-.03,w*.43,1.12],[0,22.63,-.08,w*.68,1.38],[0,23.45,-.02,w*.88,1.61],[0,25.25,.02,w,1.72],[0,26.62,.04,w*.91,1.66],[0,22.32+p.headHeight,.02,w*.78,1.49]],'skin',12,.42);
  for(const s of [-1,1]){
-  m.box('ear_'+s,'face',[s*2.58,24.1,0],[.45,1.25,.61],'skin');
-  gem(m,'earring_'+s,'head',s*2.63,23.16,-.14,.52);
-  const x=s*1.12;
-  m.box('eye_white_'+s,'face',[x,24.27,-1.87],[1.09,.92,.055],'whiteLight');
-  m.box('iris_'+s,'face',[x-s*.05,24.2,-1.91],[.61,.78,.04],'eye');
-  m.box('iris_dark_'+s,'face',[x-s*.07,24.42,-1.94],[.54,.32,.03],'blue');
-  m.box('pupil_'+s,'face',[x-s*.07,24.35,-1.963],[.21,.49,.025],'navy');
-  m.box('eye_glint_'+s,'face',[x-.14,24.47,-1.98],[.20,.21,.022],'whiteLight');
-  m.box('upper_lash_'+s,'face',[x,24.80,-1.97],[1.26,.22,.045],'lash');
-  m.box('outer_lash_'+s,'face',[x+s*.62,24.68,-1.91],[.19,.34,.04],'lash');
-  m.box('eyebrow_'+s,'face',[x,25.30,-1.88],[1.01,.13,.04],'hairShade');
-  m.box('cheek_blush_'+s,'face',[s*1.53,23.52,-1.83],[.53,.16,.02],'skinShade');
+  m.box('ear_'+s,'face',[s*2.31,24.25,.06],[.38,1.20,.54],'skin');
+  gem(m,'earring_'+s,'head',s*2.34,23.31,-.08,.48);
+  const x=s*.98;
+  m.box('eye_white_'+s,'face',[x,24.38,-1.76],[1.08,.60,.055],'whiteLight');
+  m.box('iris_'+s,'face',[x-s*.06,24.34,-1.80],[.54,.54,.04],'eye');
+  m.box('iris_dark_'+s,'face',[x-s*.07,24.48,-1.83],[.49,.22,.03],'blue');
+  m.box('pupil_'+s,'face',[x-s*.07,24.37,-1.855],[.18,.36,.025],'navy');
+  m.box('eye_glint_'+s,'face',[x-.11,24.49,-1.87],[.14,.14,.022],'whiteLight');
+  m.ribbon('upper_lash_'+s,'face',[[x-s*.57,24.62,-1.85],[x,24.68,-1.89],[x+s*.60,24.77,-1.84]],[.12,.15,.10],[.06,.06,.05],'lash');
+  m.ribbon('lower_lash_'+s,'face',[[x-s*.48,24.12,-1.82],[x,24.06,-1.84],[x+s*.47,24.14,-1.81]],[.055,.045,.035],[.035,.03,.025],'lash');
+  m.ribbon('eyebrow_'+s,'face',[[x-s*.52,25.12,-1.77],[x,25.25,-1.80],[x+s*.52,25.38,-1.75]],[.16,.19,.12],[.055,.055,.045],'lash');
  }
- m.loft('small_nose','face',[[0,23.45,-1.91,.20,.17],[0,23.7,-1.94,.13,.15],[0,24,-1.86,.1,.06]],'skin',6,.6);
- m.box('quiet_mouth','face',[0,23.03,-1.76],[.55,.105,.05],'lip');
- m.box('lower_lip_light','face',[0,22.94,-1.72],[.36,.075,.03],'skin');
+ m.loft('small_nose','face',[[0,23.40,-1.79,.17,.14],[0,23.75,-1.84,.11,.12],[0,24.05,-1.76,.075,.05]],'skin',6,.65);
+ m.ribbon('confident_mouth','face',[[-.34,23.05,-1.70],[0,22.99,-1.74],[.34,23.07,-1.70]],[.085,.11,.075],[.04,.045,.035],'lip');
+ m.ribbon('defined_lower_lip','face',[[-.22,22.93,-1.68],[0,22.88,-1.70],[.22,22.94,-1.68]],[.06,.075,.05],[.03,.035,.025],'skinShade');
  hair(m,p);
  // Silver circlet and ice battlements wrap all around the head.
  for(let i=0;i<16;i++){
@@ -183,17 +197,21 @@ export function character(p=defaults){
  const m=new Model('amelia');m.bone('amelia_root',null);m.bone('body','amelia_root',[0,14.6,0]);m.bone('pelvis','body',[0,14.6,0]);m.bone('waist','pelvis',[0,16.0,0]);m.bone('torso','waist',[0,17.15,0]);m.bone('chest','torso',[0,19.4,-.2]);
  m.loft('hip_foundation','pelvis',[[0,13.5,0,p.hipWidth*.41,1.28],[0,14.6,0,p.hipWidth*.50,1.42],[0,15.9,0,p.waistWidth*.56,1.05]],'navy',12,.60);
  m.loft('corset_tailored_waist','waist',[[0,15.15,0,p.hipWidth*.45,1.35],[0,16.25,0,p.waistWidth*.50,1.10],[0,17.35,0,p.waistWidth*.54,1.17],[0,18.4,0,p.torsoWidth*.49,1.45]],['blue','cloth','blue','blueLight'],12,.6);
- m.loft('upper_body_skin','torso',[[0,17.9,.05,2.02,1.25],[0,19.6,0,2.60,1.33],[0,20.8,0,2.93,1.02],[0,21.5,.1,1.49,.90],[0,22.3,.1,.66,.63]],'skin',12,.6);
+ m.loft('upper_body_skin','torso',[[0,17.9,.05,2.02,1.25],[0,19.4,0,2.55,1.36],[0,20.45,-.02,2.88,1.10],[0,21.2,.05,2.25,.96],[0,21.72,.1,1.30,.78],[0,22.3,.1,.66,.63]],'skin',12,.6);
  m.loft('neck','torso',[[0,21.4,0,.66,.6],[0,22.65,0,.70,.63]],'skin',8,.6);
  m.loft('dark_choker','torso',[[0,21.86,0,.71,.65],[0,22.2,0,.73,.67]],'navy',10,.55);
  for(const s of [-1,1]){
-  const cx=s*p.chestWidth*.245;
-  m.loft('sculpted_bodice_cup_'+s,'chest',[[cx*.85,17.95,-.71,.70,.75],[cx,18.45,-.83,1.15,1.16],[cx,19.25,-.72,p.chestWidth*.25,p.chestDepth*.36],[cx*.94,20,-.57,1.32,1.23],[cx*.85,20.5,-.33,.78,.72]],['white','whiteLight','white','white'],12,.72);
-  for(let j=0;j<2;j++)trimPath(m,'cup_seam_'+s+'_'+j,'chest',[[s*(.9+j*.8),20.25,-1.68],[s*(1.2+j*.7),19.6,-2.02],[s*(1.4+j*.5),18.8,-2.09],[s*(1.2+j*.35),18.1,-1.64]],'silver',.031);
-  trimPath(m,'bodice_gold_edge_'+s,'chest',[[s*.12,18.25,-1.57],[s*.42,19.18,-2.04],[s*1.20,20.27,-1.64],[s*2.01,20.35,-1.26],[s*2.75,19.7,-.99]],'gold',.055);
+  const cx=s*p.chestWidth*.218;
+  // The bust is its own body volume; the corset cups cover only the lower half,
+  // preserving the deep open neckline and separated silhouette from the reference.
+  m.loft('exposed_bust_'+s,'chest',[[cx*.82,18.05,-.42,.52,.48],[cx*.93,18.42,-.62,.92,.86],[cx*.99,18.90,-.76,1.34,1.25],[cx,19.48,-.82,p.chestWidth*.245,p.chestDepth*.335],[cx*.98,20.03,-.70,1.53,1.40],[cx*.90,20.48,-.45,1.18,1.02],[cx*.72,20.82,-.18,.66,.54],[cx*.52,21.00,-.03,.28,.24]],['skinShade','skin','skin','skin','skin','skin','skin'],16,.96);
+  bustCup(m,'open_lower_corset_cup_'+s,'chest',[cx,19.42,-.84],1.72,1.54,1.53,s);
+  trimPath(m,'open_cup_top_edge_'+s,'chest',[[s*.12,19.25,-1.43],[s*.55,19.46,-1.79],[s*1.18,19.73,-2.13],[s*1.88,20.02,-2.03],[s*2.55,20.25,-1.48]],'gold',.075);
+  for(let j=0;j<2;j++)trimPath(m,'cup_seam_'+s+'_'+j,'chest',[[s*(.69+j*.70),19.22,-1.75],[s*(1.00+j*.62),18.91,-2.10],[s*(1.20+j*.46),18.44,-1.98],[s*(1.04+j*.36),17.98,-1.43]],'silver',.031);
+  trimPath(m,'bodice_gold_edge_'+s,'chest',[[s*.10,17.98,-1.25],[s*.40,18.48,-1.74],[s*1.18,19.64,-2.14],[s*1.88,20.00,-2.04],[s*2.59,20.24,-1.49]],'gold',.06);
   trimPath(m,'corset_boning_'+s,'waist',[[s*1.82,18.23,-1.28],[s*1.16,17.35,-1.10],[s*.90,16.4,-1.02],[s*2.15,15.34,-1.37]],'gold',.075);
   trimPath(m,'waist_chevron_'+s,'waist',[[s*2.4,15.65,-1.22],[s*1.31,15.11,-1.57],[0,14.46,-1.77]],'gold',.11);
-  trimPath(m,'shoulder_chain_'+s,'torso',[[s*.45,21.6,-.65],[s*1.6,21.22,-.77],[s*2.9,20.90,-.70],[s*3.6,20.2,-.56]],'gold',.085);
+  trimPath(m,'shoulder_chain_'+s,'torso',[[s*.45,21.58,-.66],[s*1.45,21.34,-.84],[s*2.46,20.98,-.88],[s*3.15,20.48,-.67]],'gold',.085);
   gem(m,'collar_side_gem_'+s,'torso',s*2.40,21.00,-.81,.62);
   const side=s===1?'left':'right',x=s*1.3;
   m.bone('leg_'+side,'pelvis',[x,14.3,0]);m.bone('lower_leg_'+side,'leg_'+side,[x,8.1,0]);m.bone('foot_'+side,'lower_leg_'+side,[x,1.75,-.12]);
@@ -211,10 +229,11 @@ export function character(p=defaults){
  m.bone('vfx_chest','chest',[0,19.5,-2]);m.bone('vfx_feet','amelia_root',[0,.1,0]);
  arm(m,'left','torso',p);arm(m,'right','torso',p);head(m,p);skirt(m,p);
  m.bone('staff_socket','hand_right',[-4.56,13.1,-.68]);staff(m,'staff_socket',[-4.70,.7,-.66],p);
- return m;
+ rework(m);return m;
 }
 export function firstPerson(p=defaults){
  const m=new Model('amelia_first_person');m.bone('amelia_root',null);m.bone('camera_anchor','amelia_root');arm(m,'left','camera_anchor',p,true);arm(m,'right','camera_anchor',p,true);m.bone('staff_socket','hand_right',[-4.56,13.1,-.68]);staff(m,'staff_socket',[-4.70,.7,-.66],p);
+ reworkArms(m);
  const staffIds=new Set();const visit=b=>{for(const c of b.children)if(typeof c==='string')staffIds.add(c);else visit(c);};visit(m.bones.staff_root);
  const compact=v=>[-4.7+(v[0]+4.7)*.8,13.1+(v[1]-13.1)*.55,-.66+(v[2]+.66)*.8];
  for(const e of m.elements)if(staffIds.has(e.uuid))for(const k in e.vertices)e.vertices[k]=compact(e.vertices[k]);

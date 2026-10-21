@@ -1,15 +1,15 @@
 {
   "scale": 1,
-  "headWidth": 5.2,
-  "headHeight": 5.5,
+  "headWidth": 4.75,
+  "headHeight": 5.75,
   "torsoWidth": 4.5,
-  "chestWidth": 6.1,
-  "chestDepth": 3.9,
+  "chestWidth": 6.85,
+  "chestDepth": 4.45,
   "waistWidth": 3.5,
   "hipWidth": 5.4,
   "hairLength": 18,
-  "hairVolume": 1,
+  "hairVolume": 1.08,
   "skirtLength": 13.6,
-  "staffLength": 28,
+  "staffLength": 30.5,
   "crystalSize": 1
 }
